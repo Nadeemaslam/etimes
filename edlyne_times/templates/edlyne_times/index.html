@@ -1,0 +1,392 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="bg_image">
+        <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top" id="main_header">
+            <div class="container">
+                <a href="" class="navbar-brand text-warning font-weight-bold">
+                    <img class="logo" src="{% static 'edlyne_times/assets/img/et_logo.png' %}" alt="image1">
+                </a>
+
+
+                <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">Market Research</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="login_section ">
+                    {% if user.is_authenticated %}
+                        <span>Hello, {{ user.username }}</span>
+                        <a href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                    <button class="btn btn-outline-info"><a href="{% url 'login' %}">Login</a></button>
+                        {% endif %}
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+
+        <section class="video_section">
+            <div class="container video_overlay text-center text-white">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-10 col-12">
+                            <h1 class="headline">HOW TO GET STARTED WITH INVESTING</h1>
+                            <h2>Stock investing made easy</h2>
+                            <button class="btn btn-warning text-white btn-lg">SUBSCRIBE</button>
+                         </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-10 col-12 video_right_section">
+                        <!--Text Block 1-->
+                              <div class="text-block1">
+                                <i class="fa fa-line-chart fa-3x text-white icons"></i>
+                                <h4>NIFTY50</h4>
+                                <p>sunrise</p>
+                              </div>
+
+                               <div class="text-block2">
+                                <h3>1200K</h3>
+                                <i class="fa fa-circle-o-notch fa-3x text-white" aria-hidden="true"></i>
+                                <p>Subscribers</p>
+                              </div>
+
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="video_container">
+            <video autoplay loop muted poster="">
+            <source src="{% static 'edlyne_times/assets/video/smile.mp4' %}" type="video/mp4">
+            </video>
+             </div>
+        </section>
+        <!--<div class="container text-center text-white headerset">-->
+            <!--<h2 class="headline">Welcome to the future of investing</h2>-->
+            <!--<h1>Stock investing made easy</h1>-->
+            <!--<button class="btn btn-warning text-white btn-lg">SUBSCRIBE</button>-->
+        <!--</div>-->
+
+    </div>
+
+    <!--section first content-->
+    <section class="first_content_wrapper">
+        <div class="row ">
+            <div class="col-lg-6 col-md-6 col-sm-10 col-12">
+                <div class="">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">A smallcase is a basket of stocks that reflects an idea</h2>
+                            <p class="card-text text-center">smallcases are portfolios of stocks or ETFs, weighted intelligently to track a theme, strategy or objective</p>
+                        </div>
+
+                        <div class="sub_video_container m-auto">
+                            <video autoplay  muted poster="">
+                            <source src="{% static 'edlyne_times/assets/video/stock.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+
+                    </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-10 col-12">
+                <div class="row right_section">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 aside_section1">
+                        <img src="{% static 'edlyne_times/assets/img/graph1.svg' %}" alt="Img">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-lg-offset-1  col-md-offset-1 col-sm-8 col-3">
+                        <h4>Simple to understand</h4>
+                        <p>smallcases are modern investing products based on simple ideas you can understand.</p>
+                    </div>
+                </div>
+                <div class="row right_section">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 aside_section1">
+                        <img src="{% static 'edlyne_times/assets/img/tree.svg' %}" alt="Img">
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-3">
+                        <h4>Created by experts</h4>
+                        <p>smallcases are created by India’s leading finance experts & backed by solid research.</p>
+                    </div>
+                </div>
+                <div class="row right_section">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3 aside_section1">
+                        <img src="{% static 'edlyne_times/assets/img/graph1.svg' %}" alt="Img">
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-3">
+                        <h4>Designed for you</h4>
+                        <p>smallcases are fully personalized. Change stocks any time or create your own smallcase!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--container-->
+    <section class="container ourservices text-center">
+        <h1>SERVICES</h1>
+        <p>Lorem Ipsum dolar sit amt consectertur</p>
+
+        <div class="row rowsetting">
+            <div class="col-lg-4 col-md-4 col-sm-4 col--10 d-block m-auto">
+                <div class="imgsetting d-block m-auto bg-warning">
+                    <i class="fas fa-cart-plus fa-3x text-white" id="icons"> </i>
+                </div>
+                <h2>Research</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col--10 d-block m-auto">
+                <div class="imgsetting d-block m-auto bg-warning">
+                    <i class="fas fa-cart-plus fa-3x text-white icons"></i>
+                </div>
+                <h2>Research</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col--10 d-block m-auto">
+                <div class="imgsetting d-block m-auto bg-warning">
+                    <i class="fas fa-cart-plus fa-3x text-white"></i>
+                </div>
+                <h2>Research</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--Portfolio section-->
+    <section class="portfolio bg-light">
+        <div class="container ">
+            <h2 class="text-center">There is a smallcase for everyone</h2>
+            <p class="text-center">Discover smallcases from different types, risk levels & strategies and invest with the core-satellite approach</p>
+            <div class="row portfolio_inner_section">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
+                    <div class="card">
+                        <img src="{% static 'edlyne_times/assets/img/graph4.svg' %}" class="card-img img-fluid" alt="">
+                        <div class="card-body">
+                            <h2 class="card-title">All Weather Investing</h2>
+                            <p class="card-text">A recession proof way to build long term wealth.All Weather Investing smallcase is a portfolio of equity, gold & ETFs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
+                    <div class="card">
+                        <img src="{% static 'edlyne_times/assets/img/graph3.svg' %}" class="card-img img-fluid" alt="">
+                        <div class="card-body">
+                            <h2 class="card-title">Smart Beta</h2>
+                            <p class="card-text">A low volatile portfolio that aims for high returns. Passive investing with a twist.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
+                    <div class="card">
+                        <img src="{% static 'edlyne_times/assets/img/graph2.svg' %}" class="card-img img-fluid" alt="">
+                        <div class="card-body">
+                            <h2 class="card-title">Model Based</h2>
+                            <p class="card-text">Companies that own India's everyday brands. Top consumer favorites</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--<div class="dm-width">-->
+                      <!--<div class="dm-device">-->
+                        <!--<div class="device">-->
+                          <!--<div class="screen">-->
+                            <!--<div class="slider">-->
+
+                                <!--<div class="w3-content w3-section">-->
+                                  <!--<img class="mySlides" src="{%static 'edlyne_times/assets/img/m1.svg' %}">-->
+                                  <!--<img class="mySlides" src="{%static 'edlyne_times/assets/img/m2.svg' %}">-->
+                                  <!--<img class="mySlides" src="{%static 'edlyne_times/assets/img/m1.svg' %}">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                          <!--</div>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
+
+    <!--Mobile section-->
+    <section class="mobile_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-10 col-12 right_aside_mobile">
+                    <span>Everything you need to invest</span>
+                    <h2>Simple, quick & delightful investing for you</h2>
+                    <div class="inner_right_aside1">
+                        <h4><i class="fa fa-hand-pointer-o " id="aside_icon1"> </i>Buy multiple stocks in 1 click</h4>
+                        <p>Place orders for up to 50 stocks in 1 click as a smallcase and save time.</p>
+                    </div>
+                    <div class="inner_right_aside2">
+
+                        <h4><i class="fa fa-suitcase " id="aside_icon2"> </i>Track smallcases anytime, anywhere</h4>
+                        <p>Track & manage seamlessly with a real time index value, inclusive of corp. actions & dividends</p>
+                    </div>
+                    <div class="inner_right_aside3">
+
+                        <h4><i class="fa fa-shopping-basket"   id="aside_icon3"> </i>Invest regularly with SIPs</h4>
+                        <p>Invest in a disciplined manner by starting a SIP on your smallcase for every week, month or quarter</p>
+                    </div>
+                    <div class="inner_right_aside4">
+                        <h4><i class="fa fa-cubes " id="aside_icon4"> </i>Create your own Portfolio</h4>
+                        <p>Be your own fund manager & invest in your ideas by creating a smallcase of up to 50 stocksr</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-10 col-12">
+                    <img src="{%static 'edlyne_times/assets/img/mobile.png' %}">
+                        <div class="screen-holder">
+                            <div class="w3-content w3-section">
+                                  <img class="mySlides" src="{%static 'edlyne_times/assets/img/mobile2.png' %}">
+                                  <img class="mySlides" src="{%static 'edlyne_times/assets/img/mobile3.png' %}">
+                                  <img class="mySlides" src="{%static 'edlyne_times/assets/img/mobile2.png' %}">
+                                </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Footer-->
+    <footer class="footer">
+        <div class="container top-footer">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-10 col-12">
+                    <h5>Edlyne Times</h5>
+                    <p>smallcase Technologies builds platforms & investment products to invest better in Indian equities. A smallcase is a basket of stocks/ETFs weighted intelligently to reflect an idea</p>
+                </div>
+                <div class="col-lg-2 col-lg-offset-1  col-md-offset-1 col-md-2 col-sm-10 col-12">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a>About</a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Press</a></li>
+                        <li><a>Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-10 col-12">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a>Publisher</a></li>
+                        <li><a>Gateway</a></li>
+                        <li><a>Research</a></li>
+                        <li><a>Tickertape</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-10 col-12">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a>Legal Policy</a></li>
+                        <li><a>Disclosures</a></li>
+                        <li><a>Privacy</a></li>
+                        <li><a>Complaints</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row medium-footer">
+                <div class="col-lg-5 col-md-4 col-sm-10 col-12"><p>3rd floor ,Al Gani Plaza, Main Road Bagh-i-Mehtab,<br></br>Srinagar, J&K, 190019,</p></div>
+                <div class="col-lg-4 col-md-4 col-sm-10 col-12"><p>Contact us on info@etimesmedia.com</p>
+                <div class="social_icons">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-10 col-12"><p>Help & Support</p></div>
+            </div>
+        </div>
+            <div class="bottom-footer ">
+                        <h6>Copyright @ 2021, Design by Edlyne Times.</h6>
+             </div>
+    </footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="">
+                        {% csrf_token %}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							{{form.username}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+							</div>
+							{{form.email}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							{{form.password1}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							{{form.password2}}
+						</div>
+
+				   		<div class="d-flex justify-content-center mt-3 login_container">
+				 			<input class="btn login_btn" type="submit" value="Register Account">
+				   		</div>
+					</form>
+           {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+					</div>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
