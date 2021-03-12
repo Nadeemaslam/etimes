@@ -88,7 +88,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'etimes_db',
             'USER': 'admin',
-            'PASSWORD': '',
+            'PASSWORD': 'bariq@123',
         }
     }
 
