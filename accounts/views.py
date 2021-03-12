@@ -10,24 +10,32 @@ from django.contrib.auth import authenticate, login, logout
 def registerPage(request):
     form = CreateUserForm()
     context = {'form': form}
+    print("111111111")
     if request.method == 'POST':
+        print("22222222")
         form = CreateUserForm(request.POST)
+        # print(regForm.errors)
+        print(form.errors,"peppepep")
         if form.is_valid():
+            print('333333333')
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
             password = form.cleaned_data['password2']
             password
-            # messages.success(request, 'Account created for' + user )
+            messages.success(request, 'Account created for' + username )
             user = authenticate(username=username, password=password)
             login(request, user)
             # return redirect('index')
             print("helooooo"*50)
             return redirect('login')
-    else:
-        form = CreateUserForm()
-        context = {'form': form}
-    return render(request, 'edlyne_times/index.html', context)
+        else:
+            print("44444444ggggjgjj")
+            messages.error(request, form.errors)
+            # form = CreateUserForm()
+            # context = {'form': form}
+        print("5555555")
+    return render(request, 'accounts/register.html', context)
 
 
 def loginPage(request):
@@ -36,7 +44,7 @@ def loginPage(request):
     context = {'form': form}
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
+        password = request.POST.get('password1')
         user = authenticate(username=username, password=password)
         if user is not None:
             print("heloooooooooooooooooooo")
@@ -54,3 +62,5 @@ def logoutUser(request):
 
     logout(request)
     return redirect('index')
+
+

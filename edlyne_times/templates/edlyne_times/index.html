@@ -1,50 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'etimes/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="bg_image">
-        <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top" id="main_header">
-            <div class="container">
-                <a href="" class="navbar-brand text-warning font-weight-bold">
-                    <img class="logo" src="{% static 'edlyne_times/assets/img/et_logo.png' %}" alt="image1">
-                </a>
 
 
-                <div class="collapse navbar-collapse text-center" id="collapsenavbar">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">Market Research</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="login_section ">
-                    {% if user.is_authenticated %}
-                        <span>Hello, {{ user.username }}</span>
-                        <a href="{% url 'logout' %}">Logout</a>
-                        {% else %}
-                    <button class="btn btn-outline-info"><a href="{% url 'login' %}">Login</a></button>
-                        {% endif %}
-                    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
 
 
         <section class="video_section">
@@ -147,27 +105,27 @@
         <div class="row rowsetting">
             <div class="col-lg-4 col-md-4 col-sm-4 col--10 d-block m-auto">
                 <div class="imgsetting d-block m-auto bg-warning">
-                    <i class="fas fa-cart-plus fa-3x text-white" id="icons"> </i>
+                    <i class="fa fa-search-plus fa-3x text-white icons"> </i>
                 </div>
-                <h2>Research</h2>
+                <h2>Equity Research</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-4 col--10 d-block m-auto">
                 <div class="imgsetting d-block m-auto bg-warning">
-                    <i class="fas fa-cart-plus fa-3x text-white icons"></i>
+                    <i class="fa fa-book fa-3x text-white icons"></i>
                 </div>
-                <h2>Research</h2>
+                <h2>Company Analysis</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-4 col--10 d-block m-auto">
                 <div class="imgsetting d-block m-auto bg-warning">
-                    <i class="fas fa-cart-plus fa-3x text-white"></i>
+                    <i class="fa fa-university  fa-3x text-white icons"></i>
                 </div>
-                <h2>Research</h2>
+                <h2>Financial Reports</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
@@ -212,22 +170,6 @@
             </div>
         </div>
     </section>
-<!--<div class="dm-width">-->
-                      <!--<div class="dm-device">-->
-                        <!--<div class="device">-->
-                          <!--<div class="screen">-->
-                            <!--<div class="slider">-->
-
-                                <!--<div class="w3-content w3-section">-->
-                                  <!--<img class="mySlides" src="{%static 'edlyne_times/assets/img/m1.svg' %}">-->
-                                  <!--<img class="mySlides" src="{%static 'edlyne_times/assets/img/m2.svg' %}">-->
-                                  <!--<img class="mySlides" src="{%static 'edlyne_times/assets/img/m1.svg' %}">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                          <!--</div>-->
-                        <!--</div>-->
-                      <!--</div>-->
-                    <!--</div>-->
 
     <!--Mobile section-->
     <section class="mobile_section">
@@ -271,122 +213,8 @@
             </div>
         </div>
     </section>
-<!--Footer-->
-    <footer class="footer">
-        <div class="container top-footer">
-            <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-10 col-12">
-                    <h5>Edlyne Times</h5>
-                    <p>smallcase Technologies builds platforms & investment products to invest better in Indian equities. A smallcase is a basket of stocks/ETFs weighted intelligently to reflect an idea</p>
-                </div>
-                <div class="col-lg-2 col-lg-offset-1  col-md-offset-1 col-md-2 col-sm-10 col-12">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a>About</a></li>
-                        <li><a>Blog</a></li>
-                        <li><a>Press</a></li>
-                        <li><a>Careers</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-10 col-12">
-                    <h5>Services</h5>
-                    <ul>
-                        <li><a>Publisher</a></li>
-                        <li><a>Gateway</a></li>
-                        <li><a>Research</a></li>
-                        <li><a>Tickertape</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-10 col-12">
-                    <h5>Information</h5>
-                    <ul>
-                        <li><a>Legal Policy</a></li>
-                        <li><a>Disclosures</a></li>
-                        <li><a>Privacy</a></li>
-                        <li><a>Complaints</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row medium-footer">
-                <div class="col-lg-5 col-md-4 col-sm-10 col-12"><p>3rd floor ,Al Gani Plaza, Main Road Bagh-i-Mehtab,<br></br>Srinagar, J&K, 190019,</p></div>
-                <div class="col-lg-4 col-md-4 col-sm-10 col-12"><p>Contact us on info@etimesmedia.com</p>
-                <div class="social_icons">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-linkedin"></a>
-                    <a href="#" class="fa fa-youtube"></a>
-                </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-10 col-12"><p>Help & Support</p></div>
-            </div>
-        </div>
-            <div class="bottom-footer ">
-                        <h6>Copyright @ 2021, Design by Edlyne Times.</h6>
-             </div>
-    </footer>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="POST" action="">
-                        {% csrf_token %}
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							{{form.username}}
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
-							</div>
-							{{form.email}}
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							{{form.password1}}
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							{{form.password2}}
-						</div>
-
-				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
-				   		</div>
-					</form>
-           {% for message in messages %}
-                    {{message}}
-                {% endfor %}
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
-					</div>
-				</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 {% endblock %}
