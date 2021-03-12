@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'etimes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': BASE_DIR / 'etimes_db',
+        'NAME': 'etimes_db',
         'USER': 'admin',
         'PASSWORD': '',
     }
