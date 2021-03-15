@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@&96ea8jj8hhu9l@zwtd45d6$hbr_vk0u*85x6o7c)ltrtpw-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 import os
@@ -135,8 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-import os
+MEDIA_URL = '/images/'
 
 # Add these new lines
 STATICFILES_DIRS = (
