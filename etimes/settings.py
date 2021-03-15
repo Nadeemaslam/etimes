@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@&96ea8jj8hhu9l@zwtd45d6$hbr_vk0u*85x6o7c)ltrtpw-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['128.199.22.89']
 import os
@@ -83,6 +83,7 @@ DATABASES = {
         'NAME': 'etimes_db',
         'USER': 'admin',
         'PASSWORD': 'bariq@123',
+        'HOST': 'localhost',
     }
 }
 
