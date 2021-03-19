@@ -1,10 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link rel="icon" href="{% static 'edlyne_times/assets/img/et_logo.png' %}" sizes="32x32" type="image/png">
+
         <title>ETimes-Media</title>
 
 
@@ -75,7 +78,7 @@
                     <!--</div>-->
 
                         {% else %}
-                    <a href="{% url 'login' %}"><button type="submit" class="btn btn-outline-info">Login</button></a>
+                    <a href="{% url 'login' %}"><button type="submit" class="btn" id="login-btn">Sign In</button></a>
                         {% endif %}
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">

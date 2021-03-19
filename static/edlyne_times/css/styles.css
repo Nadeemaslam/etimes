@@ -155,11 +155,6 @@
 }
 
 /*Header section*/
-#main_header{
-    background-color:#ffffff !important;
-    box-shadow: 0px 4px 6px #888888;
-
-}
 
 .login_section{
 
@@ -231,9 +226,19 @@ padding-left: 40px;
 }*/
 
 .navbar li a{
-    font-family: var(--font1);
-    color: #535b62 !important;
+    color: #000000 !important;
+    margin-right: 20px
 }
+
+.nav-colored li a {
+  color:#000000ed !important;
+}
+.nav-colored {
+    background-color:#ffffffbf !important;
+    box-shadow: 0px 4px 6px #888888;
+
+    }
+.nav-transparent { background-color:transparent !important;}
 
 .navbar li a:hover{
     color:red !important;
@@ -243,6 +248,12 @@ padding-left: 40px;
 .logo{
     width: 55px;
     height: auto;
+}
+
+#login-btn{
+    background:#FE6983;
+    padding:5px 15px;
+    color:#ffffff;
 }
 
 
@@ -347,6 +358,28 @@ padding-left: 40px;
             padding: 40px 0px 30px;
             height: 1600px;
 }
+.footer{
+    line-height: 4.71875vw;
+}
+.phone-slider{
+    margin-top:20px;
+}
+
+
+
+.text-block1 {
+    width: 22.28125vw;
+    height: 25.57813vw;
+}
+
+.text-block2 {
+    left: 33.95313vw;
+    width: 22.28125vw;
+    height: 25.57813vw;
+
+}
+
+
 }
 
 
