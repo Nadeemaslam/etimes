@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@&96ea8jj8hhu9l@zwtd45d6$hbr_vk0u*85x6o7c)ltrtpw-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 import os
@@ -89,13 +89,15 @@ else:
     ALLOWED_HOSTS = ['128.199.22.89']
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.mysql',
             'NAME': 'etimes_db',
             'USER': 'admin',
-            'PASSWORD': 'bariq@123',
-            'HOST': 'localhost',
+            'PASSWORD': 'root@123',
+            'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
+            'PORT': '3306',
         }
-}
+    }
+
 
 
 # Password validation
