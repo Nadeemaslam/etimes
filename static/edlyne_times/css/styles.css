@@ -368,15 +368,20 @@ padding-left: 40px;
 
 
 .text-block1 {
-    width: 22.28125vw;
-    height: 25.57813vw;
+    width: 40.28125vw;
+    height: 42.57813vw;
 }
 
 .text-block2 {
     left: 33.95313vw;
-    width: 22.28125vw;
-    height: 25.57813vw;
+    width: 40.28125vw;
+    height: 42.57813vw;
 
+}
+
+
+.video_overlay {
+    top:20px;
 }
 
 
