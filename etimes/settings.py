@@ -86,7 +86,7 @@ if DEBUG:
     }
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['128.199.22.89']
+    ALLOWED_HOSTS = ['*']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
