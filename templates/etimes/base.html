@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <link rel="icon" href="{% static 'edlyne_times/assets/img/et_logo.png' %}" sizes="32x32" type="image/png">
 
-        <title>ETimes-Media</title>
+        <title>ETimesMedia</title>
 
 
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -39,9 +39,61 @@
                         <li class="nav-item">
                             <a href="{% url 'index' %}" class="nav-link ">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{% url 'research' %}" class="nav-link ">Market Research</a>
-                        </li>
+
+
+
+
+
+
+                            <div class="dropdown">
+                                <button class="dropbtn">Market Research
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                   <div class="row">
+                                       <div class="col-lg-4 col-md-4 col-sm-4 col-10">
+                                           <a href="{% url 'research' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/nse.png' %}" alt="Img">
+                                            <ul class="research-submenu">
+                                                <h6>NSE</h6>
+                                                <li class="research-submenu-items"><a href="">Nifty 50</a></li>
+                                                <li class="research-submenu-items"><a href="">Sensex</a></li>
+                                                <li class="research-submenu-items"><a href="">SGX Nifty</a></li>
+                                            </ul>
+                                         </a>
+                                       </div>
+
+                                       <div class="col-lg-4 col-md-4 col-sm-4 col-10">
+                                           <a href="{% url 'research' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/nyse.jpeg' %}" alt="Img">
+                                               <ul class="research-submenu">
+                                                <h6>NYSE </h6>
+                                                <li class="research-submenu-items"><a href="">Nifty 50</a></li>
+                                                <li class="research-submenu-items"><a href="">Sensex</a></li>
+                                                <li class="research-submenu-items"><a href="">SGX Nifty</a></li>
+                                            </ul>
+                                         </a>
+                                       </div>
+
+
+                                       <div class="col-lg-4 col-md-4 col-sm-4 col-10">
+                                           <a href="{% url 'research' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/tsx.jpg' %}" alt="Img">
+                                               <ul class="research-submenu">
+                                                   <h6>TSX</h6>
+                                                <li class="research-submenu-items"><a href="">Nifty 50</a></li>
+                                                <li class="research-submenu-items"><a href="">Sensex</a></li>
+                                                <li class="research-submenu-items"><a href="">SGX Nifty</a></li>
+                                            </ul>
+                                         </a>
+                                       </div>
+                                   </div>
+
+
+                                </div>
+                              </div>
+
+
                         <li class="nav-item">
                             <a href="" class="nav-link ">News</a>
                         </li>

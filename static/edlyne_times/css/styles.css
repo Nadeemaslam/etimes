@@ -241,8 +241,7 @@ padding-left: 40px;
 .nav-transparent { background-color:transparent !important;}
 
 .navbar li a:hover{
-    color:red !important;
-
+    color:#ffc107 !important;
 }
 
 .logo{
@@ -918,3 +917,117 @@ input:checked~ul.submenu {
 input:checked~ul.submenu li{
     list-style:none;
 }
+
+
+
+
+/*hide the inputs/checkmarks and research submenu*/
+#check02,ul.research_submenu {
+  display: none;
+}
+
+/*position the label*/
+label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+/*show the submenu when input is checked*/
+input:checked~ul.research_submenu {
+  display: block;
+  position:absolute;
+  top:50%;
+  right:45%;
+  padding: 15px;
+    background: #ffffff;
+    box-shadow: 0px 3px 3px #88888854;
+    border-radius: 10px;
+}
+
+input:checked~ul.research_submenu li{
+    list-style:none;
+}
+
+
+
+/*
+dropdown research_submenu
+*/
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #000000;
+  padding: 8px 0px;
+  background-color: inherit;
+  font-family: inherit;
+  margin-right: 20px;
+}
+
+.dropdown:hover .dropbtn {
+  color: #ffc107;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #ffffff;
+  max-width: 600px;
+  z-index: 1;
+  border-top-left-radius:0px;
+  border-top-right-radius:10px;
+  border-top-bottom-radius:10px;
+  border-bottom-right-radius:10px;
+  border-bottom:5px solid #ffc107;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding:5px 0px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown-content a img {
+    width:100%;
+    height:80%;
+    border-radius:20px;
+    padding:10px;
+}
+
+
+.research-submenu li {
+    list-style:none;
+    font-family: var(--font1);
+    font-size: 16px;
+    color: #535b62 !important;
+}
+
+.dropdown-content a h6{
+    text-decoration:underline;
+}
+
+.dropdown:hover{
+    background-color:#ffffff;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+
