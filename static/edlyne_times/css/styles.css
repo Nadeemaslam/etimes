@@ -1,16 +1,4 @@
 {% load static %}
-/**{
-    margin : 0px;
-    padding :0px;
-}*/
-
-/*.bg_image {
-    background-image:url('/static/edlyne_times/assets/img/bg1.jpg');
-    background-size: 100% 100%;
-    background-attachment:fixed;
-    width:100%;
-    height:560px;
-}*/
 
 /*main video section*/
 .video_section {
@@ -180,7 +168,7 @@ padding-left: 40px;
     border-top: 1px solid #dde0e4;
     padding:20px 0px;
     background: #000;
-    color:#ffffff;
+    color:#ffffff !important;
     font-size: .9375vw;
     line-height: 1.71875vw;
     margin-top: 100px;
@@ -188,6 +176,15 @@ padding-left: 40px;
 
 .medium-footer{
     padding:10px 0px;
+}
+
+.medium-footer div a{
+    color:#ffffff !important;
+}
+
+.medium-footer div a:hover{
+    text-decoration:none;
+    transform: scale(1.5);
 }
 
 .footer ul li{
@@ -227,7 +224,8 @@ padding-left: 40px;
 
 .navbar li a{
     color: #000000 !important;
-    margin-right: 20px
+    margin-right: 20px;
+    font-family: 'Archivo', sans-serif !important;
 }
 
 .nav-colored li a {
@@ -242,6 +240,7 @@ padding-left: 40px;
 
 .navbar li a:hover{
     color:#ffc107 !important;
+    transform: scale(1.3);
 }
 
 .logo{
@@ -965,7 +964,7 @@ dropdown research_submenu
   border: none;
   outline: none;
   color: #000000;
-  padding: 8px 0px;
+  padding: 8px 0px 8px 8px;
   background-color: inherit;
   font-family: inherit;
   margin-right: 20px;
@@ -997,9 +996,9 @@ dropdown research_submenu
   text-align: left;
 }
 
-.dropdown-content a:hover {
+/*.dropdown-content a:hover {
   background-color: #ddd;
-}
+}*/
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -1016,14 +1015,21 @@ dropdown research_submenu
 
 .research-submenu li {
     list-style:none;
-    font-family: var(--font1);
-    font-size: 16px;
+
+
+}
+
+.research-submenu li a{
     color: #535b62 !important;
+    font-family: 'Archivo', sans-serif !important;
+    font-size: 16px;
 }
 
 .dropdown-content a h6{
     text-decoration:underline;
 }
+
+
 
 .dropdown:hover{
     background-color:#ffffff;
