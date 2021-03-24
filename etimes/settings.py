@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@&96ea8jj8hhu9l@zwtd45d6$hbr_vk0u*85x6o7c)ltrtpw-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 import os
@@ -146,3 +146,11 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
+
+EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'info@etimesmedia.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_PORT = 1025

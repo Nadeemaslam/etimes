@@ -166,12 +166,11 @@ padding-left: 40px;
 
 .footer{
     border-top: 1px solid #dde0e4;
-    padding:20px 0px;
+    padding:60px 0px;
     background: #000;
     color:#ffffff !important;
     font-size: .9375vw;
     line-height: 1.71875vw;
-    margin-top: 100px;
 }
 
 .medium-footer{
@@ -712,11 +711,11 @@ padding-left: 40px;
 }
 .content{
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   z-index: 999;
   text-align: center;
-  padding: 60px 32px;
+  padding: 60px 32px 0px 32px;
   width: 370px;
   transform: translate(-50%,-50%);
   background: rgba(255,255,255,0.04);

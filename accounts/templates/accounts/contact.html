@@ -1,0 +1,58 @@
+{% extends 'etimes/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="bg-img">
+            <div class="error_message">
+                    {% for message in messages %}
+                            <div class="alert alert-danger">
+                                <a class="close" href="#" data-dismiss="alert">×</a>
+
+                                {{ message }}
+
+                            </div>
+                    {% endfor %}
+
+              </div>
+      <div class="content">
+        <header>Contact Us</header>
+
+
+        <form method="POST" action="">
+                        {% csrf_token %}
+          <div class="field">
+            <span class="fa fa-user"></span>
+            {{form.contact_name}}
+          </div>
+
+            <div class="field space">
+            <span class="fa fa-envelope"></span>
+               {{form.contact_email}}
+            <span class="show">SHOW</span>
+          </div>
+
+           <div class="field space">
+            <span class="fa fa-comment"></span>
+               {{form.comment}}
+            <span class="show">SHOW</span>
+          </div>
+
+
+            <!--<div class="pass">-->
+                        <!--<a href="#">Forgot Password?</a>-->
+                      <!--</div>-->
+            <br>
+            <div class="field">
+                        <input type="submit" value="Submit">
+                      </div>
+</form>
+<br>
+<!--<div class="signup">-->
+<!--Already have an account?-->
+          <!--<a href="{% url 'login' %}">Submit</a>-->
+        <!--</div>-->
+</div>
+</div>
+
+
+{% endblock %}

@@ -5,5 +5,7 @@ from accounts.views import registerPage, loginPage, logoutUser
 urlpatterns = [
     url('register/', registerPage, name='register'),
     url('login/', loginPage, name='login'),
-    url('logout/', logoutUser, name='logout')
+    url('logout/', logoutUser, name='logout'),
+    url(r'contact/', views.contact, name='contact'),
+
 ]

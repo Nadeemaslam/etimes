@@ -16,3 +16,14 @@ class CreateUserForm(UserCreationForm):
             'username': TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
 
         }
+
+
+class ContactForm(forms.Form):
+    contact_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name'}))
+    contact_email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
+    comment = forms.CharField(
+        required=True,
+        widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Comment'})
+    )
+
+
