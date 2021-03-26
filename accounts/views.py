@@ -4,9 +4,9 @@ from accounts.forms import CreateUserForm
 from accounts.forms import ContactForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.shortcuts import redirect
-from django.template.loader import get_template
+from django.http import HttpResponse
 
 
 def registerPage(request):
@@ -61,35 +61,17 @@ def contact(request):
 
     # new logic!
     if request.method == 'POST':
-        form = form_class(data=request.POST)
+        form = form_class(request.POST)
 
         if form.is_valid():
-            contact_name = request.POST.get(
-                'contact_name'
-                , '')
-            contact_email = request.POST.get(
-                'contact_email'
-                , '')
-            form_content = request.POST.get('content', '')
-
-            # Email the profile with the
-            # contact information
-            template = get_template('accounts/contact_template.txt')
-        context = {
-            'contact_name': contact_name,
-            'contact_email': contact_email,
-            'form_content': form_content,
-        }
-        content = template.render(context)
-
-        email = EmailMessage(
-            "New contact form submission",
-            content,
-            "ETIMES MEDIA" + '',
-            ['er.nadeemaslam89@gmail.com'],
-            headers={'Reply-To': contact_email}
-        )
-        email.send()
+            contact_name = form.cleaned_data['contact_name']
+            sender = form.cleaned_data['contact_email']
+            comment = form.cleaned_data['comment']
+            msg_mail = str(comment) + " " + str(sender)
+            recipients = ['edlynetimesmedia@gmail.com']
+            send_mail(contact_name,comment,sender,recipients, fail_silently=True)
+            print("maillll sent from "+ sender, "kkkdk", recipients)
+            return render(request,'accounts/contact.html', {'message':contact_name})
         return redirect('accounts/contact')
 
     return render(request, 'accounts/contact.html', {
