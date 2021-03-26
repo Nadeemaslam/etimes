@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@&96ea8jj8hhu9l@zwtd45d6$hbr_vk0u*85x6o7c)ltrtpw-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 import os
@@ -146,11 +146,9 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
-import smtplib
-
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST ='smtp.gmail.com'
-EMAIL_HOST_USER = 'edlynetimesmedia@gmail.com'
-EMAIL_HOST_PASSWORD = 'bariq@123'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+# EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST ='smtp.gmail.com'
+# EMAIL_HOST_USER = 'edlynetimesmedia@gmail.com'
+# EMAIL_HOST_PASSWORD = 'bariq@123'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
