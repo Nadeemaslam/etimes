@@ -50,13 +50,71 @@
 
                     <div class="tab-slider--nav">
                       <ul class="tab-slider--tabs">
-                        <li class="tab-slider--trigger active" rel="tab1">NIFTY 50</li>
-                        <li class="tab-slider--trigger" rel="tab2">NASDAQ</li>
+                        <li class="tab-slider--trigger active" rel="tab1">NASDAQ</li>
+                        <li class="tab-slider--trigger" rel="tab2">NIFTY 50</li>
                       </ul>
                     </div>
                     <div class="tab-slider--container">
                       <div id="tab1" class="tab-slider--body">
-                                    <div class="row ">
+                          <div class="row ">
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-gainer-table">
+                                  <thead class="nse-table-head">
+                                    <tr>
+                                      <th scope="col">Company</th>
+                                      <th scope="col">%Change </th>
+                                      <th scope="col">LTP</th>
+                                      <th scope="col">Volume</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="nse-table-body">
+                                  {% for i in nasdaq_gainers %}
+
+                                                <tr class="">
+                                                  <td>{{i.Symbol }}</td>
+
+                                                  <td>{{i.Change}}</td>
+                                                    <td class="ltp">
+                                                    <span class="bullish">{{i.Price}}</span>
+                                                  </td>
+                                                    <td>{{i.Volume}}</td>
+                                                </tr>
+                                              {% endfor %}
+                                  </tbody>
+                                </table>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-loser-table">
+                                              <thead class="nse-table-head">
+                                                <tr>
+                                                  <th scope="col">Company</th>
+                                                  <th scope="col">Prev.Price </th>
+                                                  <th scope="col">LTP</th>
+                                                  <th scope="col">Volume</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody class="nse-table-body">
+                                              {% for i in nasdaq_losers %}
+
+                                                <tr class="">
+                                                  <td>{{i.Symbol}}</td>
+
+                                                  <td>{{i.Change}}</td>
+                                                    <td class="ltp">
+                                                    <span class="bearish">{{i.Price}}</span>
+                                                  </td>
+                                                    <td>{{i.Volume}}</td>
+                                                </tr>
+                                              {% endfor %}
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                 </div>
+
+                      </div>
+                      <div id="tab2" class="tab-slider--body">
+                        <h2>NIFTY 50</h2>
+                          <div class="row ">
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
                                         <table class="table table-striped home-nse-gainer-table">
                                   <thead class="nse-table-head">
@@ -120,63 +178,7 @@
                                             </table>
                                         </div>
                                  </div>
-                      </div>
-                      <div id="tab2" class="tab-slider--body">
-                        <h2>Nasdaq</h2>
-                        <div class="row ">
-                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
-                                        <table class="table table-striped home-nse-gainer-table">
-                                  <thead class="nse-table-head">
-                                    <tr>
-                                      <th scope="col">Company</th>
-                                      <th scope="col">%Change </th>
-                                      <th scope="col">LTP</th>
-                                      <th scope="col">Volume</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for i in nasdaq_gainers %}
 
-                                                <tr class="">
-                                                  <td>{{i.Symbol }}</td>
-
-                                                  <td>{{i.Change}}</td>
-                                                    <td class="ltp">
-                                                    <span class="bullish">{{i.Price}}</span>
-                                                  </td>
-                                                    <td>{{i.Volume}}</td>
-                                                </tr>
-                                              {% endfor %}
-                                  </tbody>
-                                </table>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
-                                        <table class="table table-striped home-nse-loser-table">
-                                              <thead class="nse-table-head">
-                                                <tr>
-                                                  <th scope="col">Company</th>
-                                                  <th scope="col">Prev.Price </th>
-                                                  <th scope="col">LTP</th>
-                                                  <th scope="col">Volume</th>
-                                                </tr>
-                                              </thead>
-                                              <tbody class="nse-table-body">
-                                              {% for i in nasdaq_losers %}
-
-                                                <tr class="">
-                                                  <td>{{i.Symbol}}</td>
-
-                                                  <td>{{i.Change}}</td>
-                                                    <td class="ltp">
-                                                    <span class="bearish">{{i.Price}}</span>
-                                                  </td>
-                                                    <td>{{i.Volume}}</td>
-                                                </tr>
-                                              {% endfor %}
-                                              </tbody>
-                                            </table>
-                                        </div>
-                                 </div>
                       </div>
                     </div>
 

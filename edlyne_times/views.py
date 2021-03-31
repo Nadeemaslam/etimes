@@ -22,13 +22,11 @@ def index(request):
     nasdaq_losers_json_records = DataFrame(nasdaq_losers, columns=['Symbol', 'Name', 'Price', 'Change', 'Volume']).to_json(orient='records')
     nasdaq_losers = []
     nasdaq_losers = json.loads(nasdaq_losers_json_records)
-    print(nasdaq_losers)
 
-    nse = Nse()
-    gainers = nse.get_top_gainers()
-    losers = nse.get_top_losers
-
-    context = {'gainers': gainers, 'losers': losers, 'nasdaq_gainers': nasdaq_gainers, 'nasdaq_losers': nasdaq_losers}
+    # nse = Nse()
+    # gainers = nse.get_top_gainers()
+    # losers = nse.get_top_losers
+    context =  {'nasdaq_gainers': nasdaq_gainers, 'nasdaq_losers': nasdaq_losers}
     return render(request, 'edlyne_times/index.html', context)
 
 
