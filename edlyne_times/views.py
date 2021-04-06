@@ -7,7 +7,6 @@ from pandas import DataFrame
 import json
 import time
 
-import aiohttp
 import asyncio
 from asgiref.sync import sync_to_async
 
