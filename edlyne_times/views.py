@@ -10,40 +10,6 @@ import time
 import asyncio
 from asgiref.sync import sync_to_async
 
-def index(request):
-    start_time  = time.time()
-    # nifty_dataframe = si.tickers_nifty50('day_losers')
-    # nifty_gainers = (nifty_dataframe.loc[nifty_dataframe['Change'] > 0]).sort_values("% Change", ascending=False)
-    # nifty_losers = (nifty_dataframe.loc[nifty_dataframe['Change'] < 0]).sort_values("% Change", ascending=False)
-    # print(nifty_losers,"lldlldlldll",nifty_gainers)
-
-    # start_time = time.time()
-    # task1 = asyncio.ensure_future(get_nasdaq_gainers_async())
-    # task2 = asyncio.ensure_future(get_nasdaq_losers_async())
-    # await asyncio.wait([task1, task2])
-    # print(task2,"ksksks", task1)
-    # nasdaq_gainers = si.get_day_gainers().head()
-    # nasdaq_gainers.columns = nasdaq_gainers.columns.str.replace(' ', '')
-    # nasdaq_gainers.columns = nasdaq_gainers.columns.str.replace('[#,@,&]', '')
-    # nasdaq_gainers.rename(columns={'Price(Intraday)': 'Price'}, inplace=True)
-    # nasdaq_gainers_json_records = DataFrame(nasdaq_gainers, columns=['Symbol', 'Name', 'Price', 'Change', 'Volume']).to_json(orient='records')
-    # nasdaq_gainers = []
-    # nasdaq_gainers = json.loads(nasdaq_gainers_json_records)
-    #
-    # nasdaq_losers = si.get_day_losers().head()
-    # nasdaq_losers.columns = nasdaq_losers.columns.str.replace(' ', '')
-    # nasdaq_losers.columns = nasdaq_losers.columns.str.replace('[#,@,&]', '')
-    # nasdaq_losers.rename(columns={'Price(Intraday)': 'Price'}, inplace=True)
-    # nasdaq_losers_json_records = DataFrame(nasdaq_losers, columns=['Symbol', 'Name', 'Price', 'Change', 'Volume']).to_json(orient='records')
-    # nasdaq_losers = []
-    # nasdaq_losers = json.loads(nasdaq_losers_json_records)
-
-    # nse = Nse()
-    # gainers = nse.get_top_gainers()
-    # losers = nse.get_top_losers
-    # context = {'nasdaq_gainers': nasdaq_gainers, 'nasdaq_losers': nasdaq_losers}
-    print("--- %s seconds--- " %(time.time() - start_time) )
-    return render(request, 'edlyne_times/index.html')
 
 @sync_to_async
 def get_nasdaq_gainers_async():
@@ -85,19 +51,17 @@ def get_nse_gainers_async():
 def get_nse_losers_async():
     nse = Nse()
     nse_losers = nse.get_top_losers()
-    print(nse_losers,"ldlldldldlldldl")
     return nse_losers
 
 async  def index(request):
     start_time = time.time()
     task1 = asyncio.ensure_future(get_nasdaq_gainers_async())
     task2 = asyncio.ensure_future(get_nasdaq_losers_async())
-    task3 = asyncio.ensure_future(get_nse_gainers_async())
-    task4 = asyncio.ensure_future(get_nse_losers_async())
-    await asyncio.wait([task1, task2, task3, task4])
+    # task3 = asyncio.ensure_future(get_nse_gainers_async())
+    # task4 = asyncio.ensure_future(get_nse_losers_async())
+    await asyncio.wait([task1, task2])
 
-    context = {'nasdaq_gainers': task1.result(), 'nasdaq_losers': task2.result(),
-               'gainers': task3.result(), 'losers': task4.result()}
+    context = {'nasdaq_gainers': task1.result(), 'nasdaq_losers': task2.result()}
     print(time.time() - start_time)
     return render(request, 'edlyne_times/index.html', context)
 
