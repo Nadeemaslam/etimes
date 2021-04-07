@@ -1100,8 +1100,15 @@ dropdown research_submenu
     color:#009900;
 }
 
-.bearish{
-    color:#cb0b06;
+
+
+
+.home-nse-loser-table tr td:nth-child(3), .home-nse-loser-table tr td:nth-child(4){
+    color:red !important;
+}
+
+.home-nse-gainer-table tr td:nth-child(3), .home-nse-gainer-table tr td:nth-child(4){
+    color:green !important;
 }
 
 

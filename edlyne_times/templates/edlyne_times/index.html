@@ -51,7 +51,7 @@
                     <div class="tab-slider--nav">
                       <ul class="tab-slider--tabs">
                         <li class="tab-slider--trigger active" rel="tab1">NASDAQ</li>
-                        <li class="tab-slider--trigger" rel="tab2">NIFTY 50</li>
+                        <li class="tab-slider--trigger" rel="tab2">NYSE</li>
                       </ul>
                     </div>
                     <div class="tab-slider--container">
@@ -61,24 +61,21 @@
                                         <table class="table table-striped home-nse-gainer-table">
                                   <thead class="nse-table-head">
                                     <tr>
+                                      <th scope="col">Symbol</th>
                                       <th scope="col">Company</th>
+                                      <th scope="col">Change </th>
                                       <th scope="col">%Change </th>
-                                      <th scope="col">LTP</th>
-                                      <th scope="col">Volume</th>
                                     </tr>
                                   </thead>
                                   <tbody class="nse-table-body">
-                                  {% for i in nasdaq_gainers %}
+                                  {% for key, value in nasdaq_gainers.items %}
 
                                                 <tr class="">
-                                                  <td>{{i.Symbol }}</td>
+                                                  <td>{{key }}</td>
+                                                   {% for i in value %}
+                                                  <td>{{i}}</td>
+                                                    {% endfor %}
 
-                                                  <td>{{i.per_change}}</td>
-                                                    <td class="ltp">
-                                                    <span class="bullish">{{i.Price}}</span>
-                                                  </td>
-                                                    <td>{{i.Volume}}</td>
-                                                </tr>
                                               {% endfor %}
                                   </tbody>
                                 </table>
@@ -87,23 +84,20 @@
                                         <table class="table table-striped home-nse-loser-table">
                                               <thead class="nse-table-head">
                                                 <tr>
+                                                  <th scope="col">Symbol</th>
                                                   <th scope="col">Company</th>
-                                                  <th scope="col">Prev.Price </th>
-                                                  <th scope="col">LTP</th>
-                                                  <th scope="col">Volume</th>
+                                                  <th scope="col">Change </th>
+                                                  <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
                                               <tbody class="nse-table-body">
-                                              {% for i in nasdaq_losers %}
+                                  {% for key, value in nasdaq_losers.items %}
 
-                                                <tr class="">
-                                                  <td>{{i.Symbol}}</td>
-
-                                                  <td>{{i.per_change}}</td>
-                                                    <td class="ltp">
-                                                    <span class="bearish">{{i.Price}}</span>
-                                                  </td>
-                                                    <td>{{i.Volume}}</td>
+                                                <tr class="losers">
+                                                  <td>{{key}}</td>
+                                                {% for i in value %}
+                                                  <td> <span class="bearish">{{i}}</span></td>
+                                                    {% endfor %}
                                                 </tr>
                                               {% endfor %}
                                               </tbody>
@@ -113,36 +107,92 @@
 
                       </div>
                       <div id="tab2" class="tab-slider--body">
-                        <h2>NIFTY 50</h2>
+                        <h2>NYSE</h2>
+                          <!--<div class="row ">-->
+                                        <!--<div class="col-lg-6 col-md-6 col-10 col-sm-10">-->
+                                        <!--<table class="table table-striped home-nse-gainer-table">-->
+                                  <!--<thead class="nse-table-head">-->
+                                    <!--<tr>-->
+                                      <!--<th scope="col">Company</th>-->
+                                      <!--<th scope="col">Prev.Price </th>-->
+                                      <!--<th scope="col">LTP</th>-->
+                                      <!--<th scope="col">Volume</th>-->
+                                    <!--</tr>-->
+                                  <!--</thead>-->
+                                  <!--<tbody class="nse-table-body">-->
+                                  <!--{% for i in gainers %}-->
+                                      <!--{% if forloop.counter <= 5 %}-->
+
+                                    <!--<tr class="">-->
+                                      <!--<td>{{i.symbol}}</td>-->
+
+                                      <!--<td>{{i.previousPrice}}</td>-->
+                                        <!--<td class="ltp">{% if i.ltp > i.previousPrice %}-->
+                                        <!--<span class="bullish">{{i.ltp}}</span>-->
+                                          <!--{% else %}-->
+                                        <!--<span class="bearish">{{i.ltp}}</span>-->
+                                          <!--{% endif %}-->
+                                      <!--</td>-->
+                                        <!--<td>{{i.tradedQuantity}}</td>-->
+                                    <!--</tr>-->
+                                  <!--{% endif %}-->
+                                  <!--{% endfor %}-->
+                                  <!--</tbody>-->
+                                <!--</table>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-lg-6 col-md-6 col-10 col-sm-10">-->
+                                        <!--<table class="table table-striped home-nse-loser-table">-->
+                                              <!--<thead class="nse-table-head">-->
+                                                <!--<tr>-->
+                                                  <!--<th scope="col">Company</th>-->
+                                                  <!--<th scope="col">Prev.Price </th>-->
+                                                  <!--<th scope="col">LTP</th>-->
+                                                  <!--<th scope="col">Volume</th>-->
+                                                <!--</tr>-->
+                                              <!--</thead>-->
+                                              <!--<tbody class="nse-table-body">-->
+                                              <!--{% for i in losers %}-->
+                                                  <!--{% if forloop.counter <= 5 %}-->
+
+                                                <!--<tr class="">-->
+                                                  <!--<td>{{i.symbol}}</td>-->
+
+                                                  <!--<td>{{i.previousPrice}}</td>-->
+                                                    <!--<td class="ltp">{% if i.ltp > i.previousPrice %}-->
+                                                    <!--<span class="bullish">{{i.ltp}}</span>-->
+                                                      <!--{% else %}-->
+                                                    <!--<span class="bearish">{{i.ltp}}</span>-->
+                                                      <!--{% endif %}-->
+                                                  <!--</td>-->
+                                                    <!--<td>{{i.tradedQuantity}}</td>-->
+                                                <!--</tr>-->
+                                              <!--{% endif %}-->
+                                              <!--{% endfor %}-->
+                                              <!--</tbody>-->
+                                            <!--</table>-->
+                                        <!--</div>-->
+                                 <!--</div>-->
                           <div class="row ">
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
                                         <table class="table table-striped home-nse-gainer-table">
                                   <thead class="nse-table-head">
                                     <tr>
+                                      <th scope="col">Symbol</th>
                                       <th scope="col">Company</th>
-                                      <th scope="col">Prev.Price </th>
-                                      <th scope="col">LTP</th>
-                                      <th scope="col">Volume</th>
+                                      <th scope="col">Change </th>
+                                      <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
                                   <tbody class="nse-table-body">
-                                  {% for i in gainers %}
-                                      {% if forloop.counter <= 5 %}
+                                  {% for key, value in nyse_gainers.items %}
 
-                                    <tr class="">
-                                      <td>{{i.symbol}}</td>
+                                                <tr class="">
+                                                  <td>{{key }}</td>
+                                                   {% for i in value %}
+                                                  <td>{{i}}</td>
+                                                    {% endfor %}
 
-                                      <td>{{i.previousPrice}}</td>
-                                        <td class="ltp">{% if i.ltp > i.previousPrice %}
-                                        <span class="bullish">{{i.ltp}}</span>
-                                          {% else %}
-                                        <span class="bearish">{{i.ltp}}</span>
-                                          {% endif %}
-                                      </td>
-                                        <td>{{i.tradedQuantity}}</td>
-                                    </tr>
-                                  {% endif %}
-                                  {% endfor %}
+                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -150,29 +200,21 @@
                                         <table class="table table-striped home-nse-loser-table">
                                               <thead class="nse-table-head">
                                                 <tr>
+                                                  <th scope="col">Symbol</th>
                                                   <th scope="col">Company</th>
-                                                  <th scope="col">Prev.Price </th>
-                                                  <th scope="col">LTP</th>
-                                                  <th scope="col">Volume</th>
+                                                  <th scope="col">Change </th>
+                                                  <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
                                               <tbody class="nse-table-body">
-                                              {% for i in losers %}
-                                                  {% if forloop.counter <= 5 %}
+                                  {% for key, value in nyse_losers.items %}
 
-                                                <tr class="">
-                                                  <td>{{i.symbol}}</td>
-
-                                                  <td>{{i.previousPrice}}</td>
-                                                    <td class="ltp">{% if i.ltp > i.previousPrice %}
-                                                    <span class="bullish">{{i.ltp}}</span>
-                                                      {% else %}
-                                                    <span class="bearish">{{i.ltp}}</span>
-                                                      {% endif %}
-                                                  </td>
-                                                    <td>{{i.tradedQuantity}}</td>
+                                                <tr class="losers">
+                                                  <td>{{key}}</td>
+                                                {% for i in value %}
+                                                  <td> <span class="bearish">{{i}}</span></td>
+                                                    {% endfor %}
                                                 </tr>
-                                              {% endif %}
                                               {% endfor %}
                                               </tbody>
                                             </table>
