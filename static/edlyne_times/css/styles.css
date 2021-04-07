@@ -1173,3 +1173,58 @@ dropdown research_submenu
 .tab-slider--trigger.active { color: #fff; }
 
 .tab-slider--body { margin-bottom: 20px; }
+
+
+
+#tabs-bar {
+    padding:0px 0px;
+}
+#tabs-bar ul {
+    display: block;
+    list-style: none;
+    float: left;
+}
+#tabs-bar ul li {
+    list-style: none;
+    display: block;
+    float: left;
+    padding-right: 10px;
+}
+#tabs-nav li a {
+    list-style: none;
+    display: block;
+    padding:10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #345F90;
+    text-align: left;
+    border-top:1px solid #ececec;
+    border-right:1px solid #ececec;
+    border-bottom:1px solid #ececec;
+    border-left:1px solid #ececec;
+    border-radius: 25px;
+    text-decoration: none;
+}
+#tabs-nav li a.current, #tabs-nav li a:hover {
+    border-bottom:0px solid #ececec;
+    background: #345F90;
+    color:#ffffff !important;
+}
+#tabs-content-wrap {
+    padding: 0px;
+    margin-top: 0px;
+}
+#tabs-content-wrap ul {
+    display: block;
+    list-style: none;
+}
+#tabs-content-wrap ul li {
+    width: 100%;
+    list-style: none;
+    display: block;
+    list-style: none;
+}
+.tab-content {
+    border-radius: 2px;
+    padding-bottom: 20px;
+}
