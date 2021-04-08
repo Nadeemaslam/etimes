@@ -77,12 +77,14 @@ $(function () {
 
 
 
-window.onload = function() {
-  myFunction();
-};
+//window.onload = function() {
+//  myFunction();
+//};
 
+document.getElementById("tsx_tab").onclick = function() {tsx()};
+document.getElementById("nyse_tab").onclick = function() {nyse()};
 
-function myFunction() {
+function tsx() {
  // code here
    $.ajax({
       type:'GET',
@@ -100,7 +102,7 @@ function myFunction() {
         tableData += '<td>' + value[2] + '</td>';
 
         tableData += '</tr>';
-        });
+});
         tableData += '</table>';
 
         $('#tsx_losers_tbody').html(tableData);
@@ -141,6 +143,10 @@ function myFunction() {
    });
 
 
+}
+
+
+function nyse(){
 //   nyse gainers
     $.ajax({
       type:'GET',
@@ -199,7 +205,6 @@ function myFunction() {
         console.log("Error: " + error)
       }
    });
-
 
 
 }
