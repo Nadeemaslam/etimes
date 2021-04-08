@@ -69,3 +69,137 @@ $(function () {
         });
     }).filter(':first').click();
 });
+
+
+
+
+
+
+
+
+window.onload = function() {
+  myFunction();
+};
+
+
+function myFunction() {
+ // code here
+   $.ajax({
+      type:'GET',
+      url:'/tsx_losers'    ,
+      cache:false,
+      async:'asynchronous',
+      dataType:'json',
+      success: function(data) {
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+        });
+        tableData += '</table>';
+
+        $('#tsx_losers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+   $.ajax({
+      type:'GET',
+      url:'/tsx_gainers'    ,
+      cache:false,
+      async:'asynchronous',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+}       );
+        tableData += '</table>';
+
+        $('#tsx_gainers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+//   nyse gainers
+    $.ajax({
+      type:'GET',
+      url:'/nyse_gainers'    ,
+      cache:false,
+      async:'asynchronous',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+}       );
+        tableData += '</table>';
+
+        $('#nyse_gainers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+//   nyse losers
+    $.ajax({
+      type:'GET',
+      url:'/nyse_losers'    ,
+      cache:false,
+      async:'asynchronous',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nyse_losers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+
+}
