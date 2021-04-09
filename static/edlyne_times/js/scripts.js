@@ -69,3 +69,23 @@ $(function () {
         });
     }).filter(':first').click();
 });
+
+
+
+//$(document).ready(function() {
+//    $('.dropdown-content').hover(function(){
+//        $('#page-top').addClass('opacity');
+//        console.log("hehehehhehe")
+//    },
+//    function(){
+//        $('#page-top').removeClass('opacity');
+//    });
+//});
+
+
+$('.dropdown').hover(
+       function(){ $('.main-wrapper').addClass('opacity');
+        },
+       function(){ $('.main-wrapper').removeClass('opacity') ;
+       }
+)
