@@ -1027,7 +1027,7 @@ dropdown research_submenu
   border-right:1px solid red;
 }
 .submenu-items {
-    margin-left:37px;
+    margin-left:35px;
 }
 
 .dropdown:hover .dropdown-content {
