@@ -213,7 +213,7 @@ async  def index(request):
 
 
 def research(request):
-    context = {}
+    context = {'range': range(10)}
     return render(request, 'edlyne_times/research.html', context)
 
 
@@ -225,6 +225,15 @@ def nse(request):
     # context = {'companyName': data[0]['symbol'],'LTP': data[1]['ltp']}
      # print( data(i), print (data[0]['symbol'],"llllll", data[1]['ltp']))
     return render(request, 'edlyne_times/nse.html', )
+
+
+def reports(request):
+
+    # nse = Nse()
+    # data = nse.get_top_gainers()
+    # context = {'companyName': data[0]['symbol'],'LTP': data[1]['ltp']}
+     # print( data(i), print (data[0]['symbol'],"llllll", data[1]['ltp']))
+    return render(request, 'edlyne_times/stock_report.html', )
 
 
 

@@ -1,6 +1,9 @@
 {% load static %}
 
 /*main video section*/
+
+body, html { overflow-x:hidden; }
+
 .video_section {
     position:relative;
     width:100%;
@@ -283,14 +286,11 @@ padding-left: 40px;
 /*our services*/
 .ourservices{
     height:500px;
+    color: #ffffff;
 }
 
-.ourservices p{
-    color: #ffffff !important;
-}
 
 .ourservices h1{
-    color: #ffffff !important;
     font-size:50;
     font-weight:bold;
 }
@@ -298,7 +298,6 @@ padding-left: 40px;
 
 .rowsetting p{
     padding:10px;
-    color: #ffffff !important;
     font-font:var(--font1) !important;
     font-size:14px;
 }
@@ -307,7 +306,6 @@ padding-left: 40px;
     margin-top:20px;
     font-weight:bold;
     font-size:30px;
-    color:#ffffff;
 }
 
 .fa-shopping-plus{
@@ -375,7 +373,17 @@ padding-left: 40px;
         }
 
         .ourservices{
-            height:1630px;
+            height:1200px;
+            position:static;
+        }
+
+        .ourservices h1,h2{
+            color:#000000 !important;
+        }
+        .ourservices p{
+            font-family: var(--font1);
+            font-size: 14px;
+            color: #535b62 !important;
         }
         .portfolio{
             padding: 40px 0px 30px;
@@ -1278,4 +1286,8 @@ dropdown research_submenu
 .tab-content {
     border-radius: 2px;
     padding-bottom: 20px;
+}
+
+.container {
+
 }

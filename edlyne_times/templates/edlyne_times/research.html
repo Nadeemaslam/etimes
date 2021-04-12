@@ -1,43 +1,28 @@
 {% extends 'etimes/base.html' %}
 {% load static %}
 {% block content %}
-
- <!--Portfolio section-->
-    <section class="portfolio bg-light">
-        <div class="container ">
-            <h2 class="text-center">There is a smallcase for everyone</h2>
-            <p class="text-center">Discover smallcases from different types, risk levels & strategies and invest with the core-satellite approach</p>
-            <div class="row portfolio_inner_section">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
-                    <div class="card">
-                        <img src="{% static 'edlyne_times/assets/img/graph4.svg' %}" class="card-img img-fluid" alt="">
-                        <div class="card-body">
-                            <h2 class="card-title">All Weather Investing</h2>
-                            <p class="card-text">A recession proof way to build long term wealth.All Weather Investing smallcase is a portfolio of equity, gold & ETFs</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
-                    <div class="card">
-                        <img src="{% static 'edlyne_times/assets/img/graph3.svg' %}" class="card-img img-fluid" alt="">
-                        <div class="card-body">
-                            <h2 class="card-title">Smart Beta</h2>
-                            <p class="card-text">A low volatile portfolio that aims for high returns. Passive investing with a twist.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-10 d-block m-auto">
-                    <div class="card">
-                        <img src="{% static 'edlyne_times/assets/img/graph2.svg' %}" class="card-img img-fluid" alt="">
-                        <div class="card-body">
-                            <h2 class="card-title">Model Based</h2>
-                            <p class="card-text">Companies that own India's everyday brands. Top consumer favorites</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="clear"></div>
+<div class="container">
+ <div class="col-lg-12 col-md-12 col-10 col-sm-10">
+                                        <table class="table table-striped stock-table">
+                                              <thead class="nse-table-head">
+                                                <tr>
+                                                  <th scope="col">Company</th>
+                                                  <th scope="col">Exchange </th>
+                                                  <th scope="col">Action </th>
+                                                </tr>
+                                              </thead>
+                                              <tbody class="">
+                                            {% for i in range %}
+                                                <tr class="losers">
+                                                  <td>Company</td>
+                                                  <td>NSE</td>
+                                                  <td><i class="fa fa-eye" aria-hidden="true"></i><a href="{% url 'reports' %}"> View Report</a></td>
+                                                </tr>
+                                              {% endfor %}
+                                              </tbody>
+                                            </table>
+    </div>
+    </div>
 
 {% endblock %}
