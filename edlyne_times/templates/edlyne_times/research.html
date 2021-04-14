@@ -15,9 +15,9 @@
                                               <tbody class="">
                                             {% for i in range %}
                                                 <tr class="losers">
-                                                  <td>Company</td>
-                                                  <td>NSE</td>
-                                                  <td><i class="fa fa-eye" aria-hidden="true"></i><a href="{% url 'reports' %}"> View Report</a></td>
+                                                  <td>{{i.name}}</td>
+                                                  <td>{{i.exchange }}</td>
+                                                  <td><i class="fa fa-eye" aria-hidden="true"></i><a href="{% url 'reports' i.slug %}"> View Report</a></td>
                                                 </tr>
                                               {% endfor %}
                                               </tbody>

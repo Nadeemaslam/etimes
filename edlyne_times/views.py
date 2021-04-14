@@ -6,7 +6,7 @@ from yahoo_fin import stock_info as si
 from pandas import DataFrame
 import json
 import time
-
+from edlyne_times.models import report
 import asyncio
 from asgiref.sync import sync_to_async
 import bs4
@@ -212,8 +212,10 @@ async  def index(request):
 
 
 
-def research(request):
-    context = {'range': range(10)}
+def research(request, exchange):
+    stocks = report.objects.filter(exchange=exchange)
+    print(type(stocks),"lslslslsl")
+    context = {'range': stocks}
     return render(request, 'edlyne_times/research.html', context)
 
 
@@ -227,13 +229,10 @@ def nse(request):
     return render(request, 'edlyne_times/nse.html', )
 
 
-def reports(request):
+def reports(request, slug):
 
-    # nse = Nse()
-    # data = nse.get_top_gainers()
-    # context = {'companyName': data[0]['symbol'],'LTP': data[1]['ltp']}
-     # print( data(i), print (data[0]['symbol'],"llllll", data[1]['ltp']))
-    return render(request, 'edlyne_times/stock_report.html', )
+    stock_report = report.objects.get(slug=slug)
+    return render(request, 'edlyne_times/stock_report.html', {'stock_report': stock_report})
 
 
 
