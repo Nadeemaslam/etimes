@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 
 from django.db import models
-fs = FileSystemStorage(location='static/edlyne_times/files')
+fs = FileSystemStorage(location='/tmp')
 
 class report(models.Model):
     name = models.CharField(max_length=255)
