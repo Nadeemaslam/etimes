@@ -407,12 +407,17 @@ padding-left: 40px;
 }
 .phone-slider{
     margin-top:20px;
+    padding-left:0px !important;
 }
 
 
+#login-btn {
+    font-size:10px;
+}
 
-
-
+.login_section{
+    padding-left: 0px;
+}
 .video_overlay {
     top:20px;
 }
@@ -441,9 +446,11 @@ padding-left: 40px;
 }
 
 .video_section {
-    height:210px;
+    height:220px;
 }
-
+.logo{
+    width:40px;
+}
 .video_section h2{
     font-size:1rem;
 }
@@ -457,7 +464,16 @@ padding-left: 40px;
     font-size:12px !important;
 }
 
-
+.sub_video_container {
+        padding-bottom: 25px;
+}
+.mobile_section {
+    border-top: 1px solid red;
+}
+.screen-holder {
+    top:69px !important;
+    left:45px !important;
+}
 }
 
 
