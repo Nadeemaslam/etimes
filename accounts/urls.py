@@ -7,5 +7,4 @@ urlpatterns = [
     url('login/', loginPage, name='login'),
     url('logout/', logoutUser, name='logout'),
     url(r'contact/', views.contact, name='contact'),
-
 ]

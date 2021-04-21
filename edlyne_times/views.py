@@ -2,16 +2,13 @@ from django.shortcuts import render
 from nsetools import Nse
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
-from yahoo_fin import stock_info as si
-from pandas import DataFrame
-import json
 import time
 from edlyne_times.models import report
 import asyncio
 from asgiref.sync import sync_to_async
 import bs4
 import requests
-from bs4 import BeautifulSoup
+from accounts.decorators import allowed_users
 
 
 @sync_to_async
@@ -214,7 +211,6 @@ async  def index(request):
 
 def research(request, exchange):
     stocks = report.objects.filter(exchange=exchange)
-    print(type(stocks),"lslslslsl")
     context = {'range': stocks}
     return render(request, 'edlyne_times/research.html', context)
 
@@ -228,11 +224,18 @@ def nse(request):
      # print( data(i), print (data[0]['symbol'],"llllll", data[1]['ltp']))
     return render(request, 'edlyne_times/nse.html', )
 
-
+@allowed_users(allowed_roles=['admin'])
 def reports(request, slug):
 
     stock_report = report.objects.get(slug=slug)
     return render(request, 'edlyne_times/stock_report.html', {'stock_report': stock_report})
+
+
+# @allowed_users(allowed_roles=['admin'])
+def products(request, exchange):
+    exchange = exchange
+    context = {'exchange': exchange}
+    return render(request, 'edlyne_times/products.html', context)
 
 
 

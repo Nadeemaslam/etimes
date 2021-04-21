@@ -6,8 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.shortcuts import redirect
-from django.http import HttpResponse
-
+from .decorators import allowed_users, user_authenticated
 
 def registerPage(request):
     form = CreateUserForm()
@@ -30,7 +29,7 @@ def registerPage(request):
             # context = {'form': form}
     return render(request, 'accounts/register.html', context)
 
-
+@user_authenticated
 def loginPage(request):
 
     form = CreateUserForm()
@@ -70,7 +69,6 @@ def contact(request):
             msg_mail = str(comment) + " " + str(sender)
             recipients = ['edlynetimesmedia@gmail.com']
             send_mail(contact_name,comment,sender,recipients, fail_silently=True)
-            print("maillll sent from "+ sender, "kkkdk", recipients)
             return render(request,'accounts/contact.html', {'message':contact_name})
         return redirect('accounts/contact')
 

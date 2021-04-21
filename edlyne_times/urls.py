@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'research/(?P<exchange>[\w-]+)/$', views.research, name='research'),
     url(r'reports/(?P<slug>[\w-]+)/$', views.reports, name='reports'),
     url(r'research/', views.nse, name='nse'),
+    url(r'products/(?P<exchange>[\w-]+)/$', views.products, name='products'),
 ]
