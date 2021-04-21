@@ -14,7 +14,10 @@ body, html { overflow-x:hidden; }
     overflow:hidden;
 }
 
-.video_section h1{
+
+
+
+.headline{
     font-size:4rem;
     padding:20px;
     margin: 50px 15px 0px;
@@ -290,8 +293,13 @@ padding-left: 40px;
 }
 
 
+.ourservices span{
+    font-size:50px !important;
+    font-weight:bold;
+}
+
 .ourservices h1{
-    font-size:50;
+    font-size:20px;
     font-weight:bold;
 }
 
