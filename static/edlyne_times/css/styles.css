@@ -22,6 +22,7 @@ body, html { overflow-x:hidden; }
     padding:20px;
     margin: 50px 15px 0px;
     z-index:1;
+    font-weight:700;
 }
 
 .video_section p{
@@ -104,10 +105,12 @@ body, html { overflow-x:hidden; }
     font-size:16px;
 }
 
-
+.collapse {
+    display: none !important;
+}
 
 .first_content_wrapper {
-    margin:40px 40px;
+    margin:40px 40px 0 0;
      border-bottom: 1px solid red;
 
 }
@@ -385,9 +388,10 @@ padding-left: 40px;
             position:static;
         }
 
-        .ourservices h1,h2{
+        .ourservices h1, .ourservices h2, .ourservices span{
             color:#000000 !important;
         }
+
         .ourservices p{
             font-family: var(--font1);
             font-size: 14px;
@@ -398,6 +402,7 @@ padding-left: 40px;
             height: 1600px;
 }
 .footer{
+    text-align:center;
     line-height: 4.71875vw;
 }
 .phone-slider{
@@ -406,17 +411,6 @@ padding-left: 40px;
 
 
 
-.text-block1 {
-    width: 40.28125vw;
-    height: 42.57813vw;
-}
-
-.text-block2 {
-    left: 33.95313vw;
-    width: 40.28125vw;
-    height: 42.57813vw;
-
-}
 
 
 .video_overlay {
@@ -428,6 +422,39 @@ padding-left: 40px;
 .first_content_wrapper {
     margin:0px 0px;
 
+}
+
+.headline{
+    font-size:1rem;
+    padding:10px;
+    margin: 10px 15px 0px;
+    z-index:1;
+    font-weight:600;
+}
+
+.video_right_section{
+    display:none;
+}
+
+.sub-video {
+    display:none;
+}
+
+.video_section {
+    height:210px;
+}
+
+.video_section h2{
+    font-size:1rem;
+}
+
+#mainvideo {
+    width:100%;
+    height:auto;
+}
+
+.subscribe-btn{
+    font-size:12px !important;
 }
 
 
@@ -1426,8 +1453,8 @@ dropdown research_submenu
 /* CSS Document */
 
 
-.pricing-plan-icon {
-    color:#10bb87;
-    font-size:40px;
-    padding-bottom:5px;
-}
+
+
+
+
+

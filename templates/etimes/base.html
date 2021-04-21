@@ -28,6 +28,16 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'edlyne_times/css/utils.css' %}">
         <link rel="stylesheet" href="{% static 'edlyne_times/css/styles.css' %}">
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNNV7S2BG7"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CNNV7S2BG7');
+        </script>
     </head>
     <body id="page-top">
 
@@ -44,8 +54,6 @@
                         <li class="nav-item">
                             <a href="{% url 'index' %}" class="nav-link ">Home</a>
                         </li>
-
-
 
 
 
@@ -264,15 +272,7 @@
     <script src="{% static 'edlyne_times/js/scripts.js' %}"></script>
 
     <script src="{% static 'edlyne_times/js/parallax.min.js' %}"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CNNV7S2BG7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CNNV7S2BG7');
-</script>
 
     </body>
 </html>
