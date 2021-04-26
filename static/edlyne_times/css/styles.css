@@ -460,7 +460,7 @@ padding-left: 40px;
     height:220px;
 }
 .logo{
-    width:40px;
+    width:55px;
     padding-left:15px;
 }
 .video_section h2{
@@ -494,6 +494,12 @@ padding-left: 40px;
 
 .dropdown{
     display:none;
+}
+
+input:checked~ul.submenu {
+
+    right: 35% !important;
+    padding: 10px !important;
 }
 
 }
@@ -1017,17 +1023,21 @@ input:checked~ul.submenu {
   position:absolute;
   top:60%;
   right:5%;
-  padding: 15px;
-    background: #ffffff;
-    box-shadow: 0px 3px 3px #88888854;
-    border-radius: 10px;
+  padding: 10px 15px;
+   background: #ffffff;
+   box-shadow: 0px 3px 3px #88888854;
+   border-top: 2px solid #f49306;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 input:checked~ul.submenu li{
     list-style:none;
 }
 
-
+input:checked~ul.submenu a{
+       color: #173966 !important;
+}
 
 
 /*hide the inputs/checkmarks and research submenu*/
@@ -1455,7 +1465,6 @@ dropdown research_submenu
 .pricingTable .btn-block{
     width: 50%;
     margin: 0 auto;
-    background: #e46367;
     border:1px solid transparent;
     padding: 10px 5px;
     color:#fff;
@@ -1471,11 +1480,11 @@ dropdown research_submenu
     font-size: 15px;
 }
 
-.pricingTable:hover .btn-block{
+/*.pricingTable:hover .btn-block{
     background:#fff;
     color: #e46367;
     border:1px solid #e46367;
-}
+}*/
 
 @media screen and (max-width:990px){
     .pricingTable{
@@ -1717,7 +1726,7 @@ header .side-menu-close span {
 
 .side-menu-nav .main-menu>li>a {
   color: #212529;
-  padding: 15px 30px 22px 10px;
+  padding: 15px 30px 15px 10px;
   font-weight: 600;
   display: block;
   transition: .4s;

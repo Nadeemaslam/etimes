@@ -9,6 +9,8 @@ from asgiref.sync import sync_to_async
 import bs4
 import requests
 from accounts.decorators import allowed_users
+from django.shortcuts import redirect
+
 
 
 @sync_to_async
@@ -204,18 +206,6 @@ async  def index(request):
 
 
 
-
-
-
-
-
-def research(request, exchange):
-    stocks = report.objects.filter(exchange=exchange)
-    context = {'range': stocks}
-    return render(request, 'edlyne_times/research.html', context)
-
-
-
 def nse(request):
 
     # nse = Nse()
@@ -224,17 +214,51 @@ def nse(request):
      # print( data(i), print (data[0]['symbol'],"llllll", data[1]['ltp']))
     return render(request, 'edlyne_times/nse.html', )
 
-@allowed_users(allowed_roles=['admin'])
 def reports(request, slug):
+    logged_user = request.GET.get('user_group', -1)
+    user_category = list(request.user.groups.all().values())
+    allowed_group = []
+    for user in user_category:
+        allowed_group.append(user['name'])
+    if logged_user in allowed_group:
+        stock_report = report.objects.get(slug=slug)
+        return render(request, 'edlyne_times/stock_report.html', {'stock_report': stock_report})
+    else:
+        return redirect('contact')
 
-    stock_report = report.objects.get(slug=slug)
-    return render(request, 'edlyne_times/stock_report.html', {'stock_report': stock_report})
 
+def research(request, exchange):
+    user_group = request.GET.get('user_group', -1)
+    stocks = report.objects.filter(exchange=exchange, category='user_group')
+    context = {'range': stocks, 'user_group': user_group}
+    return render(request, 'edlyne_times/research.html', context)
 
-# @allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin', 'basic', 'gold'])
 def products(request, exchange):
+
+    user_category = request.user.groups.all().values()
+    gold = False
+    dividend = False
+    health = False
+    penny = False
+    resources = False
+    platinum = False
+    for key in user_category:
+        if key['name'] == 'gold':
+            gold = True
+        elif key['name'] =='dividend':
+            dividend = True
+        elif key['name'] =='health':
+            health = True
+        elif key['name'] =='platinum':
+            platinum = True
+        elif key['name'] =='penny':
+            penny = True
+        elif key['name'] =='resources':
+            resources = True
     exchange = exchange
-    context = {'exchange': exchange}
+    context = {'exchange': exchange, 'gold': gold, 'dividend': dividend,
+               'health': health, 'penny': penny, 'resources': resources, 'platinum':platinum}
     return render(request, 'edlyne_times/products.html', context)
 
 

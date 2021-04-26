@@ -101,7 +101,7 @@ $('.dropdown').hover(
   var sideMenu = $('.side-menu-wrap nav');
   sideMenu.append(topHeaderMenu);
   if ($(sideMenu).find('.sub-menu').length != 0) {
-    $(sideMenu).find('.sub-menu').parent().append('<i class="fas fa-chevron-right d-flex align-items-center"></i>');
+    $(sideMenu).find('.sub-menu').parent().append('<i class="fa fa-chevron-right d-flex align-items-center"></i>');
   }
   // auto generated side menu from top header menu end
 
