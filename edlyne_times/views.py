@@ -233,7 +233,6 @@ def research(request, exchange):
     context = {'range': stocks, 'user_group': user_group}
     return render(request, 'edlyne_times/research.html', context)
 
-@allowed_users(allowed_roles=['admin', 'basic', 'gold'])
 def products(request, exchange):
 
     user_category = request.user.groups.all().values()
