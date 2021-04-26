@@ -22,7 +22,7 @@
                                             {% for i in range %}
                                                 <tr class="losers">
                                                   <td>{{i.name}}</td>
-                                                  <td>{{i.exchange }}</td>{{user_group}}
+                                                  <td>{{i.exchange }}</td>
                                                   <td><i class="fa fa-eye" aria-hidden="true"></i><a href="{% url 'reports' i.slug  %}?user_group={{ user_group }}"> View Report</a></td>
                                                 </tr>
                                               {% endfor %}
