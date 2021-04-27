@@ -220,6 +220,7 @@ def reports(request, slug):
     allowed_group = []
     for user in user_category:
         allowed_group.append(user['name'])
+    print(allowed_group,"sksks", logged_user)
     if logged_user in allowed_group:
         stock_report = report.objects.get(slug=slug)
         return render(request, 'edlyne_times/stock_report.html', {'stock_report': stock_report})

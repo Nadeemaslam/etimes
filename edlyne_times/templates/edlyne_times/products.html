@@ -36,7 +36,7 @@
                             {% if dividend %}
                             <a href="{% url 'research' exchange %}?user_group=dividend" class="btn btn-block btn-info">View Report</a>
                             {% else %}
-                            <a href="{% url 'research' exchange %}" class="btn btn-block btn-danger">buy now</a>
+                            <a href="{% url 'research' exchange %}?user_group=dividend" class="btn btn-block btn-danger">buy now</a>
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -64,7 +64,7 @@
                             {% if gold %}
                             <a href="{% url 'research' exchange %}?user_group=gold" class="btn btn-block btn-info">View Report</a>
                             {% else %}
-                            <a href="{% url 'research' exchange %}" class="btn btn-block btn-danger">buy now</a>
+                            <a href="{% url 'research' exchange %}?user_group=gold" class="btn btn-block btn-danger">buy now</a>
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -94,7 +94,7 @@
                                 {% if penny %}
                                 <a href="{% url 'research' exchange %}?user_group=penny" class="btn btn-block btn-info">View Report</a>
                                 {% else %}
-                                <a href="{% url 'research' exchange %}" class="btn btn-block btn-danger">buy now</a>
+                                <a href="{% url 'research' exchange %}?user_group=penny" class="btn btn-block btn-danger">buy now</a>
                                 {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -127,7 +127,7 @@
                             {% if resources %}
                             <a href="{% url 'research' exchange %}?user_group=resources" class="btn btn-block btn-info">View Report</a>
                             {% else %}
-                            <a href="{% url 'research' exchange %}" class="btn btn-block btn-danger">buy now</a>
+                            <a href="{% url 'research' exchange %}?user_group=resources" class="btn btn-block btn-danger">buy now</a>
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -155,7 +155,7 @@
                             {% if health %}
                             <a href="{% url 'research' exchange %}?user_group=health" class="btn btn-block btn-info">View Report</a>
                             {% else %}
-                            <a href="{% url 'research' exchange %}" class="btn btn-block btn-danger">buy now</a>
+                            <a href="{% url 'research' exchange %}?user_group=health" class="btn btn-block btn-danger">buy now</a>
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -183,7 +183,7 @@
                             {% if platinum %}
                             <a href="{% url 'research' exchange %}?user_group=platinum" class="btn btn-block btn-info">View Report</a>
                             {% else %}
-                            <a href="{% url 'research' exchange %}" class="btn btn-block btn-danger">buy now</a>
+                            <a href="{% url 'research' exchange %}?user_group=platinum" class="btn btn-block btn-danger">buy now</a>
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
