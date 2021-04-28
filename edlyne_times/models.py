@@ -14,6 +14,8 @@ CHOICES = (
         ('resources', 'Resources Report'),
         ('health', 'Health Care Report'),
         ('platinum', 'Platinum Report'),
+        ('technical', 'Technical Analysis'),
+        ('american', 'American Tech Report'),
     )
 
 class report(models.Model):

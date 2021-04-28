@@ -19,9 +19,7 @@ def registerPage(request):
             password = form.cleaned_data['password1']
             password = form.cleaned_data['password2']
             password
-            messages.success(request, 'Account created for' + username )
-            user = authenticate(username=username, password=password)
-            login(request, user)
+            messages.success(request, 'Account created for ' + username )
             return redirect('login')
         else:
             messages.error(request, form.errors)

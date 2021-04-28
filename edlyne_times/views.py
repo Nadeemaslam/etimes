@@ -220,7 +220,6 @@ def reports(request, slug):
     allowed_group = []
     for user in user_category:
         allowed_group.append(user['name'])
-    print(allowed_group,"sksks", logged_user)
     if logged_user in allowed_group:
         stock_report = report.objects.get(slug=slug)
         return render(request, 'edlyne_times/stock_report.html', {'stock_report': stock_report})
@@ -244,6 +243,8 @@ def products(request, exchange):
     penny = False
     resources = False
     platinum = False
+    technical = False
+    american = False
     for key in user_category:
         if key['name'] == 'gold':
             gold = True
@@ -255,11 +256,16 @@ def products(request, exchange):
             platinum = True
         elif key['name'] =='penny':
             penny = True
+        elif key['name'] =='technical':
+            technical = True
         elif key['name'] =='resources':
             resources = True
+        elif key['name'] =='american':
+            american = True
     exchange = exchange
     context = {'exchange': exchange, 'gold': gold, 'dividend': dividend,
-               'health': health, 'penny': penny, 'resources': resources, 'platinum':platinum}
+               'health': health, 'penny': penny, 'resources': resources, 'platinum': platinum,
+               'technical': technical, 'american': american}
     return render(request, 'edlyne_times/products.html', context)
 
 
