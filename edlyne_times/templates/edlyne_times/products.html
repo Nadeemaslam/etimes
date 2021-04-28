@@ -33,10 +33,38 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if dividend %}
-                            <a href="{% url 'research' exchange %}?user_group=dividend" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=dividend" class="btn btn-block btn-danger">buy now</a>
+                            {{nse_technical}}
+                            {% if exchange == 'nse' %}
+                                {% if nse_dividend %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_dividend %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_dividend %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_dividend %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_dividend %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_dividend" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -61,10 +89,37 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if gold %}
-                            <a href="{% url 'research' exchange %}?user_group=gold" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=gold" class="btn btn-block btn-danger">buy now</a>
+                           {% if exchange == 'nse' %}
+                                {% if nse_gold %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_gold %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_gold %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_gold %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_gold %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_gold" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -89,13 +144,38 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-
-
-                                {% if penny %}
-                                <a href="{% url 'research' exchange %}?user_group=penny" class="btn btn-block btn-info">View Report</a>
-                                {% else %}
-                                <a href="{% url 'research' exchange %}?user_group=penny" class="btn btn-block btn-danger">buy now</a>
+                            {% if exchange == 'nse' %}
+                                {% if nse_penny %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_penny %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-danger">buy now</a>
                                 {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_penny %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_penny %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_penny %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_penny" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
+                            {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
                 </div>
@@ -124,10 +204,37 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if resources %}
-                            <a href="{% url 'research' exchange %}?user_group=resources" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=resources" class="btn btn-block btn-danger">buy now</a>
+                            {% if exchange == 'nse' %}
+                                {% if nse_resources %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_resources %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_resources %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_resources %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_resources %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -152,10 +259,37 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if health %}
-                            <a href="{% url 'research' exchange %}?user_group=health" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=health" class="btn btn-block btn-danger">buy now</a>
+                           {% if exchange == 'nse' %}
+                                {% if nse_health %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_health %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_health %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_health %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_health %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_health" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -180,10 +314,37 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if platinum %}
-                            <a href="{% url 'research' exchange %}?user_group=platinum" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=platinum" class="btn btn-block btn-danger">buy now</a>
+                            {% if exchange == 'nse' %}
+                                {% if nse_platinum %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_platinum %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_platinum %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_platinum %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_platinum %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_platinum" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -211,10 +372,37 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if technical %}
-                            <a href="{% url 'research' exchange %}?user_group=technical" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=technical" class="btn btn-block btn-danger">buy now</a>
+                            {% if exchange == 'nse' %}
+                                {% if nse_technical %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_technical %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_technical %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_technical %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_technical %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_technical" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>
@@ -239,10 +427,37 @@
                         </div><!-- /  CONTENT BOX-->
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
-                            {% if american %}
-                            <a href="{% url 'research' exchange %}?user_group=american" class="btn btn-block btn-info">View Report</a>
-                            {% else %}
-                            <a href="{% url 'research' exchange %}?user_group=american" class="btn btn-block btn-danger">buy now</a>
+                            {% if exchange == 'nse' %}
+                                {% if nse_american %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_american %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_american %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_american %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_american %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_american" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+
                             {% endif %}
                         </div><!-- BUTTON BOX-->
                     </div>

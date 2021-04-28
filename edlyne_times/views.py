@@ -229,43 +229,126 @@ def reports(request, slug):
 
 def research(request, exchange):
     user_group = request.GET.get('user_group', -1)
-
+    print(user_group,"plplplplpp")
     stocks = report.objects.filter(exchange=exchange, category=user_group)
+    print(stocks)
     context = {'range': stocks, 'user_group': user_group}
     return render(request, 'edlyne_times/research.html', context)
 
 def products(request, exchange):
 
     user_category = request.user.groups.all().values()
-    gold = False
-    dividend = False
-    health = False
-    penny = False
-    resources = False
-    platinum = False
-    technical = False
-    american = False
+    print(user_category)
+    nse_gold, nse_dividend, nse_health, nse_platinum, nse_penny, nse_technical, nse_american, nse_resources, \
+    bse_gold, bse_dividend, bse_health, bse_platinum, bse_penny, bse_technical, bse_american, bse_resources,\
+    nyse_gold, nyse_dividend, nyse_health, nyse_platinum, nyse_penny, nyse_technical, nyse_american, nyse_resources,\
+    nasdaq_gold, nasdaq_dividend, nasdaq_health, nasdaq_platinum, \
+    nasdaq_penny, nasdaq_technical, nasdaq_american, nasdaq_resources,\
+    tsx_gold, tsx_dividend, tsx_health, tsx_platinum, tsx_penny, tsx_technical, tsx_american, tsx_resources, = (False,)*40
+
+   
     for key in user_category:
-        if key['name'] == 'gold':
-            gold = True
-        elif key['name'] =='dividend':
-            dividend = True
-        elif key['name'] =='health':
-            health = True
-        elif key['name'] =='platinum':
-            platinum = True
-        elif key['name'] =='penny':
-            penny = True
-        elif key['name'] =='technical':
-            technical = True
-        elif key['name'] =='resources':
-            resources = True
-        elif key['name'] =='american':
-            american = True
+        if key['name'] == 'nse_gold':
+            nse_gold = True
+        elif key['name'] == 'nse_dividend':
+            nse_dividend = True
+        elif key['name'] == 'nse_health':
+            nse_health = True
+        elif key['name'] == 'nse_platinum':
+            nse_platinum = True
+        elif key['name'] == 'nse_penny':
+            nse_penny = True
+        elif key['name'] == 'nse_technical':
+            nse_technical = True
+        elif key['name'] == 'nse_resources':
+            nse_resources = True
+        elif key['name'] == 'nse_american':
+            nse_american = True
+        elif key['name'] == 'bse_gold':
+            bse_gold = True
+        elif key['name'] == 'bse_dividend':
+            bse_dividend = True
+        elif key['name'] == 'bse_health':
+            bse_health = True
+        elif key['name'] == 'bse-platinum':
+            bse_platinum = True
+        elif key['name'] == 'bse_penny':
+            bse_penny = True
+        elif key['name'] == 'bse_technical':
+            bse_technical = True
+        elif key['name'] == 'bse_resources':
+            bse_resources = True
+        elif key['name'] == 'bse_american':
+            bse_american = True
+        elif key['name'] == 'nasdaq_gold':
+            nasdaq_gold = True
+        elif key['name'] == 'nasdaq_dividend':
+            nasdaq_dividend = True
+        elif key['name'] == 'nasdaq_health':
+            nasdaq_health = True
+        elif key['name'] == 'nasdaq-platinum':
+            nasdaq_platinum = True
+        elif key['name'] == 'nasdaq_penny':
+            nasdaq_penny = True
+        elif key['name'] == 'nasdaq_technical':
+            nasdaq_technical = True
+        elif key['name'] == 'nasdaq_resources':
+            nasdaq_resources = True
+        elif key['name'] == 'nasdaq_american':
+            nasdaq_american = True
+        elif key['name'] == 'tsx_gold':
+            tsx_gold = True
+        elif key['name'] == 'tsx_dividend':
+            tsx_dividend = True
+        elif key['name'] == 'tsx_health':
+            tsx_health = True
+        elif key['name'] == 'tsx-platinum':
+            tsx_platinum = True
+        elif key['name'] == 'tsx_penny':
+            tsx_penny = True
+        elif key['name'] == 'tsx_technical':
+            tsx_technical = True
+        elif key['name'] == 'tsx_resources':
+            tsx_resources = True
+        elif key['name'] == 'tsx_american':
+            tsx_american = True
+        elif key['name'] == 'nyse_gold':
+            nyse_gold = True
+        elif key['name'] == 'nyse_dividend':
+            nyse_dividend = True
+        elif key['name'] == 'nyse_health':
+            nyse_health = True
+        elif key['name'] == 'nyse-platinum':
+            nyse_platinum = True
+        elif key['name'] == 'nyse_penny':
+            nyse_penny = True
+        elif key['name'] == 'nyse_technical':
+            nyse_technical = True
+        elif key['name'] == 'nyse_resources':
+            nyse_resources = True
+        elif key['name'] == 'nyse_american':
+            nyse_american = True
     exchange = exchange
-    context = {'exchange': exchange, 'gold': gold, 'dividend': dividend,
-               'health': health, 'penny': penny, 'resources': resources, 'platinum': platinum,
-               'technical': technical, 'american': american}
+    context = {'exchange': exchange, 'nse_gold': nse_gold, 'nse_dividend': nse_dividend,
+               'nse_health': nse_health, 'nse_penny': nse_penny, 'nse_resources': nse_resources, 'nse_platinum': nse_platinum,
+               'nse_technical': nse_technical, 'nse_american': nse_american,
+               'bse_gold': bse_gold, 'bse_dividend': bse_dividend,
+               'bse_health': bse_health, 'bse_penny': bse_penny, 'bse_resources': bse_resources,
+               'bse_platinum': bse_platinum,
+               'bse_technical': bse_technical, 'bse_american': bse_american,
+               'nyse_gold': nyse_gold, 'nyse_dividend': nyse_dividend,
+               'nyse_health': nyse_health, 'nyse_penny': nyse_penny, 'nyse_resources': nyse_resources,
+               'nyse_platinum': nyse_platinum,
+               'nyse_technical': nyse_technical, 'nyse_american': nyse_american,
+               'nasdaq_gold': nasdaq_gold, 'nasdaq_dividend': nasdaq_dividend,
+               'nasdaq_health': nasdaq_health, 'nasdaq_penny': nasdaq_penny, 'nasdaq_resources': nasdaq_resources,
+               'nasdaq_platinum': nasdaq_platinum,
+               'nasdaq_technical': nasdaq_technical, 'nasdaq_american': nasdaq_american,
+               'tsx_gold': tsx_gold, 'tsx_dividend': tsx_dividend,
+               'tsx_health': tsx_health, 'tsx_penny': tsx_penny, 'tsx_resources': tsx_resources,
+               'tsx_platinum': tsx_platinum,
+               'tsx_technical': tsx_technical, 'tsx_american': tsx_american
+               }
     return render(request, 'edlyne_times/products.html', context)
 
 
