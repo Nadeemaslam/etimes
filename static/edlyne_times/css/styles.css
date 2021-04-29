@@ -502,6 +502,10 @@ input:checked~ul.submenu {
     padding: 10px !important;
 }
 
+.social_icons a {
+    font-size:4em;
+}
+
 }
 
 
@@ -1086,7 +1090,7 @@ dropdown research_submenu
     font-weight: 700;
   border: none;
   outline: none;
-  padding: 8px 0px 8px 8px;
+  padding: 8px 5px 8px 8px;
   background:none !important;
 }
 
@@ -1105,7 +1109,7 @@ dropdown research_submenu
     box-shadow: -1px 4px 28px 0px rgb(0 0 0 / 75%);
     transition: all .5s ease;
     opacity: 1;
-    top: 80px;
+    top: 56px;
     border-radius: 10px;
 }
 
@@ -1189,9 +1193,10 @@ dropdown research_submenu
 
 
 .dropdown:hover{
-    background-color:#ffffff;
+    background-color: #08080869;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
+    opacity: 1;
 
 }
 

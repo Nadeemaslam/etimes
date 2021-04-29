@@ -229,16 +229,13 @@ def reports(request, slug):
 
 def research(request, exchange):
     user_group = request.GET.get('user_group', -1)
-    print(user_group,"plplplplpp")
     stocks = report.objects.filter(exchange=exchange, category=user_group)
-    print(stocks)
     context = {'range': stocks, 'user_group': user_group}
     return render(request, 'edlyne_times/research.html', context)
 
 def products(request, exchange):
 
     user_category = request.user.groups.all().values()
-    print(user_category)
     nse_gold, nse_dividend, nse_health, nse_platinum, nse_penny, nse_technical, nse_american, nse_resources, \
     bse_gold, bse_dividend, bse_health, bse_platinum, bse_penny, bse_technical, bse_american, bse_resources,\
     nyse_gold, nyse_dividend, nyse_health, nyse_platinum, nyse_penny, nyse_technical, nyse_american, nyse_resources,\
