@@ -50,10 +50,10 @@
         <li><a href="#th-tab-one" class="current">NASDAQ</a>
 
         </li>
-        <li><a href="#th-tab-two">NYSE</a>
+        <li><a id='nyse_tab' href="#th-tab-two">NYSE</a>
 
         </li>
-        <li><a href="#th-tab-three">TSX</a>
+        <li><a id='tsx_tab' href="#th-tab-three">TSX</a>
 
         </li>
     </ul>
@@ -126,16 +126,8 @@
                                       <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in nyse_gainers.items %}
+                                  <tbody id="nyse_gainers_tbody" class="nse-table-body">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>{{i}}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -149,16 +141,8 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in nyse_losers.items %}
+                                              <tbody id="nyse_losers_tbody" class="nse-table-body">
 
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
                                               </tbody>
                                             </table>
                                         </div>
@@ -177,16 +161,8 @@
                                       <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in tsx_gainers.items %}
+                                  <tbody id="tsx_gainers_tbody" class="nse-table-body">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>{{i}}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -200,16 +176,7 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in tsx_losers.items %}
-
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
+                                              <tbody id="tsx_losers_tbody" class="nse-table-body">
                                               </tbody>
                                             </table>
                                         </div>
