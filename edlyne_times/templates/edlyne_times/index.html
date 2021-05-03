@@ -238,7 +238,10 @@
                                                 <tr class="">
                                                   <td>{{key }}</td>
                                                    {% for i in value %}
-                                                  <td>{{i}}</td>
+                                                  <td>
+                                                      {% if not forloop.last %}
+                                                      <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
+                                                    {{i}}</td>
                                                     {% endfor %}
 
                                               {% endfor %}
@@ -261,7 +264,10 @@
                                                 <tr class="losers">
                                                   <td>{{key}}</td>
                                                 {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
+                                                  <td> <span class="bearish">
+                                                      {% if not forloop.last %}
+                                                      <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
+                                                      {{i}}</span></td>
                                                     {% endfor %}
                                                 </tr>
                                               {% endfor %}
