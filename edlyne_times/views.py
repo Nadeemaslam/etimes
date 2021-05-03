@@ -192,19 +192,19 @@ def get_bse_gainers_async():
 
     res = {}
     if len(td) > 0:
-        res[td[0].text.lstrip()] = [td[3].text, td[4].text]
+        res[td[0].text.lstrip()] = [td[2].text, td[3].text, td[4].text]
     if len(td) > 5:
-        res[td[5].text.lstrip()] = [td[8].text, td[9].text]
+        res[td[5].text.lstrip()] = [td[7].text, td[8].text, td[9].text]
     if len(td) > 10:
-        res[td[10].text.lstrip()] = [td[13].text, td[14].text]
+        res[td[10].text.lstrip()] = [td[12].text, td[13].text, td[14].text]
     if len(td) > 15:
-        res[td[15].text.lstrip()] = [td[18].text, td[19].text]
+        res[td[15].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
     if len(td) > 20:
-        res[td[20].text.lstrip()] = [td[23].text, td[24].text]
+        res[td[20].text.lstrip()] = [td[22].text, td[23].text, td[24].text]
     if len(td) > 25:
-        res[td[25].text.lstrip()] = [td[28].text, td[29].text]
+        res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
     if len(td) > 30:
-        res[td[30].text.lstrip()] = [td[33].text, td[34].text]
+        res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
     return res
 
 
@@ -217,19 +217,19 @@ def get_bse_losers_async():
 
     res = {}
     if len(td) > 0:
-        res[td[0].text.lstrip()] = [td[3].text, td[4].text]
+        res[td[0].text.lstrip()] = [td[2].text, td[3].text, td[4].text]
     if len(td) > 5:
-        res[td[5].text.lstrip()] = [td[8].text, td[9].text]
+        res[td[5].text.lstrip()] = [td[7].text, td[8].text, td[9].text]
     if len(td) > 10:
-        res[td[10].text.lstrip()] = [td[13].text, td[14].text]
+        res[td[10].text.lstrip()] = [td[12].text, td[13].text, td[14].text]
     if len(td) > 15:
-        res[td[15].text.lstrip()] = [td[18].text, td[19].text]
+        res[td[15].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
     if len(td) > 20:
-        res[td[20].text.lstrip()] = [td[23].text, td[24].text]
+        res[td[20].text.lstrip()] = [td[22].text, td[23].text, td[24].text]
     if len(td) > 25:
-        res[td[25].text.lstrip()] = [td[28].text, td[29].text]
+        res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
     if len(td) > 30:
-        res[td[30].text.lstrip()] = [td[33].text, td[34].text]
+        res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
     return res
 
 async  def index(request):
