@@ -84,7 +84,7 @@
                                                 <tr class="">
                                                   <td>{{key }}</td>
                                                    {% for i in value %}
-                                                  <td>{{i}}</td>
+                                                  <td>{% if  forloop.counter|divisibleby:2 %}<span>&#36;</span>{% endif %}{{i}}</td>
                                                     {% endfor %}
 
                                               {% endfor %}
@@ -107,7 +107,7 @@
                                                 <tr class="losers">
                                                   <td>{{key}}</td>
                                                 {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
+                                                  <td> <span class="bearish">{% if  forloop.counter|divisibleby:2 %}<span>&#36;</span>{% endif %}{{i}}</span></td>
                                                     {% endfor %}
                                                 </tr>
                                               {% endfor %}
@@ -135,7 +135,7 @@
                                                 <tr class="">
                                                   <td>{{key }}</td>
                                                    {% for i in value %}
-                                                  <td>{{i}}</td>
+                                                  <td>{% if  forloop.counter|divisibleby:2%}<span>&#36;</span>{% endif %}{{i}}</td>
                                                     {% endfor %}
 
                                               {% endfor %}
@@ -158,7 +158,7 @@
                                                 <tr class="losers">
                                                   <td>{{key}}</td>
                                                 {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
+                                                  <td> <span class="bearish">{% if  forloop.counter|divisibleby:2 %}<span>&#36;</span>{% endif %}{{i}}</span></td>
                                                     {% endfor %}
                                                 </tr>
                                               {% endfor %}
@@ -186,7 +186,8 @@
                                                 <tr class="">
                                                   <td>{{key }}</td>
                                                    {% for i in value %}
-                                                  <td>{{i}}</td>
+                                                  <td>{% if  forloop.counter|divisibleby:2 %}<span>&#36;</span>{% endif %}
+                                                      {{i}}</td>
                                                     {% endfor %}
 
                                               {% endfor %}
@@ -209,7 +210,9 @@
                                                 <tr class="losers">
                                                   <td>{{key}}</td>
                                                 {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
+                                                  <td> <span class="bearish">
+                                                      {% if  forloop.counter|divisibleby:2 %}<span>&#36;</span>{% endif %}
+                                                      {{i}}</span></td>
                                                     {% endfor %}
                                                 </tr>
                                               {% endfor %}
@@ -241,7 +244,8 @@
                                                   <td>
                                                       {% if not forloop.last %}
                                                       <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
-                                                    {{i}}</td>
+
+                                                    {{i}}{% if forloop.last %}<span>&#37;</span>{% endif %}</td>
                                                     {% endfor %}
 
                                               {% endfor %}
@@ -267,7 +271,7 @@
                                                   <td> <span class="bearish">
                                                       {% if not forloop.last %}
                                                       <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
-                                                      {{i}}</span></td>
+                                                      {{i}}{% if forloop.last %}<span>&#37;</span>{% endif %}</span></td>
                                                     {% endfor %}
                                                 </tr>
                                               {% endfor %}
