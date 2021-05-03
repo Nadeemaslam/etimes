@@ -180,13 +180,57 @@ def get_tsx_losers_async():
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
+    print(res)
     return res
 
 @sync_to_async
-def get_nse_losers_async():
-    nse = Nse()
-    nse_losers = nse.get_top_losers()
-    return nse_losers
+def get_bse_gainers_async():
+    res = requests.get('https://money.rediff.com/gainers/bse')
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[3].text, td[4].text]
+    if len(td) > 5:
+        res[td[5].text.lstrip()] = [td[8].text, td[9].text]
+    if len(td) > 10:
+        res[td[10].text.lstrip()] = [td[13].text, td[14].text]
+    if len(td) > 15:
+        res[td[15].text.lstrip()] = [td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[24].text]
+    if len(td) > 25:
+        res[td[25].text.lstrip()] = [td[28].text, td[29].text]
+    if len(td) > 30:
+        res[td[30].text.lstrip()] = [td[33].text, td[34].text]
+    return res
+
+
+@sync_to_async
+def get_bse_losers_async():
+    res = requests.get('https://money.rediff.com/losers/bse')
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[3].text, td[4].text]
+    if len(td) > 5:
+        res[td[5].text.lstrip()] = [td[8].text, td[9].text]
+    if len(td) > 10:
+        res[td[10].text.lstrip()] = [td[13].text, td[14].text]
+    if len(td) > 15:
+        res[td[15].text.lstrip()] = [td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[24].text]
+    if len(td) > 25:
+        res[td[25].text.lstrip()] = [td[28].text, td[29].text]
+    if len(td) > 30:
+        res[td[30].text.lstrip()] = [td[33].text, td[34].text]
+    return res
 
 async  def index(request):
     start_time = time.time()
@@ -196,11 +240,15 @@ async  def index(request):
     task4 = asyncio.ensure_future(get_nyse_losers_async())
     task5 = asyncio.ensure_future(get_tsx_gainers_async())
     task6 = asyncio.ensure_future(get_tsx_losers_async())
-    await asyncio.wait([task1, task2, task3, task4, task5, task6])
+    task7 = asyncio.ensure_future(get_bse_gainers_async())
+    task8 = asyncio.ensure_future(get_bse_losers_async())
+    await asyncio.wait([task1, task2, task3, task4, task5, task6, task7, task8])
 
     context = {'nasdaq_gainers': task1.result(), 'nasdaq_losers': task2.result(),
                'nyse_gainers': task3.result(), 'nyse_losers': task4.result(),
-               'tsx_gainers': task5.result(), 'tsx_losers': task6.result()}
+               'tsx_gainers': task5.result(), 'tsx_losers': task6.result(),
+               'bse_gainers': task7.result(), 'bse_losers': task8.result()
+               }
     print(time.time() - start_time)
     return render(request, 'edlyne_times/index.html', context)
 
