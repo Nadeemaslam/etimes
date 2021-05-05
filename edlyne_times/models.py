@@ -61,3 +61,6 @@ class report(models.Model):
     exchange = models.CharField(max_length=255)
     category = models.CharField(max_length=50, choices=CHOICES, default=None, blank=True, null=True)
     file = models.FileField(storage=fs)
+
+    def __str__(self):
+        return self.name
