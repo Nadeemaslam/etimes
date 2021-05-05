@@ -462,6 +462,64 @@
                         </div><!-- BUTTON BOX-->
                     </div>
                 </div>
+                
+                
+                
+                 <div class="col-md-4 col-sm-6">
+                    <div class="pricingTable">
+                        <div class="pricingTable-header">
+                            <span class="heading">
+                               Ipo Report
+                            </span>
+                        </div>
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>20</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li><b>70GB</b> Disk Space</li>
+                                <li><b>70</b>Email Accounts</li>
+                                <li><b>70GB</b> Monthly Bandwidth</li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
+                            {% if exchange == 'nse' %}
+                                {% if nse_america %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-danger">buy now</a>
+                                 {% endif %}
+                            {% elif exchange == 'bse' %}
+                                {% if bse_ipo %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nyse' %}
+                                {% if nyse_ipo %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'nasdaq' %}
+                                {% if nasdaq_ipo %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            {% elif exchange == 'tsx' %}
+                                {% if tsx_ipo %}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-info">View Report</a>
+                                {% else%}
+                                    <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-danger">buy now</a>
+                                {% endif %}
+                            
+
+                            {% endif %}
+                        </div><!-- BUTTON BOX-->
+                    </div>
+                </div>
 
                 <!--<div class="col-md-4 col-sm-6">-->
                     <!--<div class="pricingTable">-->

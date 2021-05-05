@@ -339,12 +339,12 @@ def research(request, exchange):
 def products(request, exchange):
 
     user_category = request.user.groups.all().values()
-    nse_gold, nse_dividend, nse_health, nse_platinum, nse_penny, nse_technical, nse_american, nse_resources, \
-    bse_gold, bse_dividend, bse_health, bse_platinum, bse_penny, bse_technical, bse_american, bse_resources,\
-    nyse_gold, nyse_dividend, nyse_health, nyse_platinum, nyse_penny, nyse_technical, nyse_american, nyse_resources,\
-    nasdaq_gold, nasdaq_dividend, nasdaq_health, nasdaq_platinum, \
-    nasdaq_penny, nasdaq_technical, nasdaq_american, nasdaq_resources,\
-    tsx_gold, tsx_dividend, tsx_health, tsx_platinum, tsx_penny, tsx_technical, tsx_american, tsx_resources, = (False,)*40
+    nse_gold, nse_dividend, nse_health, nse_platinum, nse_penny, nse_technical, nse_american,nse_ipo, nse_resources, \
+    bse_gold, bse_dividend, bse_health, bse_platinum, bse_penny, bse_technical, bse_american, bse_resources, bse_ipo,\
+    nyse_gold, nyse_dividend, nyse_health, nyse_platinum, nyse_penny, nyse_technical, nyse_american, nyse_resources, nyse_ipo,\
+    nasdaq_gold, nasdaq_dividend, nasdaq_health, nasdaq_platinum, nasdaq_ipo, \
+    nasdaq_penny, nasdaq_technical, nasdaq_american, nasdaq_resources, tsx_ipo,\
+    tsx_gold, tsx_dividend, tsx_health, tsx_platinum, tsx_penny, tsx_technical, tsx_american, tsx_resources, = (False,)*45
 
    
     for key in user_category:
@@ -364,8 +364,12 @@ def products(request, exchange):
             nse_resources = True
         elif key['name'] == 'nse_american':
             nse_american = True
+        elif key['name'] == 'nse_ipo':
+            nse_ipo = True
         elif key['name'] == 'bse_gold':
             bse_gold = True
+        elif key['name'] == 'bse_ipo':
+            bse_ipo = True
         elif key['name'] == 'bse_dividend':
             bse_dividend = True
         elif key['name'] == 'bse_health':
@@ -382,6 +386,8 @@ def products(request, exchange):
             bse_american = True
         elif key['name'] == 'nasdaq_gold':
             nasdaq_gold = True
+        elif key['name'] == 'nasdaq_ipo':
+            nasdaq_ipo = True
         elif key['name'] == 'nasdaq_dividend':
             nasdaq_dividend = True
         elif key['name'] == 'nasdaq_health':
@@ -398,6 +404,8 @@ def products(request, exchange):
             nasdaq_american = True
         elif key['name'] == 'tsx_gold':
             tsx_gold = True
+        elif key['name'] == 'tsx_ipo':
+            tsx_ipo = True
         elif key['name'] == 'tsx_dividend':
             tsx_dividend = True
         elif key['name'] == 'tsx_health':
@@ -428,23 +436,25 @@ def products(request, exchange):
             nyse_resources = True
         elif key['name'] == 'nyse_american':
             nyse_american = True
+        elif key['name'] == 'nyse_ipo':
+            nyse_ipo = True
     exchange = exchange
     context = {'exchange': exchange, 'nse_gold': nse_gold, 'nse_dividend': nse_dividend,
                'nse_health': nse_health, 'nse_penny': nse_penny, 'nse_resources': nse_resources, 'nse_platinum': nse_platinum,
-               'nse_technical': nse_technical, 'nse_american': nse_american,
+               'nse_technical': nse_technical, 'nse_american': nse_american,'nse_ipo': nse_ipo,
                'bse_gold': bse_gold, 'bse_dividend': bse_dividend,
                'bse_health': bse_health, 'bse_penny': bse_penny, 'bse_resources': bse_resources,
-               'bse_platinum': bse_platinum,
+               'bse_platinum': bse_platinum, 'nyse_ipo': nyse_ipo,
                'bse_technical': bse_technical, 'bse_american': bse_american,
-               'nyse_gold': nyse_gold, 'nyse_dividend': nyse_dividend,
+               'nyse_gold': nyse_gold, 'nyse_dividend': nyse_dividend,'bse_ipo': bse_ipo,
                'nyse_health': nyse_health, 'nyse_penny': nyse_penny, 'nyse_resources': nyse_resources,
-               'nyse_platinum': nyse_platinum,
+               'nyse_platinum': nyse_platinum,'nyse_ipo': nyse_ipo,
                'nyse_technical': nyse_technical, 'nyse_american': nyse_american,
                'nasdaq_gold': nasdaq_gold, 'nasdaq_dividend': nasdaq_dividend,
                'nasdaq_health': nasdaq_health, 'nasdaq_penny': nasdaq_penny, 'nasdaq_resources': nasdaq_resources,
-               'nasdaq_platinum': nasdaq_platinum,
+               'nasdaq_platinum': nasdaq_platinum,'nasdaq_ipo': nasdaq_ipo,
                'nasdaq_technical': nasdaq_technical, 'nasdaq_american': nasdaq_american,
-               'tsx_gold': tsx_gold, 'tsx_dividend': tsx_dividend,
+               'tsx_gold': tsx_gold, 'tsx_dividend': tsx_dividend,'tsx_ipo': tsx_ipo,
                'tsx_health': tsx_health, 'tsx_penny': tsx_penny, 'tsx_resources': tsx_resources,
                'tsx_platinum': tsx_platinum,
                'tsx_technical': tsx_technical, 'tsx_american': tsx_american

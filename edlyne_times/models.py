@@ -16,6 +16,7 @@ CHOICES = (
         ('nse_platinum', 'Nse Platinum Report'),
         ('nse_technical', 'NseTechnical Analysis'),
         ('nse_american', 'Nse American Tech Report'),
+        ('nse_ipo', 'Nse IPO Report'),
         ('bse_dividend', 'Bse Dividend Report'),
         ('bse_gold', 'Bse Gold Report'),
         ('bse_penny', 'Bse Penny Report'),
@@ -24,6 +25,7 @@ CHOICES = (
         ('bse_platinum', 'Bse Platinum Report'),
         ('bse_technical', 'BseTechnical Analysis'),
         ('bse_american', 'Bse American Tech Report'),
+        ('bse_ipo', 'Bse IPO Report'),
         ('nyse_dividend', 'NYse Dividend Report'),
         ('nyse_gold', 'NYse Gold Report'),
         ('nyse_penny', 'NYse Penny Report'),
@@ -32,6 +34,7 @@ CHOICES = (
         ('nyse_platinum', 'NYse Platinum Report'),
         ('nyse_technical', 'NYseTechnical Analysis'),
         ('nyse_american', 'NYse American Tech Report'),
+        ('nyse_ipo', 'NYse IPO Report'),
         ('nasdaq_dividend', 'Nasdaq Dividend Report'),
         ('nasdaq_gold', 'Nasdaq Gold Report'),
         ('nasdaq_penny', 'Nasdaq Penny Report'),
@@ -40,6 +43,7 @@ CHOICES = (
         ('nasdaq_platinum', 'Nasdaq Platinum Report'),
         ('nasdaq_technical', 'Nasdaq Technical Analysis'),
         ('nasdaq_american', 'Nasdaq American Tech Report'),
+        ('nasdaq_ipo', 'Nasdaq IPO Report'),
         ('tsx_dividend', 'Tsx Dividend Report'),
         ('tsx_gold', 'Tsx Gold Report'),
         ('tsx_penny', 'Tsx Penny Report'),
@@ -48,6 +52,7 @@ CHOICES = (
         ('tsx_platinum', 'Tsx Platinum Report'),
         ('tsx_technical', 'Tsx Technical Analysis'),
         ('tsx_american', 'Tsx American Tech Report'),
+        ('tsx_ipo', 'Tsx IPO Report'),
     )
 
 class report(models.Model):
