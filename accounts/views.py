@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.shortcuts import redirect
 from .decorators import allowed_users, user_authenticated
+from accounts.models import Lead
 
 def registerPage(request):
     form = CreateUserForm()
@@ -63,13 +64,21 @@ def contact(request):
         if form.is_valid():
             contact_name = form.cleaned_data['contact_name']
             sender = form.cleaned_data['contact_email']
+            phone = form.cleaned_data['contact_phone']
+            sender = form.cleaned_data['contact_email']
+            if Lead.objects.filter(email=sender).count() > 0:
+                return render(request, 'accounts/contact.html', {'form': form, 'message': 'This email Already Exists'})
+            if Lead.objects.filter(phone=phone).count() > 0:
+                return render(request, 'accounts/contact.html', {'form': form, 'message': 'The Phone Number Already Exists'})
             comment = form.cleaned_data['comment']
-            msg_mail = str(comment) + " " + str(sender)
+            lead = Lead()
+            lead.name = contact_name
+            lead.email =sender
+            lead.phone = phone
+            lead.message = comment
+            lead.save()
             recipients = ['edlynetimesmedia@gmail.com']
-            send_mail(contact_name,comment,sender,recipients, fail_silently=True)
-            return render(request,'accounts/contact.html', {'message':contact_name})
+            send_mail(contact_name, comment, sender, recipients, fail_silently=True)
+            return render(request, 'accounts/contact.html', {'success_message': 'Thanks ' + contact_name})
         return redirect('accounts/contact')
-
-    return render(request, 'accounts/contact.html', {
-        'form': form_class,
-    })
+    return render(request, 'accounts/contact.html', {'form': form_class})
