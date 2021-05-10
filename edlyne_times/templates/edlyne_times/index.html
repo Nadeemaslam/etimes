@@ -305,7 +305,7 @@
       type:'GET',
       url:'/tsx_losers'    ,
       cache:false,
-      async:'asynchronous',
+      async:'false',
       dataType:'json',
       success: function(data) {
         var tableData = '<table>'
@@ -333,7 +333,7 @@
       type:'GET',
       url:'/tsx_gainers'    ,
       cache:false,
-      async:'asynchronous',
+      async:'false',
       dataType:'json',
       success: function(data) {
         console.log(data)
@@ -369,7 +369,7 @@ function nyse(){
       type:'GET',
       url:'/nyse_gainers'    ,
       cache:false,
-      async:'asynchronous',
+      async:'false',
       dataType:'json',
       success: function(data) {
         console.log(data)
@@ -399,7 +399,7 @@ function nyse(){
       type:'GET',
       url:'/nyse_losers'    ,
       cache:false,
-      async:'asynchronous',
+      async:'false',
       dataType:'json',
       success: function(data) {
         console.log(data)
