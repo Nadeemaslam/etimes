@@ -50,10 +50,10 @@
         <li><a href="#th-tab-one" class="current">NASDAQ</a>
 
         </li>
-        <li><a id='nyse_tab' href="#th-tab-two">NYSE</a>
+        <li><a onclick="nyse()" id='nyse_tab' href="#th-tab-two">NYSE</a>
 
         </li>
-        <li><a id='tsx_tab' href="#th-tab-three">TSX</a>
+        <li><a onclick="tsx()" id='tsx_tab' href="#th-tab-three">TSX</a>
 
         </li>
     </ul>
@@ -299,11 +299,7 @@
 
 </div>
 <script>
-
-
-$("#tsx_tab").click(function (e) {
-    e.preventDefault();
-
+    function tsx() {
  // code here
    $.ajax({
       type:'GET',
@@ -364,11 +360,10 @@ $("#tsx_tab").click(function (e) {
 
 }
 
-);
 
-$("#nyse_tab").click(function (e) {
-    e.preventDefault();
 
+
+function nyse(){
 //   nyse gainers
     $.ajax({
       type:'GET',
@@ -429,8 +424,7 @@ $("#nyse_tab").click(function (e) {
    });
 
 
-});
-
+}
 
 </script>
 

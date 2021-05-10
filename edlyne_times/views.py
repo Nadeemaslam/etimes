@@ -8,6 +8,7 @@ import asyncio
 from asgiref.sync import sync_to_async
 import bs4
 import requests
+import json
 from accounts.decorators import allowed_users
 from django.shortcuts import redirect
 
@@ -92,7 +93,9 @@ def get_nyse_gainers_async():
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    return res
+    json_data = json.dumps(res)
+    print(type(json_data),json_data)
+    return HttpResponse(json_data, mimetype='application/json')
 
 
 @sync_to_async
@@ -118,7 +121,8 @@ def get_nyse_losers_async():
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    return res
+    json_data = json.dumps(res)
+    return HttpResponse(json_data, mimetype='application/json')
 
 
 
@@ -140,6 +144,8 @@ def get_tsx_gainers_async():
     u = table.find_all('u')
     font = table.find_all('font')
     res = {}
+
+
     if len(u) > 0:
         res[u[0].text] = [u[1].text, font[0].text, font[1].text]
     if len(u) > 2:
@@ -154,8 +160,8 @@ def get_tsx_gainers_async():
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-
-    return res
+    json_data = json.dumps(res)
+    return HttpResponse(json_data, mimetype='application/json')
 
 @sync_to_async
 def get_tsx_losers_async():
@@ -180,7 +186,8 @@ def get_tsx_losers_async():
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    return res
+    json_data = json.dumps(res)
+    return HttpResponse(json_data, mimetype='application/json')
 
 @sync_to_async
 def get_nse_losers_async():
@@ -350,7 +357,7 @@ def products(request, exchange):
     return render(request, 'edlyne_times/products.html', context)
 
 
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 
 def tsx_losers(request):
