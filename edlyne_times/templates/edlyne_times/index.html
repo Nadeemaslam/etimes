@@ -308,6 +308,7 @@ $(document).ready(function(){
       cache:false,
       async:'false',
       dataType:'json',
+      timeout: 30000,
       success: function(data) {
         var tableData = '<table>'
         $.each(data, function(key, value){
@@ -372,6 +373,7 @@ window.onload = function() {
       cache:false,
       async:'false',
       dataType:'json',
+      timeout: 30000,
       success: function(data) {
         console.log(data)
         var tableData = '<table>'
