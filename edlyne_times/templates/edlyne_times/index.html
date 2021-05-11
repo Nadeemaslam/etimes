@@ -226,20 +226,8 @@
                                       <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in bse_gainers.items %}
+                                  <tbody id='bse_gainers_tbody' class="nse-table-body">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>
-                                                      {% if not forloop.last %}
-                                                      <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
-
-                                                    {{i}}{% if forloop.last %}<span>&#37;</span>{% endif %}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -253,19 +241,8 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in bse_losers.items %}
+                                              <tbody id="bse_losers_tbody" class="nse-table-body">
 
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">
-                                                      {% if not forloop.last %}
-                                                      <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
-                                                      {{i}}{% if forloop.last %}<span>&#37;</span>{% endif %}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
                                               </tbody>
                                             </table>
                                         </div>
@@ -285,20 +262,8 @@
                                       <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in nse_gainers.items %}
+                                  <tbody id="nse_gainers_tbody" class="nse-table-body">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>
-                                                      {% if not forloop.last %}
-                                                      <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
-
-                                                    {{i}}{% if forloop.last %}<span>&#37;</span>{% endif %}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -312,19 +277,9 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in nse_losers.items %}
+                                              <tbody id="nse_losers_tbody" class="nse-table-body">
 
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">
-                                                      {% if not forloop.last %}
-                                                      <i class="fa fa-inr" aria-hidden="true"></i>{% endif %}
-                                                      {{i}}{% if forloop.last %}<span>&#37;</span>{% endif %}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
+
                                               </tbody>
                                             </table>
                                         </div>
@@ -532,5 +487,136 @@
 
 
 </div>
+<script>
+
+
+
+$(document).ready(function(){
+//   bse gainers
+    $.ajax({
+      type:'GET',
+      url:'/bse_gainers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+}       );
+        tableData += '</table>';
+
+        $('#bse_gainers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+//   bse losers
+    $.ajax({
+      type:'GET',
+      url:'/bse_losers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#bse_losers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+});
+
+
+
+$(document).ready(function(){
+    $.ajax({
+      type:'GET',
+      url:'/nse_gainers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nse_gainers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+//   nyse losers
+    $.ajax({
+      type:'GET',
+      url:'/nse_losers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nse_losers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+});
+</script>
 
 {% endblock %}
