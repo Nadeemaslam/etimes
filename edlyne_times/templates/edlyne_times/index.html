@@ -47,15 +47,11 @@
     <section class="first_content_wrapper">
         <div id="tabs-bar">
     <ul id="tabs-nav">
-        <li><a href="#th-tab-one" class="current">NASDAQ</a>
-
-        </li>
-        <li><a  id='nyse_tab' href="#th-tab-two">NYSE</a>
-
-        </li>
-        <li><a id='tsx_tab' href="#th-tab-three">TSX</a>
-
-        </li>
+        <li><a href="#th-tab-one" class="current">NASDAQ</a></li>
+        <li><a href="#th-tab-two">NYSE</a></li>
+        <li><a href="#th-tab-three">TSX</a></li>
+        <li><a href="#th-tab-four">BSE</a></li>
+        <li><a href="#th-tab-five">NSE</a></li>
     </ul>
     <div style="clear:both;"></div>
 </div>
@@ -183,6 +179,78 @@
                                  </div>
         </li>
         <!-- ends Tab Three Content -->
+            <li id="th-tab-four" class="tab-content">
+            <div class="row ">
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-gainer-table">
+                                  <thead class="nse-table-head">
+                                    <tr>
+                                      <!--<th scope="col">Symbol</th>-->
+                                      <th scope="col">Company</th>
+                                        <th scope="col">Prev Price</th>
+                                      <th scope="col">Current Price </th>
+                                      <th scope="col">%Change </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="nse-table-body">
+
+                                  </tbody>
+                                </table>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-loser-table">
+                                              <thead class="nse-table-head">
+                                                <tr>
+                                                  <th scope="col">Company</th>
+                                                  <th scope="col">Prev Price</th>
+                                                  <th scope="col">Current Price </th>
+                                                  <th scope="col">%Change </th>
+                                                </tr>
+                                              </thead>
+                                              <tbody id="" class="nse-table-body">
+
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                 </div>
+        </li>
+        <!-- ends Tab four Content -->
+        <li id="th-tab-five" class="tab-content">
+            <div class="row ">
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-gainer-table">
+                                  <thead class="nse-table-head">
+                                    <tr>
+                                      <!--<th scope="col">Symbol</th>-->
+                                      <th scope="col">Company</th>
+                                        <th scope="col">Prev Price</th>
+                                      <th scope="col">Current Price </th>
+                                      <th scope="col">%Change </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="nse_gainers_tbody" class="nse-table-body">
+
+                                  </tbody>
+                                </table>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-loser-table">
+                                              <thead class="nse-table-head">
+                                                <tr>
+                                                  <th scope="col">Company</th>
+                                                  <th scope="col">Prev Price</th>
+                                                  <th scope="col">Current Price </th>
+                                                  <th scope="col">%Change </th>
+                                                </tr>
+                                              </thead>
+                                              <tbody id="nse_losers_tbody" class="nse-table-body">
+
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                 </div>
+        </li>
+        <!-- ends Tab five Content -->
     </ul>
 </div>
 
@@ -308,7 +376,6 @@ $(document).ready(function(){
       cache:false,
       async:'false',
       dataType:'json',
-      timeout: 30000,
       success: function(data) {
         var tableData = '<table>'
         $.each(data, function(key, value){
@@ -365,7 +432,7 @@ $(document).ready(function(){
 );
 
 
-window.onload = function() {
+$(document).ready(function(){
 //   nyse gainers
     $.ajax({
       type:'GET',
@@ -373,7 +440,6 @@ window.onload = function() {
       cache:false,
       async:'false',
       dataType:'json',
-      timeout: 30000,
       success: function(data) {
         console.log(data)
         var tableData = '<table>'
@@ -427,7 +493,71 @@ window.onload = function() {
    });
 
 
-}
+});
+
+
+
+$(document).ready(function(){
+    $.ajax({
+      type:'GET',
+      url:'/nse_gainers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nse_gainers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+//   nyse losers
+    $.ajax({
+      type:'GET',
+      url:'/nse_losers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nse_losers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+});
 
 </script>
 

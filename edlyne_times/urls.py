@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'tsx_gainers/', views.tsx_gainers, name='tsx_gainers'),
     url(r'tsx_losers/', views.tsx_losers, name='tsx_losers'),
     url(r'nyse_losers/', views.get_nyse_losers, name='nyse_losers'),
+    url(r'nse_losers/', views.get_nse_losers, name='nse_losers'),
     url(r'nyse_gainers/', views.get_nyse_gainers, name='nyse_gainers'),
+    url(r'nse_gainers/', views.get_nse_gainers, name='nse_gainers'),
 ]

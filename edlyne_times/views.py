@@ -186,14 +186,10 @@ def get_tsx_losers_async():
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    json_data = json.dumps(res)
-    return HttpResponse(json_data, mimetype='application/json')
+    print(res)
+    return res
 
-@sync_to_async
-def get_nse_losers_async():
-    nse = Nse()
-    nse_losers = nse.get_top_losers()
-    return nse_losers
+
 
 async  def index(request):
     start_time = time.time()
@@ -460,4 +456,103 @@ def get_nyse_losers(request):
         res[u[10].text] = [u[11].text, font[10].text, font[11].text]
     if len(u) > 12:
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
+    return JsonResponse(res)
+
+
+
+def get_bse_gainers(request):
+    res = requests.get('https://money.rediff.com/gainers/bse')
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[2].text, td[3].text, td[4].text]
+    if len(td) > 5:
+        res[td[5].text.lstrip()] = [td[7].text, td[8].text, td[9].text]
+    if len(td) > 10:
+        res[td[10].text.lstrip()] = [td[12].text, td[13].text, td[14].text]
+    if len(td) > 15:
+        res[td[15].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[22].text, td[23].text, td[24].text]
+    if len(td) > 25:
+        res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
+    if len(td) > 30:
+        res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
+    return JsonResponse(res)
+
+
+def get_bse_losers(request):
+    res = requests.get('https://money.rediff.com/losers/bse/daily')
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[2].text, td[3].text, td[4].text]
+    if len(td) > 5:
+        res[td[5].text.lstrip()] = [td[7].text, td[8].text, td[9].text]
+    if len(td) > 10:
+        res[td[10].text.lstrip()] = [td[12].text, td[13].text, td[14].text]
+    if len(td) > 15:
+        res[td[15].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[22].text, td[23].text, td[24].text]
+    if len(td) > 25:
+        res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
+    if len(td) > 30:
+        res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
+    return JsonResponse(res)
+
+
+
+def get_nse_gainers(request):
+    print("helelleleleleellelelo")
+    res = requests.get('https://money.rediff.com/gainers/nse')
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
+    print(res,"lllllll")
+    return JsonResponse(res)
+
+def get_nse_losers(request):
+    res = requests.get('https://money.rediff.com/losers/nse/daily')
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
     return JsonResponse(res)
