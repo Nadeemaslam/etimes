@@ -463,7 +463,6 @@ def products(request, exchange):
 
 
 def get_bse_gainers(request):
-    print("helelleleleleellelelo")
 
     res = requests.get('https://money.rediff.com/gainers/bse')
     soup = bs4.BeautifulSoup(res.text, "lxml")
@@ -485,7 +484,6 @@ def get_bse_gainers(request):
         res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
     if len(td) > 30:
         res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
-    print(res,"lllllllqwq")
 
     return JsonResponse(res)
 

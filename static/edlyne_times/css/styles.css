@@ -1902,12 +1902,17 @@ header .side-menu-close span {
 /* Services */
 
 .services {
-	margin-top: 140px;
+	padding-top:40px;
 }
 
 .service-item img {
 	width: 100%;
 	overflow: hidden;
+}
+.service-item { transition: all .2s ease-in-out; }
+.service-item:hover {
+      transform: scale(1.06);
+
 }
 
 .service-item .down-content {
