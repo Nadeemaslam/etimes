@@ -336,6 +336,10 @@ def research(request, exchange):
     context = {'range': stocks, 'user_group': user_group}
     return render(request, 'edlyne_times/research.html', context)
 
+
+def services(request):
+    return render(request, 'edlyne_times/services.html')
+
 def products(request, exchange):
 
     user_category = request.user.groups.all().values()
