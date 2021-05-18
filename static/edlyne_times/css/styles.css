@@ -479,13 +479,7 @@ padding-left: 40px;
 .sub_video_container {
         padding-bottom: 25px;
 }
-.mobile_section {
-    border-top: 1px solid red;
-}
-.screen-holder {
-    top:69px !important;
-    left:45px !important;
-}
+
 
 #tabs-content-wrap ul {
     margin-left: -10px;
@@ -1090,12 +1084,12 @@ dropdown research_submenu
     font-weight: 700;
   border: none;
   outline: none;
-  padding: 8px 5px 8px 8px;
+  padding: 14px 5px 0px 8px;
   background:none !important;
 }
 
 .dropdown:hover .dropbtn {
-  color: #ffc107;
+  color: #a4c639;
 }
 
 .dropdown-content {
@@ -1193,10 +1187,7 @@ dropdown research_submenu
 
 
 .dropdown:hover{
-    background-color: #08080869;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    opacity: 1;
+
 
 }
 
@@ -1528,6 +1519,7 @@ header .header-logo {
   left:0;
   z-index: 1000;
   width:100vw;
+  height:16vh;
 }
 
 header .main-menu>li {
@@ -1541,7 +1533,7 @@ header .main-menu>li {
 header .main-menu>li>a {
   color: #000000;
   font-size: 15px;
-  padding: 25px 1.5vw;
+  padding: 25px 1.5vw 10px;
   font-weight: 700;
   display: block;
   transition: .4s;
@@ -1556,7 +1548,8 @@ header .main-menu>li.active>a {
 }
 
 header .main-menu>li:hover>a {
-  color: #ffc107;
+    color: #a4c639 !important;
+    border-bottom: 3px solid #a4c639;
 }
 
 header .main-menu>li>a>i {
