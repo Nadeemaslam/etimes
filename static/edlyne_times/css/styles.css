@@ -1969,6 +1969,57 @@ a.filled-button:hover {
 
 
 
+/* testimonial section */
+.testimonials {
+    margin-top: 140px;
+    background-color: #f7f7f7;
+    padding: 140px 0px;}
+
+
+.testimonial-item .inner-content {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    width:80%;
+    margin:0 auto;
+    }
+.testimonial-item h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e1e1e;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+
+    }
+
+
+ .testimonial-item span {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #a4c639;}
+
+
+.testimonial-item p {
+    font-size: 14px;
+    font-weight: 400;}
+
+
+ .testimonial-item img {
+    max-width: 60px;
+    border-radius: 50%;
+    margin: 25px auto 0px auto;}
+
+
+
+
+
+.carousel-indicators li{
+    background-color:#a4c639 !important;
+}
+
 /* services page */
 
 .page-heading {
@@ -2050,8 +2101,4 @@ a.filled-button:hover {
 }
 
 
-.appear {
-
-display:block;
-background:red;
-}
+.

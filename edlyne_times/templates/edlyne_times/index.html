@@ -43,6 +43,7 @@
 
 
 
+
     <!--section first content-->
     <section class="first_content_wrapper">
         <div id="tabs-bar">
@@ -432,7 +433,72 @@
       </div>
     </div>
 
-
+ <div class="col-lg-12  testimonials">
+     <div class="section-heading">
+              <h2>What they say <em>about us</em></h2>
+              <span>testimonials from our greatest clients</span>
+            </div>
+  <div id="client-testimonial-carousel" class="carousel slide testimonial-item" data-ride="carousel" style="height:200px;">
+    <div class="carousel-inner inner-content" role="listbox">
+      <div class="carousel-item active text-center p-4">
+        <blockquote class="blockquote text-center">
+          <p class="mb-0"><i class="fa fa-quote-left"></i> Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.
+          </p>
+            <h4>George Walker</h4>
+          <span class="blockquote-footer">Chief Financial Analyst </span>
+          <!-- Client review stars -->
+          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+          <p class="client-review-stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </p>
+        </blockquote>
+      </div>
+      <div class="carousel-item text-center p-4">
+        <blockquote class="blockquote text-center">
+          <p class="mb-0"><i class="fa fa-quote-left"></i> Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.
+          </p>
+           <h4>John Smith</h4>
+                  <span>Market Specialist</span>
+          <!-- Client review stars -->
+          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+          <p class="client-review-stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </p>
+        </blockquote>
+      </div>
+      <div class="carousel-item text-center p-4">
+        <blockquote class="blockquote text-center">
+          <p class="mb-0"><i class="fa fa-quote-left"></i> A person who never made a mistake never tried anything new.
+          </p>
+            <h4>David Wood</h4>
+                  <span>Chief Accountant</span>
+          <!-- Client review stars -->
+          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+          <p class="client-review-stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
+      <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
+    </ol>
+  </div>
+</div>
 
 </div>
 <script>
@@ -565,6 +631,42 @@ $(document).ready(function(){
 
 
 });
+
+
+
+(function () {
+  "use strict";
+
+  var carousels = function () {
+    $(".owl-carousel1").owlCarousel({
+      loop: true,
+      center: true,
+      margin: 0,
+      responsiveClass: true,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false
+        },
+        680: {
+          items: 2,
+          nav: false,
+          loop: false
+        },
+        1000: {
+          items: 3,
+          nav: true
+        }
+      }
+    });
+  };
+
+  (function ($) {
+    carousels();
+  })(jQuery);
+})();
+
 </script>
 
 {% endblock %}
