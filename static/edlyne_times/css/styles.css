@@ -311,6 +311,7 @@ padding-left: 40px;
     padding:10px;
     font-font:var(--font1) !important;
     font-size:14px;
+    line-height:30px;
 }
 
 .rowsetting h2 {
@@ -1922,6 +1923,9 @@ header .side-menu-close span {
 
 .service-item .down-content p {
 	margin-bottom: 20px;
+	font-size: 14px !important;
+    color: #666666 !important;
+    line-height: 25px !important;
 }
 
 .section-heading {
