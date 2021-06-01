@@ -278,7 +278,7 @@ padding-left: 40px;
       z-index:1;
       position:absolute;
       top:50px;
-      left:50px;
+      left:75px;
     }
 
 .sub_video_container {
@@ -295,6 +295,10 @@ padding-left: 40px;
     color: #ffffff;
 }
 
+.ourservices h2{
+    font-size: 36px;
+    font-weight: 600;
+}
 
 .ourservices span{
     font-size:50px !important;
