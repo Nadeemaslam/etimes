@@ -340,6 +340,9 @@ def research(request, exchange):
 def services(request):
     return render(request, 'edlyne_times/services.html')
 
+def news(request):
+    return render(request, 'edlyne_times/news.html')
+
 def products(request, exchange):
 
     user_category = request.user.groups.all().values()

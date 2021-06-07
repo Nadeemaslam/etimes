@@ -4,14 +4,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="One of the best equity research websites,
-        ETimes Media focuses on providing its clients full support and updated research on stock markets across the globe. " />
-        <meta name="keywords" content="equity research firms, equity market research, equity research company in india,
-        market research companies in india,equity research canada, top stock research websites, investing in equities " />
+        <meta name="description" content="Browse the latest and interesting reads on startups, entrepreneurship, share market, unicorns, mergers and acquisitions, layoffs and more on ETimes Media! " />
+        <meta name="keywords" content="equity research firms, equity market research, equity research company in india, market research companies in india,equity research canada, top stock research websites, investing in equities  " />
         <meta name="author" content="" />
         <link rel="icon" href="{% static 'edlyne_times/assets/img/et_logo.png' %}" sizes="32x32" type="image/png">
 
-        <title>Contact Us For the Latest Research on Share Market</title>
+        <title>Updated Stock Market News</title>
 
 
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -141,7 +139,7 @@
 
               </li>
               <li>
-                <a href="{% url 'news' %}" class="d-block" title="About">
+                <a href="" class="d-block" title="About">
                   <span>News</span>
                 </a>
               </li>
@@ -219,71 +217,24 @@
 
     </div> <!--bg.image ends here-->
 
-<div class="bg-img">
-            <div class="error_message">
-                    {% for message in messages %}
-                            <div class="alert alert-danger">
-                                <a class="close" href="#" data-dismiss="alert">×</a>
-
-                                {{ message }}
-
-                            </div>
-                    {% endfor %}
-
-              </div>
-      <div class="content">
-
-          {% if message %}
-          <center><h3 class="alert alert-danger">{{message}}! </h3>
-          <!--<p class="text-white">Your Response is Recieved.</p>-->
-          </center>
-          {% elif success_message %}
-          <center><h3 class="alert alert-success">{{success_message}}! </h3>
-          <p class="text-white">Your Response is Recieved.</p>
-          </center>
-         {% endif %}
-        <header>Contact Us</header>
 
 
-        <form method="POST" action="">
-                        {% csrf_token %}
-          <div class="field">
-            <span class="fa fa-user"></span>
-            {{form.contact_name}}
-          </div>
-
-            <div class="field space">
-            <span class="fa fa-envelope"></span>
-               {{form.contact_email}}
-            <span class="show">SHOW</span>
-          </div>
-
-             <div class="field space">
-            <span class="fa fa-phone"></span>
-               {{form.contact_phone}}
-            <span class="show">SHOW</span>
-          </div>
-           <div class="field space">
-            <span class="fa fa-comment"></span>
-               {{form.comment}}
-            <span class="show">SHOW</span>
-          </div>
 
 
-            <!--<div class="pass">-->
-                        <!--<a href="#">Forgot Password?</a>-->
-                      <!--</div>-->
-            <br>
-            <div class="field">
-                        <input type="submit" value="Submit">
-                      </div>
-</form>
-<br>
-
-</div>
-</div>
-
-<div class="clear"></div>
+     {% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-center">Stock Market Analysis Made Simple</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endblock  %}
+    <div class="clear"></div>
      <!--Footer-->
     <footer class="footer">
         <div class="container top-footer">
