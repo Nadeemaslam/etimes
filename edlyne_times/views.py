@@ -14,65 +14,61 @@ from django.shortcuts import redirect
 
 from django.http import JsonResponse, HttpResponse
 
-@sync_to_async
-def get_nasdaq_gainers_async():
+def get_nasdaq_gainers(request):
+    res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
 
-
-    res = requests.get('https://www.investcom.com/us/mpgnasdaq.htm')
-    soup = bs4.BeautifulSoup(res.text,"xml")
-    div1 = soup.find_all('div', {"class": "genTable"})
-    table = div1[0].find('table')
-    u = table.find_all('u')
-    font = table.find_all('font')
     res = {}
-    if len(u) > 0:
-        res[u[0].text] = [u[1].text, font[0].text, font[1].text]
-    if len(u) > 2:
-        res[u[2].text] = [u[3].text, font[2].text, font[3].text]
-    if len(u) > 4:
-        res[u[4].text] = [u[5].text, font[4].text, font[5].text]
-    if len(u) > 6:
-        res[u[6].text] = [u[7].text, font[6].text, font[7].text]
-    if len(u) > 8:
-        res[u[8].text] = [u[9].text, font[8].text, font[9].text]
-    if len(u) > 10:
-        res[u[10].text] = [u[11].text, font[10].text, font[11].text]
-    if len(u) > 12:
-        res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    return res
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+    return JsonResponse(res)
 
 
-@sync_to_async
-def get_nasdaq_losers_async():
-    res = requests.get('https://www.investcom.com/us/mplnasdaq.htm')
-    soup = bs4.BeautifulSoup(res.text, "xml")
-    div1 = soup.find_all('div', {"class": "genTable"})
-    table = div1[0].find('table')
-    u = table.find_all('u')
-    font = table.find_all('font')
+def get_nasdaq_losers(request):
+    res = requests.get('https://munafasutra.com/nasdaq/top/LOSERS/Day',  verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
+
     res = {}
-    if len(u) > 0:
-        res[u[0].text] = [u[1].text, font[0].text, font[1].text]
-    if len(u) > 2:
-        res[u[2].text] = [u[3].text, font[2].text, font[3].text]
-    if len(u) > 4:
-        res[u[4].text] = [u[5].text, font[4].text, font[5].text]
-    if len(u) > 6:
-        res[u[6].text] = [u[7].text, font[6].text, font[7].text]
-    if len(u) > 8:
-        res[u[8].text] = [u[9].text, font[8].text, font[9].text]
-    if len(u) > 10:
-        res[u[10].text] = [u[11].text, font[10].text, font[11].text]
-    if len(u) > 12:
-        res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    return res
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+    return JsonResponse(res)
 
 
 @sync_to_async
 def get_nyse_gainers_async():
 
 
-    res = requests.get('https://www.investcom.com/us/mpgnyse.htm')
+    res = requests.get('https://www.investcom.com/us/mpgnyse.htm', verify=False)
     soup = bs4.BeautifulSoup(res.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
@@ -98,7 +94,7 @@ def get_nyse_gainers_async():
 
 @sync_to_async
 def get_nyse_losers_async():
-    res = requests.get('https://www.investcom.com/us/mplnyse.htm')
+    res = requests.get('https://www.investcom.com/us/mplnyse.htm', verify=False)
     soup = bs4.BeautifulSoup(res.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
@@ -134,7 +130,7 @@ def get_nse_gainers_async():
 def get_tsx_gainers_async():
 
 
-    res = requests.get('https://www.investcom.com/page/mpgtoronto.htm')
+    res = requests.get('https://www.investcom.com/page/mpgtoronto.htm', verify=False)
     soup = bs4.BeautifulSoup(res.text,"xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
@@ -160,7 +156,7 @@ def get_tsx_gainers_async():
 
 @sync_to_async
 def get_tsx_losers_async():
-    res = requests.get('https://www.investcom.com/page/mpltoronto.htm')
+    res = requests.get('https://www.investcom.com/page/mpltoronto.htm', verify=False )
     soup = bs4.BeautifulSoup(res.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
@@ -285,8 +281,8 @@ def get_nse_losers_async():
 
 async  def index(request):
     start_time = time.time()
-    task1 = asyncio.ensure_future(get_nasdaq_gainers_async())
-    task2 = asyncio.ensure_future(get_nasdaq_losers_async())
+    # task1 = asyncio.ensure_future(get_nasdaq_gainers_async())
+    # task2 = asyncio.ensure_future(get_nasdaq_losers_async())
     task3 = asyncio.ensure_future(get_nyse_gainers_async())
     task4 = asyncio.ensure_future(get_nyse_losers_async())
     task5 = asyncio.ensure_future(get_tsx_gainers_async())
@@ -295,9 +291,10 @@ async  def index(request):
     # task8 = asyncio.ensure_future(get_bse_losers_async())
     # task9 = asyncio.ensure_future(get_nse_gainers_async())
     # task10 = asyncio.ensure_future(get_nse_losers_async())
-    await asyncio.wait([task1, task2, task3, task4, task5, task6])
+    await asyncio.wait([task3, task4, task5, task6])
 
-    context = {'nasdaq_gainers': task1.result(), 'nasdaq_losers': task2.result(),
+    context = {
+               #  'nasdaq_gainers': task1.result(), 'nasdaq_losers': task2.result(),
                'nyse_gainers': task3.result(), 'nyse_losers': task4.result(),
                'tsx_gainers': task5.result(), 'tsx_losers': task6.result(),
                # 'bse_gainers': task7.result(), 'bse_losers': task8.result(),
@@ -471,7 +468,7 @@ def products(request, exchange):
 
 def get_bse_gainers(request):
 
-    res = requests.get('https://money.rediff.com/gainers/bse')
+    res = requests.get('https://money.rediff.com/gainers/bse', verify=False )
     soup = bs4.BeautifulSoup(res.text, "lxml")
     table = soup.find('table', {"class": "dataTable"})
     td = table.find_all('td')
@@ -495,7 +492,7 @@ def get_bse_gainers(request):
     return JsonResponse(res)
 
 def get_bse_losers(request):
-    res = requests.get('https://money.rediff.com/losers/bse/daily')
+    res = requests.get('https://money.rediff.com/losers/bse/daily', verify=False)
     soup = bs4.BeautifulSoup(res.text, "lxml")
     table = soup.find('table', {"class": "dataTable"})
     td = table.find_all('td')
@@ -520,7 +517,7 @@ def get_bse_losers(request):
 
 
 def get_nse_gainers(request):
-    res = requests.get('https://money.rediff.com/gainers/nse')
+    res = requests.get('https://money.rediff.com/gainers/nse', verify=False)
     soup = bs4.BeautifulSoup(res.text, "lxml")
     table = soup.find('table', {"class": "dataTable"})
     td = table.find_all('td')
@@ -543,7 +540,7 @@ def get_nse_gainers(request):
     return JsonResponse(res)
 
 def get_nse_losers(request):
-    res = requests.get('https://money.rediff.com/losers/nse/daily')
+    res = requests.get('https://money.rediff.com/losers/nse/daily', verify=False)
     soup = bs4.BeautifulSoup(res.text, "lxml")
     table = soup.find('table', {"class": "dataTable"})
     td = table.find_all('td')

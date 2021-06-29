@@ -66,22 +66,14 @@
                                         <table class="table table-striped home-nse-gainer-table">
                                   <thead class="nse-table-head">
                                     <tr>
-                                      <th scope="col">Symbol</th>
-                                      <th scope="col">Company</th>
-                                      <th scope="col">Change </th>
-                                      <th scope="col">%Change </th>
+                                          <th scope="col">Company</th>
+                                          <th scope="col">Prev Price</th>
+                                          <th scope="col">Current Price </th>
+                                          <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in nasdaq_gainers.items %}
+                                  <tbody id="nasdaq_gainers_tbody">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>{{i}}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -89,22 +81,15 @@
                                         <table class="table table-striped home-nse-loser-table">
                                               <thead class="nse-table-head">
                                                 <tr>
-                                                  <th scope="col">Symbol</th>
                                                   <th scope="col">Company</th>
-                                                  <th scope="col">Change </th>
+                                                  <th scope="col">Prev Price</th>
+                                                  <th scope="col">Current Price </th>
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in nasdaq_losers.items %}
+                                           <tbody id="nasdaq_losers_tbody" class="nse-table-body">
 
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
+
                                               </tbody>
                                             </table>
                                         </div>
@@ -519,7 +504,6 @@
 <script>
 
 
-
 $(document).ready(function(){
 //   bse gainers
     $.ajax({
@@ -615,7 +599,7 @@ $(document).ready(function(){
    });
 
 
-//   nyse losers
+//   nse losers
     $.ajax({
       type:'GET',
       url:'/nse_losers'    ,
@@ -647,6 +631,68 @@ $(document).ready(function(){
 
 });
 
+
+$(document).ready(function(){
+    $.ajax({
+      type:'GET',
+      url:'/nasdaq_gainers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nasdaq_gainers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+//   nse losers
+    $.ajax({
+      type:'GET',
+      url:'/nasdaq_losers'    ,
+      cache:false,
+      async:'false',
+      dataType:'json',
+      success: function(data) {
+        console.log(data)
+        var tableData = '<table>'
+        $.each(data, function(key, value){
+        tableData += '<tr>';
+        tableData += '<td>' + key + '</td>';
+        tableData += '<td>' + value[0] + '</td>';
+        tableData += '<td>' + value[1] + '</td>';
+        tableData += '<td>' + value[2] + '</td>';
+
+        tableData += '</tr>';
+            });
+        tableData += '</table>';
+
+        $('#nasdaq_losers_tbody').html(tableData);
+
+      },
+      error: function( error) {
+        console.log("Error: " + error)
+      }
+   });
+
+
+});
 
 
 (function () {

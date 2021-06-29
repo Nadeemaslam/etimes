@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'nse_gainers/', views.get_nse_gainers, name='nse_gainers'),
     url(r'bse_losers/', views.get_bse_losers, name='bse_losers'),
     url(r'bse_gainers/', views.get_bse_gainers, name='bse_gainers'),
+    url(r'nasdaq_losers/', views.get_nasdaq_losers, name='nasdaq_losers'),
+    url(r'nasdaq_gainers/', views.get_nasdaq_gainers, name='nasdaq_gainers'),
 ]
