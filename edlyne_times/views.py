@@ -554,7 +554,7 @@ def get_nse_gainers(request):
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
     if len(td) > 28:
-    res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
+        res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
     return JsonResponse(res)
 
 def get_nse_losers(request):
