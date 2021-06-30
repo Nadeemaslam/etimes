@@ -61,10 +61,6 @@ def get_nasdaq_losers(request):
         res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
-    if len(u) > 14:
-        res[u[14].text.lstrip()] = [u[15].text, font[14].text, font[15].text[:-7]]
-    if len(u) > 16:
-        res[u[16].text.lstrip()] = [u[17].text, font[16].text, font[17].text[:-7]]
     return JsonResponse(res)
 
 
