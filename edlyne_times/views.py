@@ -15,56 +15,56 @@ from django.shortcuts import redirect
 from django.http import JsonResponse, HttpResponse
 
 def get_nasdaq_gainers(request):
-    # res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
-    # soup = bs4.BeautifulSoup(res.text, "lxml")
-    # table = soup.find_all('table')
-    # td = table[1].find_all('td')
+    res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
     #
     res = {}
-    # # if len(td) > 0:
-    # #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
-    # if len(td) > 4:
-    #     res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
-    #     text = td[5].text
-    # if len(td) > 8:
-    #     res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
-    # if len(td) > 12:
-    #     res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
-    # if len(td) > 16:
-    #     res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
-    # if len(td) > 20:
-    #     res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
-    # if len(td) > 24:
-    #     res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
     return JsonResponse(res)
 
 
 def get_nasdaq_losers(request):
-    # res = requests.get('https://munafasutra.com/nasdaq/top/LOSERS/Day',  verify=False)
-    # soup = bs4.BeautifulSoup(res.text, "lxml")
-    # table = soup.find_all('table')
-    # td = table[1].find_all('td')
+    res = requests.get('https://munafasutra.com/nasdaq/top/LOSERS/Day',  verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
     #
     res = {}
-    # # if len(td) > 0:
-    # #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
-    # if len(td) > 4:
-    #     res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
-    #     text = td[5].text
-    # if len(td) > 8:
-    #     res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
-    # if len(td) > 12:
-    #     res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
-    # if len(td) > 16:
-    #     res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
-    # if len(td) > 20:
-    #     res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
-    # if len(td) > 24:
-    #     res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
-    # if len(u) > 14:
-    #     res[u[14].text.lstrip()] = [u[15].text, font[14].text, font[15].text[:-7]]
-    # if len(u) > 16:
-    #     res[u[16].text.lstrip()] = [u[17].text, font[16].text, font[17].text[:-7]]
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+    if len(u) > 14:
+        res[u[14].text.lstrip()] = [u[15].text, font[14].text, font[15].text[:-7]]
+    if len(u) > 16:
+        res[u[16].text.lstrip()] = [u[17].text, font[16].text, font[17].text[:-7]]
     return JsonResponse(res)
 
 
@@ -72,58 +72,58 @@ def get_nasdaq_losers(request):
 def get_nyse_gainers_async():
 
 
-    # res = requests.get('https://www.investcom.com/us/mpgnyse.htm', verify=False)
-    # soup = bs4.BeautifulSoup(res.text, "xml")
-    # div1 = soup.find_all('div', {"class": "genTable"})
-    # table = div1[0].find('table')
-    # u = table.find_all('u')
-    # font = table.find_all('font')
+    res = requests.get('https://www.investcom.com/us/mpgnyse.htm', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "xml")
+    div1 = soup.find_all('div', {"class": "genTable"})
+    table = div1[0].find('table')
+    u = table.find_all('u')
+    font = table.find_all('font')
     res = {}
-    # if len(u) > 0:
-    #     res[u[0].text] = [u[1].text, font[0].text, font[1].text]
-    # if len(u) > 2:
-    #     res[u[2].text] = [u[3].text, font[2].text, font[3].text]
-    # if len(u) > 4:
-    #     res[u[4].text] = [u[5].text, font[4].text, font[5].text]
-    # if len(u) > 6:
-    #     res[u[6].text] = [u[7].text, font[6].text, font[7].text]
-    # if len(u) > 8:
-    #     res[u[8].text] = [u[9].text, font[8].text, font[9].text]
-    # if len(u) > 10:
-    #     res[u[10].text] = [u[11].text, font[10].text, font[11].text]
-    # if len(u) > 12:
-    #     res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    # if len(u) > 14:
-    #     res[u[14].text] = [u[15].text, font[14].text, font[15].text]
+    if len(u) > 0:
+        res[u[0].text] = [u[1].text, font[0].text, font[1].text]
+    if len(u) > 2:
+        res[u[2].text] = [u[3].text, font[2].text, font[3].text]
+    if len(u) > 4:
+        res[u[4].text] = [u[5].text, font[4].text, font[5].text]
+    if len(u) > 6:
+        res[u[6].text] = [u[7].text, font[6].text, font[7].text]
+    if len(u) > 8:
+        res[u[8].text] = [u[9].text, font[8].text, font[9].text]
+    if len(u) > 10:
+        res[u[10].text] = [u[11].text, font[10].text, font[11].text]
+    if len(u) > 12:
+        res[u[12].text] = [u[13].text, font[12].text, font[13].text]
+    if len(u) > 14:
+        res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
     return res
 
 
 @sync_to_async
 def get_nyse_losers_async():
-    # res = requests.get('https://www.investcom.com/us/mplnyse.htm', verify=False)
-    # soup = bs4.BeautifulSoup(res.text, "xml")
-    # div1 = soup.find_all('div', {"class": "genTable"})
-    # table = div1[0].find('table')
-    # u = table.find_all('u')
-    # font = table.find_all('font')
+    res = requests.get('https://www.investcom.com/us/mplnyse.htm', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "xml")
+    div1 = soup.find_all('div', {"class": "genTable"})
+    table = div1[0].find('table')
+    u = table.find_all('u')
+    font = table.find_all('font')
     res = {}
-    # if len(u) > 0:
-    #     res[u[0].text] = [u[1].text, font[0].text, font[1].text]
-    # if len(u) > 2:
-    #     res[u[2].text] = [u[3].text, font[2].text, font[3].text]
-    # if len(u) > 4:
-    #     res[u[4].text] = [u[5].text, font[4].text, font[5].text]
-    # if len(u) > 6:
-    #     res[u[6].text] = [u[7].text, font[6].text, font[7].text]
-    # if len(u) > 8:
-    #     res[u[8].text] = [u[9].text, font[8].text, font[9].text]
-    # if len(u) > 10:
-    #     res[u[10].text] = [u[11].text, font[10].text, font[11].text]
-    # if len(u) > 12:
-    #     res[u[12].text] = [u[13].text, font[12].text, font[13].text]
-    # if len(u) > 14:
-    #     res[u[14].text] = [u[15].text, font[14].text, font[15].text]
+    if len(u) > 0:
+        res[u[0].text] = [u[1].text, font[0].text, font[1].text]
+    if len(u) > 2:
+        res[u[2].text] = [u[3].text, font[2].text, font[3].text]
+    if len(u) > 4:
+        res[u[4].text] = [u[5].text, font[4].text, font[5].text]
+    if len(u) > 6:
+        res[u[6].text] = [u[7].text, font[6].text, font[7].text]
+    if len(u) > 8:
+        res[u[8].text] = [u[9].text, font[8].text, font[9].text]
+    if len(u) > 10:
+        res[u[10].text] = [u[11].text, font[10].text, font[11].text]
+    if len(u) > 12:
+        res[u[12].text] = [u[13].text, font[12].text, font[13].text]
+    if len(u) > 14:
+        res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
     return res
 
@@ -533,51 +533,51 @@ def get_bse_losers(request):
 
 
 def get_nse_gainers(request):
-    # res = requests.get('https://money.rediff.com/gainers/nse', verify=False)
-    # soup = bs4.BeautifulSoup(res.text, "lxml")
-    # table = soup.find('table', {"class": "dataTable"})
-    # td = table.find_all('td')
-    #
-    # res = {}
-    # if len(td) > 0:
-    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
-    # if len(td) > 4:
-    #     res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
-    # if len(td) > 8:
-    #     res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
-    # if len(td) > 12:
-    #     res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
-    # if len(td) > 16:
-    #     res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
-    # if len(td) > 20:
-    #     res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
-    # if len(td) > 24:
-    #     res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
-    # if len(td) > 28:
-    # res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
+    res = requests.get('https://money.rediff.com/gainers/nse', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
+    if len(td) > 28:
+    res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
     return JsonResponse(res)
 
 def get_nse_losers(request):
-    # res = requests.get('https://money.rediff.com/losers/nse/daily', verify=False)
-    # soup = bs4.BeautifulSoup(res.text, "lxml")
-    # table = soup.find('table', {"class": "dataTable"})
-    # td = table.find_all('td')
-    #
-    # res = {}
-    # if len(td) > 0:
-    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
-    # if len(td) > 4:
-    #     res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
-    # if len(td) > 8:
-    #     res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
-    # if len(td) > 12:
-    #     res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
-    # if len(td) > 16:
-    #     res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
-    # if len(td) > 20:
-    #     res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
-    # if len(td) > 24:
-    #     res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
-    # if len(td) > 28:
-    #     res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
+    res = requests.get('https://money.rediff.com/losers/nse/daily', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find('table', {"class": "dataTable"})
+    td = table.find_all('td')
+
+    res = {}
+    if len(td) > 0:
+        res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
+    if len(td) > 28:
+        res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
     return JsonResponse(res)
