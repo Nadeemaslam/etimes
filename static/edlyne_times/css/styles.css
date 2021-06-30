@@ -110,8 +110,8 @@ body, html { overflow-x:hidden; }
 }
 
 .first_content_wrapper {
-    margin:40px 40px 0 0;
-     border-bottom: 1px solid red;
+   /* margin:40px 40px 0 0;
+     border-bottom: 1px solid red;*/
 
 }
 
@@ -269,7 +269,7 @@ padding-left: 40px;
 
 
 /*sub video container*/
-.sub_video_container video{
+.sub-video{
     width:100%;
 }
   .ourservices {
@@ -513,6 +513,29 @@ input:checked~ul.submenu {
 
 .social_icons a {
     font-size:4em;
+}
+
+.table {
+    color: #000 !important;
+}
+
+.table-container {
+    height:155vh !important;
+    }
+
+#tabs-nav li a {
+    font-size:12px !important;
+}
+#tabs-bar ul li {
+    padding-right:0px !important;
+}
+
+.first_content_wrapper h2{
+   color:#000 !important;
+}
+
+.mobile-table-view {
+    margin-left:-40px !important;
 }
 
 }
@@ -1213,6 +1236,10 @@ dropdown research_submenu
 
 
 
+.table {
+color:#ffffff;
+}
+
  /*NSE data table*/
 .home-nse-gainer-table .nse-table-head{
     background-color:#009900;
@@ -1351,7 +1378,7 @@ dropdown research_submenu
     padding:10px 15px;
     font-size: 16px;
     font-weight: 500;
-    color: #345F90;
+    color: #a4c639;
     text-align: left;
     border-top:1px solid #ececec;
     border-right:1px solid #ececec;
@@ -1362,7 +1389,7 @@ dropdown research_submenu
 }
 #tabs-nav li a.current, #tabs-nav li a:hover {
     border-bottom:0px solid #ececec;
-    background: #345F90;
+    background: #a4c639;
     color:#ffffff !important;
 }
 #tabs-content-wrap {
@@ -1911,6 +1938,7 @@ header .side-menu-close span {
 
 .services {
 	padding-top:40px;
+	padding-bottom:30px;
 }
 
 .service-item img {
@@ -2297,3 +2325,33 @@ ul.slick-dots {
 .slick-initialized .slick-slide{display:block}
 .slick-loading .slick-slide{visibility:hidden}
 .slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}
+
+
+
+.table-container {
+    width:100%; height:105vh;
+    position:relative;
+    display:inline-block;
+    margin: 0;
+}
+.vid {
+    position: absolute;
+    top: 0; left:0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+.first_content_wrapper {
+    position:absolute;
+    top:0; left:0;
+    color:white;
+    width:100%;
+}
+
+.table-container span{
+   /* display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 1px;*/
+}

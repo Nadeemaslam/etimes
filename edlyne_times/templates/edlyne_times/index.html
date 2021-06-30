@@ -37,17 +37,26 @@
             <source src="{% static 'edlyne_times/assets/video/home_video.mp4' %}" type="video/mp4">
             </video>
              </div>
-             Banner Starts Here
 
         </section>
 
 
 
 
+<section class="table-container">
 
-
+    <div class="vid">
+    <video autoplay  loop muted poster="" class="sub-video">
+        <source src="{% static 'edlyne_times/assets/video/stock.mp4' %}" type="video/mp4">
+    </video>
+    </div>
     <!--section first content-->
     <section class="first_content_wrapper">
+        <br>
+        <br>
+            <h2 class="text-center"><em> Stock</em>/Market</h2><p class="text-center">Top Daily Gainers/losers.</p>
+        <br>
+
         <div id="tabs-bar">
     <ul id="tabs-nav">
         <li><a href="#th-tab-one" class="current">NASDAQ</a></li>
@@ -63,7 +72,7 @@
 <div id="tabs-content-wrap">
     <ul>
         <li id="th-tab-one" class="tab-content">
-            <div class="row ">
+            <div class="row mobile-table-view">
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
                                         <table class="table table-striped home-nse-gainer-table">
                                   <thead class="nse-table-head">
@@ -150,7 +159,7 @@
         </li>
         <!-- ends Tab Two Content -->
         <li id="th-tab-three" class="tab-content">
-            <div class="row ">
+            <div class="row mobile-table-view">
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
                                         <table class="table table-striped home-nse-gainer-table">
                                   <thead class="nse-table-head">
@@ -279,6 +288,60 @@
 
 
     </section>
+</section>
+
+        <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our <em>Services</em></h2>
+              <span>We embrace your dreams of financial growth.</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <img src="{% static 'edlyne_times/assets/img/service_01.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Equity Research</h4>
+                <p>
+                    With a universe of about 15000 companies under coverage, we are the best equipped to provide you with an independent opinion on fair value. Our valuation represents the most likely price around which a deal can happen, if more than one independently acting potential buyer/seller is found after adequate efforts, but within a limited timeframe after our analysis.
+                    We offer full support in finding your way into the world of stock market.
+                </p>
+                <a href="{% url 'services' %}" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <img src="{% static 'edlyne_times/assets/img/service_02.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Company Analysis</h4>
+                <p>
+                    Our aim is to provide you with the status-quo of a company’s performance and enlightening our clients with its overall risk assessments, growth prospects, liquidity, key investment highlights, future prospects, business outlook dynamics, share price, performance analysis, key fundamentals and shareholder statistics, etc., thus helping you get the better picture of the company’s growth.
+
+                </p>
+                <a href="{% url 'services' %}" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <img src="{% static 'edlyne_times/assets/img/service_03.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Financial Reports</h4>
+                <p>
+                    Our team of experts work strenuously and methodically to provide you with the financial reports conveying the overall financial health of a company you’re planning to invest in, including the net sales turnover, stock adjustments, operating profit, prior year adjustments, EBITDA, reported PAT, reserves and surplus, ROA, ROE, IIEA, CTI, P/E, debt to equity ratio and more.
+
+                </p>
+                <a href="{% url 'services' %}" class="filled-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
  <div class="main-banner header-text" id="top">
         <div class="Modern-Slider">
@@ -381,108 +444,6 @@
 
 
 
-        <div class="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Our <em>Services</em></h2>
-              <span>We embrace your dreams of financial growth.</span>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{% static 'edlyne_times/assets/img/service_01.jpg' %}" alt="">
-              <div class="down-content">
-                <h4>Equity Research</h4>
-                <p>
-                    With a universe of about 15000 companies under coverage, we are the best equipped to provide you with an independent opinion on fair value. Our valuation represents the most likely price around which a deal can happen, if more than one independently acting potential buyer/seller is found after adequate efforts, but within a limited timeframe after our analysis.
-                    We offer full support in finding your way into the world of stock market.
-                </p>
-                <a href="{% url 'services' %}" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{% static 'edlyne_times/assets/img/service_02.jpg' %}" alt="">
-              <div class="down-content">
-                <h4>Company Analysis</h4>
-                <p>
-                    Our aim is to provide you with the status-quo of a company’s performance and enlightening our clients with its overall risk assessments, growth prospects, liquidity, key investment highlights, future prospects, business outlook dynamics, share price, performance analysis, key fundamentals and shareholder statistics, etc., thus helping you get the better picture of the company’s growth.
-
-                </p>
-                <a href="{% url 'services' %}" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{% static 'edlyne_times/assets/img/service_03.jpg' %}" alt="">
-              <div class="down-content">
-                <h4>Financial Reports</h4>
-                <p>
-                    Our team of experts work strenuously and methodically to provide you with the financial reports conveying the overall financial health of a company you’re planning to invest in, including the net sales turnover, stock adjustments, operating profit, prior year adjustments, EBITDA, reported PAT, reserves and surplus, ROA, ROE, IIEA, CTI, P/E, debt to equity ratio and more.
-
-                </p>
-                <a href="{% url 'services' %}" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="fun-facts">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="left-content">
-              <span>Top Market Research Company</span>
-              <h2>Our Solutions for Your  <em>Financial Growth</em></h2>
-              <p>
-                  Our goal is to provide our customers with information on the market. Lack of information creates ineptitude that results in stocks being misrepresented. Our analysts spend a lot of time examining a stock, its industry, and its peer group to provide earnings and valuation guesstimate with their understanding and mastery.
-                <br>
-                <br>
-                  Research analysts share their insights and industry know-how with investors who may not have them or may not have the time to develop them. Our research is thus valuable and helpful for our clients as it fills information gaps so that our investors need not analyze every stock.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 align-self-center">
-            <div class="row" id="counter">
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="counter-value count-digit" data-count="945">200</div>
-                  <div class="count-title">Work Hours</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="counter-value count-digit" data-count="1280">500</div>
-                  <div class="count-title">Great Reviews</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="counter-value count-digit" data-count="578">100</div>
-                  <div class="count-title">Projects Done</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="counter-value count-digit" data-count="1327">500</div>
-                  <div class="count-title">Subscribers</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
  <div class="col-lg-12  testimonials">
      <div class="section-heading">
               <h2>What they say <em>about us</em></h2>
@@ -549,6 +510,57 @@
     </ol>
   </div>
 </div>
+
+
+
+
+    <div class="fun-facts">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-content">
+              <span>Top Market Research Company</span>
+              <h2>Our Solutions for Your  <em>Financial Growth</em></h2>
+              <p>
+                  Our goal is to provide our customers with information on the market. Lack of information creates ineptitude that results in stocks being misrepresented. Our analysts spend a lot of time examining a stock, its industry, and its peer group to provide earnings and valuation guesstimate with their understanding and mastery.
+                <br>
+                <br>
+                  Research analysts share their insights and industry know-how with investors who may not have them or may not have the time to develop them. Our research is thus valuable and helpful for our clients as it fills information gaps so that our investors need not analyze every stock.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 align-self-center">
+            <div class="row" id="counter">
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="945">200</div>
+                  <div class="count-title">Work Hours</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="1280">500</div>
+                  <div class="count-title">Great Reviews</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="3956">2500</div>
+                  <div class="count-title">Reports Done</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="1327">500</div>
+                  <div class="count-title">Subscribers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 </div>
 <script>
