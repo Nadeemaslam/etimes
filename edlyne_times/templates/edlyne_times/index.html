@@ -13,16 +13,16 @@
                             <button class="btn btn-warning text-white btn-lg subscribe-btn">SUBSCRIBE</button>
                          </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-10 col-12 video_right_section">
+                    <div class="col-lg-6 col-md-6 col-sm-10 col-12 video_right_section" id="topcounter">
                         <!--Text Block 1-->
                               <div class="text-block1">
                                 <i class="fa fa-line-chart fa-3x text-white icons"></i>
-                                <h4>NIFTY50</h4>
-                                <p>sunrise</p>
+                                <div class="topcounter-value count-digit" data-count="2500">2300</div>
+                                <p>Reports</p>
                               </div>
 
-                               <div class="text-block2">
-                                <h3>1200K</h3>
+                               <div class="text-block2" >
+                                <div class="topcounter-value count-digit" data-count="945">900</div>
                                 <i class="fa fa-circle-o-notch fa-3x text-white" aria-hidden="true"></i>
                                 <p>Subscribers</p>
                               </div>
@@ -59,8 +59,8 @@
 
         <div id="tabs-bar">
     <ul id="tabs-nav">
-        <li><a href="#th-tab-one" class="current">NASDAQ</a></li>
-        <li><a href="#th-tab-two">NYSE</a></li>
+        <li><a href="#th-tab-one" class="current">NYSE</a></li>
+        <li><a href="#th-tab-two">NASDAQ</a></li>
         <li><a href="#th-tab-three">TSX</a></li>
         <li><a href="#th-tab-four">BSE</a></li>
         <li><a href="#th-tab-five">NSE</a></li>
@@ -72,42 +72,6 @@
 <div id="tabs-content-wrap">
     <ul>
         <li id="th-tab-one" class="tab-content">
-            <div class="row mobile-table-view">
-                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
-                                        <table class="table table-striped home-nse-gainer-table">
-                                  <thead class="nse-table-head">
-                                    <tr>
-                                          <th scope="col">Company</th>
-                                          <th scope="col">Prev Price</th>
-                                          <th scope="col">Current Price </th>
-                                          <th scope="col">%Change </th>
-                                    </tr>
-                                  </thead>
-                                  <tbody id="nasdaq_gainers_tbody">
-
-                                  </tbody>
-                                </table>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
-                                        <table class="table table-striped home-nse-loser-table">
-                                              <thead class="nse-table-head">
-                                                <tr>
-                                                  <th scope="col">Company</th>
-                                                  <th scope="col">Prev Price</th>
-                                                  <th scope="col">Current Price </th>
-                                                  <th scope="col">%Change </th>
-                                                </tr>
-                                              </thead>
-                                           <tbody id="nasdaq_losers_tbody" class="nse-table-body">
-
-
-                                              </tbody>
-                                            </table>
-                                        </div>
-                                 </div>
-        </li>
-        <!-- Ends Tab One Content -->
-        <li id="th-tab-two" class="tab-content">
             <div class="row ">
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
                                         <table class="table table-striped home-nse-gainer-table">
@@ -156,6 +120,43 @@
                                             </table>
                                         </div>
                                  </div>
+        </li>
+        <!-- Ends Tab One Content -->
+        <li id="th-tab-two" class="tab-content">
+            <div class="row mobile-table-view">
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-gainer-table">
+                                  <thead class="nse-table-head">
+                                    <tr>
+                                          <th scope="col">Company</th>
+                                          <th scope="col">Prev Price</th>
+                                          <th scope="col">Current Price </th>
+                                          <th scope="col">%Change </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="nasdaq_gainers_tbody">
+
+                                  </tbody>
+                                </table>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-10 col-sm-10">
+                                        <table class="table table-striped home-nse-loser-table">
+                                              <thead class="nse-table-head">
+                                                <tr>
+                                                  <th scope="col">Company</th>
+                                                  <th scope="col">Prev Price</th>
+                                                  <th scope="col">Current Price </th>
+                                                  <th scope="col">%Change </th>
+                                                </tr>
+                                              </thead>
+                                           <tbody id="nasdaq_losers_tbody" class="nse-table-body">
+
+
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                 </div>
+
         </li>
         <!-- ends Tab Two Content -->
         <li id="th-tab-three" class="tab-content">
@@ -719,7 +720,7 @@ $(document).ready(function(){
    });
 
 
-//   nse losers
+//   nasdaq losers
     $.ajax({
       type:'GET',
       url:'/nasdaq_losers'    ,
