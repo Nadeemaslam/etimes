@@ -520,7 +520,7 @@ input:checked~ul.submenu {
 }
 
 .table-container {
-    height:170vh !important;
+    height:310vh !important;
     }
 
 #tabs-nav li a {
@@ -703,7 +703,7 @@ input:checked~ul.submenu {
 }
 
 .table-container {
-    height:170vh !important;
+    height:310vh !important;
     }
 
 #tabs-nav li a {
@@ -2504,7 +2504,7 @@ ul.slick-dots {
     position: absolute;
     top: 0; left:0;
     width: 100%;
-    height: 116vh;
+    height: 110vh;
     z-index: -1;
 }
 
