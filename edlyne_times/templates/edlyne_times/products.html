@@ -1,6 +1,243 @@
-{% extends 'etimes/base.html' %}
+<!DOCTYPE html>
 {% load static %}
-{% block content %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% if exchange == 'nse' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly NSE reports to stay updated and invest wisely with ETimes Media! " />
+        <meta name="keywords" content="equity research firms, equity market research, equity research company in india, nse india, national stock exchange, nse stock, indian stock exchange, bse nse live " />
+        <meta name="author" content="" />
+        <title>Get Daily Updated NSE Reports - ETimes Media</title>
+        {% elif exchange == 'bse' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly BSE reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research company in india, nse india, bombay stock exchange, bse stock, indian stock exchange, bse nse live" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated BSE Reports - ETimes Media</title>
+        {% elif exchange == 'nasdaq' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly NASDAQ reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research canada, top stock research websites, investing in equities, nasdaq" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated NASDAQ Reports - ETimes Media</title>
+        {% elif exchange == 'tsx' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly TSX reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research canada, top stock research websites, investing in equities, tsx, toronto stock exchange" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated TSX Reports - ETimes Media</title>
+        {% elif exchange == 'nyse' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly NYSE reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research canada, top stock research websites, investing in equities, nyse, new york stock exchange" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated NYSE Reports - ETimes Media</title>
+        {% endif%}
+        <link rel="icon" href="{% static 'edlyne_times/assets/img/et_logo.png' %}" sizes="32x32" type="image/png">
+
+
+
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'edlyne_times/css/utils.css' %}">
+        <link rel="stylesheet" href="{% static 'edlyne_times/css/styles.css' %}">
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNNV7S2BG7"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CNNV7S2BG7');
+        </script>
+    </head>
+    <body id="page-top">
+
+    <div class="bg_image">
+
+<header class="px-2 py-3 py-lg-0 px-sm-0 header" id="main_header">
+      <div class="container">
+        <div class="row align-items-center justify-content-between inner-menu-container">
+          <a href="{% url 'index' %}" title="Site Logo" class="header-logo d-block">
+            <img class="logo" src="{% static 'edlyne_times/assets/img/et_logo.png' %}" alt="image1">
+
+          </a>
+          <nav class="d-none d-lg-block">
+            <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
+              <li class="">
+                <a href="{% url 'index' %}" class="d-block" title="Home">
+                  <span>HOME</span>
+                </a>
+              </li>
+              <li >
+                  <a href="#" class="d-block submenu-mobile" title="Services">
+                      <span>Market Research</span></a>
+                   <div class="dropdown">
+                                <button class="dropbtn">Market Research
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                   <div class="row">
+                                       <div class="col-lg-2 col-md-2 col-sm-2 col-10 submenu-items">
+                                           <a href="{% url 'products' 'nse' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/nse.png' %}" alt="Img">
+                                               <p class="submenu-inner-heading">NSE REPORTS</p>
+                                               </a>
+                                       </div>
+                                       <div class="col-lg-2 col-md-2 col-sm-2 col-10 submenu-items">
+                                           <a href="{% url 'products' 'bse' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/bse1.png' %}" alt="Img">
+                                               <p class="submenu-inner-heading">BSE REPORTS</p>
+                                               </a>
+
+
+                                       </div>
+
+                                       <div class="col-lg-2 col-md-2 col-sm-2 col-10 submenu-items">
+                                           <a href="{% url 'products' 'nyse' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/nyse.jpeg' %}" alt="Img">
+                                                <p class="submenu-inner-heading">NYSE REPORTS</p>
+                                               </a>
+                                       </div>
+
+
+                                       <div class="col-lg-2 col-md-2 col-sm-2  col-10 submenu-items">
+                                           <a href="{% url 'products' 'nasdaq' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/nasdaq1.png' %}" alt="Img">
+                                                <p class="submenu-inner-heading">NASDAQ REPORTS</p>
+                                               </a>
+
+                                       </div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2  col-10 submenu-items ">
+                                           <a class="last-submenu-item" href="{% url 'products' 'tsx' %}">
+                                            <img src="{% static 'edlyne_times/assets/img/tsx.jpg' %}" alt="Img">
+                                                <p class="submenu-inner-heading">TSX REPORTS</p>
+                                               </a>
+
+                                       </div>
+
+                                   </div>
+
+
+                                </div>
+                              </div>
+                <ul class="sub-menu list-unstyled p-0 m-0">
+
+                    <li>
+                        <a href="{% url 'products' 'nse' %}" class="d-block">
+                           <span class="">NSE REPORTS</span>
+                           </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' 'bse' %}" class="d-block">
+                           <span class="">BSE REPORTS</span>
+                           </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' 'nyse' %}" class="d-block">
+                           <span class="">NYSE REPORTS</span>
+                           </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' 'nasdaq' %}" class="d-block">
+                           <span class="">NASDAQ REPORTS</span>
+                           </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' 'tsx' %}" class="d-block">
+                           <span class="">TSX REPORTS</span>
+                           </a>
+                    </li>
+                </ul>
+
+              </li>
+              <li>
+                <a href="{% url 'news' %}" class="d-block" title="About">
+                  <span>News</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}" class="d-block" title="Blog">
+                  <span>Contact Us</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'register'%}" class="d-block" title="Register">
+                  <span>Register</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div id="call-action" class=" d-lg-flex align-items-center">
+            <!--<a href="#" title="Call Now" class="d-none d-lg-inline-block call-action">Call Now</a>-->
+              <div class="login_section ">
+
+
+                    {% if user.is_authenticated %}
+                    <input id="check01" type="checkbox" name="menu" />
+                        <label for="check01" class="dropdown-toggle">
+                                <span class="caret"></span>
+                            <span class="user_profile_section">Hello, <span class="username caret">{{ user.username }}</span></span>
+                        </label>
+                        <ul class="submenu">
+                          <li><a href="{% url 'logout' %}">Logout</a></li>
+
+                        </ul>
+                    <!--<div class="navigation">-->
+
+                        <!--<a class="button" href="">-->
+                        <!--<img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">-->
+
+                      <!--<div class="logout">LOGOUT</div>-->
+
+                        <!--</a>-->
+
+                    <!--</div>-->
+
+                        {% else %}
+                    <a href="{% url 'login' %}"><button type="submit" class="btn" id="login-btn">Sign In</button></a>
+                        {% endif %}
+                </div>
+          </div>
+          <div
+            class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-center ">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+        </nav>
+
+<!-- side menu start -->
+    <div class="side-menu-wrap ">
+      <a href="{% url 'index' %}" title="Site Logo" class="side-menu-logo d-block py-3">
+                    <img class="logo" src="{% static 'edlyne_times/assets/img/et_logo.png' %}" alt="image1">
+      </a>
+      <nav class="side-menu-nav">
+        <!-- auto generated side menu from top header menu -->
+      </nav>
+      <div class="side-menu-close d-flex flex-wrap flex-column align-items-center justify-content-center">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <!-- side menu end -->
+
+
+    </div> <!--bg.image ends here-->
 <div class="clear"></div>
 <br>
 <br>
@@ -210,9 +447,11 @@
                                 <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
                                  {% endif %}
                             {% elif exchange == 'bse' %}
+                            {{bse_resources}}{{nse_dividend}}
                                 {% if bse_resources %}
                                     <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
                                 {% else%}
+
                                     <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
                                 {% endif %}
                             {% elif exchange == 'nyse' %}
@@ -556,4 +795,95 @@
     </div>
 
 
-{% endblock %}
+    <div class="clear"></div>
+     <!--Footer-->
+    <footer class="footer">
+        <div class="container top-footer">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-10 col-12">
+                    <h5>Edlyne Times</h5>
+                    <p>
+                        ETimes Media is the one of the leading independent equity research companies focusing on helping its clients to improve their investment results through unbiased technology-powered research.
+                        We, being one of the best equity research firms, have a proven track record and are trusted by many investors for the success of their financial goals unlike a commission-based model where an investor’s interest is often ignored.
+
+                    </p>
+                </div>
+                <div class="col-lg-2 col-lg-offset-1  col-md-offset-1 col-md-2 col-sm-10 col-12">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a>About</a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Press</a></li>
+                        <li><a>Careers</a></li>
+                    </ul>
+                </div>
+                <!--<div class="col-lg-2 col-md-2 col-sm-10 col-12">-->
+                    <!--<h5>Services</h5>-->
+                    <!--<ul>-->
+                        <!--<li><a>Publisher</a></li>-->
+                        <!--<li><a>Gateway</a></li>-->
+                        <!--<li><a>Research</a></li>-->
+                        <!--<li><a>Tickertape</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <div class="col-lg-2 col-md-2 col-sm-10 col-12">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a>Legal Policy</a></li>
+                        <li><a>Disclosures</a></li>
+                        <li><a>Privacy</a></li>
+                        <li><a>Complaints</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row medium-footer">
+                <div class="col-lg-5 col-md-4 col-sm-10 col-12"><p>Copyright @ 2021, Design by Edlyne Times<br></br></p></div>
+                <div class="col-lg-4 col-md-4 col-sm-10 col-12"><p>Contact us on info@etimesmedia.com</p>
+                <div class="social_icons">
+                    <a href="https://www.facebook.com/Edlynetimes/" class="fa fa-2x fa-facebook"></a>
+                    <a href="https://twitter.com/etimesm" class="fa fa-2x fa-twitter"></a>
+                    <a href="https://www.instagram.com/etimesmedia/" class="fa fa-2x fa-instagram"></a>
+                    <a href="https://www.linkedin.com/company/etimes-media/" class="fa fa-2x fa-linkedin"></a>
+                    <a href="https://www.youtube.com/channel/UCJaHIoSMKLGtthFA4AqR0Vg" class="fa fa-2x fa-youtube"></a>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-10 col-12"><p>Help & Support</p></div>
+            </div>
+        </div>
+            <!--<div class="bottom-footer ">-->
+                        <!--<h6>Copyright @ 2021, Design by Edlyne Times.</h6>-->
+             <!--</div>-->
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Bootstrap core JS-->
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- Popper JS -->
+
+<!-- Latest compiled JavaScript -->
+    <script src="{% static 'edlyne_times/js/scripts.js' %}"></script>
+
+    <script src="{% static 'edlyne_times/js/parallax.min.js' %}"></script>
+    <script src="{% static 'edlyne_times/js/custom.js' %}"></script>
+    <script src="{% static 'edlyne_times/js/slick.js' %}"></script>
+
+
+    </body>
+</html>
