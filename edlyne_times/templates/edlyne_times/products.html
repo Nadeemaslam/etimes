@@ -161,7 +161,7 @@
 
               </li>
               <li>
-                <a href="{% url 'news' %}" class="d-block" title="About">
+                <a href="{% url 'post' %}" class="d-block" title="About">
                   <span>News</span>
                 </a>
               </li>
@@ -447,7 +447,6 @@
                                 <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-danger">buy now</a>
                                  {% endif %}
                             {% elif exchange == 'bse' %}
-                            {{bse_resources}}{{nse_dividend}}
                                 {% if bse_resources %}
                                     <a href="{% url 'research' exchange %}?user_group={{ exchange }}_resources" class="btn btn-block btn-info">View Report</a>
                                 {% else%}
