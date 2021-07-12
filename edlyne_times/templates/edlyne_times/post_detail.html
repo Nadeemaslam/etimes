@@ -1,0 +1,42 @@
+{% extends 'etimes/base.html' %}
+{% load static %}
+{% block content %}
+<div class="clear"></div>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Page Content -->
+
+
+    <div class="single-services">
+      <div class="container">
+        <div class="row" id="tabs">
+          <div class="col-md-3">
+            <ul>
+              <li><a href='#'>Research Analysis <i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-9">
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+
+                <img src="{% static 'edlyne_times/assets/files/' %}{{post.featured_image}}" alt="">
+                <h4>{{post.title}}</h4>
+                <p>
+                    {{post.content}}
+                   </p>
+                  <span>{{post.author}}</span>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+
+
+
+{% endblock %}

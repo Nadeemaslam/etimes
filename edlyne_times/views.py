@@ -13,6 +13,8 @@ from accounts.decorators import allowed_users
 from django.shortcuts import redirect
 
 from django.http import JsonResponse, HttpResponse
+from django.views import generic
+from .models import Post
 
 def get_nasdaq_gainers(request):
     res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
@@ -345,8 +347,7 @@ def research(request, exchange):
 def services(request):
     return render(request, 'edlyne_times/services.html')
 
-def news(request):
-    return render(request, 'edlyne_times/news.html')
+
 
 def products(request, exchange):
 
@@ -577,3 +578,23 @@ def get_nse_losers(request):
     if len(td) > 28:
         res[td[28].text.lstrip()] = [td[29].text, td[30].text, td[31].text]
     return JsonResponse(res)
+
+
+
+def PostList(request):
+    blogs = Post.objects.filter(status=1).order_by('-created_on')[:10]
+    context = {'Post': blogs}
+    return render(request, 'edlyne_times/post.html', context)
+
+
+from django.core.exceptions import ObjectDoesNotExist
+
+def PostDetail(request, slug):
+    try:
+        post = Post.objects.get(slug=slug)
+        context = {'post': post}
+        return render(request, 'edlyne_times/post_detail.html', context)
+    except ObjectDoesNotExist:
+        return render(request, 'edlyne_times/post_detail.html')
+
+

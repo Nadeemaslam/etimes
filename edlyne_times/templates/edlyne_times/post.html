@@ -218,22 +218,50 @@
     </div> <!--bg.image ends here-->
 
 
+<br>
+<br>
+
+
+   <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Latest <em>Blogs</em></h2>
 
 
 
-     {% block content %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 class="text-center">Stock Market Analysis Made Simple</h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    {% endblock  %}
+              <h1 class="span-text">Leading Equity Research Company</h1>
+            </div>
+          </div>
+        </div>
+            {% for post in Post %}
+          <div class="row  blog-item">
+            <div class="col-md-3">
+              <img src="{% static 'edlyne_times/assets/files/' %}{{post.featured_image}}" alt="">
+            </div>
+              <div class="col-md-9 down-content">
+                <h4>{{post.title}}</h4>
+                <p>
+                    {{post.content|slice:":100"}}
+                </p>
+                  <div class="row">
+                      <div class="col-md-3"><span class="author-tag">{{post.author}}</span></div>
+                          <div class="col-md-6">{{post.updated_on| date:"F d Y"}}</div>
+                          <div class="col-md-3">
+                              <a href="{% url 'post_detail' post.slug  %}" class="read-more">Read More</a>
+                          </div>
+                  </div>
+              </div>
+          </div>
+            {% endfor %}
+      </div>
+    </div>
+
+
+
+
+
     <div class="clear"></div>
      <!--Footer-->
     <footer class="footer">

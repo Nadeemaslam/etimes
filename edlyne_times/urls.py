@@ -14,7 +14,6 @@ urlpatterns = [
     url(r'research/(?P<exchange>[\w-]+)/$', views.research, name='research'),
     url(r'reports/(?P<slug>[\w-]+)/$', views.reports, name='reports'),
     url(r'research/', views.nse, name='nse'),
-    url(r'news/', views.news, name='news'),
     url(r'products/(?P<exchange>[\w-]+)/$', views.products, name='products'),
     url(r'services/', views.services, name='services'),
     url(r'nse_losers/', views.get_nse_losers, name='nse_losers'),
@@ -23,4 +22,6 @@ urlpatterns = [
     url(r'bse_gainers/', views.get_bse_gainers, name='bse_gainers'),
     url(r'nasdaq_losers/', views.get_nasdaq_losers, name='nasdaq_losers'),
     url(r'nasdaq_gainers/', views.get_nasdaq_gainers, name='nasdaq_gainers'),
+    url(r'blogs/', views.PostList, name='post'),
+    url(r'blog/(?P<slug>[\w-]+)/$', views.PostDetail, name='post_detail')
 ]

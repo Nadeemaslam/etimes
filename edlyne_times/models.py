@@ -7,6 +7,7 @@ from django.core.files.storage import FileSystemStorage
 
 from django.db import models
 fs = FileSystemStorage(location='/tmp')
+blogimage  =  FileSystemStorage(location='/tmp')
 CHOICES = (
         ('nse_dividend', 'Nse Dividend Report'),
         ('nse_gold', 'Nse Gold Report'),
@@ -64,3 +65,25 @@ class report(models.Model):
 
     def __str__(self):
         return self.name
+
+STATUS = (
+    (0,"Draft"),
+    (1,"Publish")
+)
+
+class Post(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,related_name='blog_posts')
+    updated_on = models.DateTimeField(auto_now= True)
+    content = models.TextField()
+    description = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    featured_image = models.FileField(default=None,null=True, storage=blogimage)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.title

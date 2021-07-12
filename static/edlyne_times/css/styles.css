@@ -2240,6 +2240,53 @@ a.filled-button:hover {
     background-color:#a4c639 !important;
 }
 
+/* blog */
+
+
+
+.blog-item { transition: all .2s ease-in-out; }
+.blog-item:hover {
+      transform: scale(1.06);
+
+}
+
+.blog-item .down-content {
+	background-color: #f7f7f7;
+	padding: 5px 20px;
+}
+.blog-item {
+    margin:20px 0px;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.blog-item img{
+    width:90%;
+}
+
+.author-tag{
+    background:#a4c639;
+    padding:5px 10px;
+    border-radius:15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    }
+
+.blog-item p {
+    padding-bottom:25px;
+}
+
+.read-more {
+    color: #a4c639;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
 /* services page */
 
 .page-heading {
