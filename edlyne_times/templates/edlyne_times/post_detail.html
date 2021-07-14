@@ -25,7 +25,7 @@
                 <img src="{% static 'edlyne_times/assets/files/' %}{{post.featured_image}}" alt="">
                 <h4>{{post.title}}</h4>
                 <p>
-                    {{post.content}}
+                    {{post.content|safe}}
                    </p>
                   <span>{{post.author}}</span>
               </article>

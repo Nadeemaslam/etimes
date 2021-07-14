@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'edlyne_times',
     'accounts',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [

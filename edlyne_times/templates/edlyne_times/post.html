@@ -249,7 +249,7 @@
               <div class="col-md-9 down-content">
                 <h4>{{post.title}}</h4>
                 <p>
-                    {{post.content|slice:":100"}}
+                    {{post.content|slice:":100"|safe}}
                 </p>
                   <div class="row">
                       <div class="col-md-3"><span class="author-tag">{{post.author}}</span></div>
