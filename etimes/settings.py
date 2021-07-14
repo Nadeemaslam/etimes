@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'edlyne_times',
     'accounts',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 # EMAIL_HOST_PASSWORD = ''
 # EMAIL_USE_TLS = True
 # EMAIL_PORT = 587
+
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+

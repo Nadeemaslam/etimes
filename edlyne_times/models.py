@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 from django.core.files.storage import FileSystemStorage
+from ckeditor.fields import RichTextField
 
 from django.db import models
 fs = FileSystemStorage(location='/tmp')
-blogimage  =  FileSystemStorage(location='/tmp')
 CHOICES = (
         ('nse_dividend', 'Nse Dividend Report'),
         ('nse_gold', 'Nse Gold Report'),
@@ -76,11 +76,11 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now= True)
-    content = models.TextField()
+    content = models.RichTextField()
     description = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    featured_image = models.FileField(default=None,null=True, storage=blogimage)
+    featured_image = models.FileField(default=None,null=True, storage=fs)
 
     class Meta:
         ordering = ['-created_on']

@@ -581,3 +581,32 @@ padding-left: 40px;
         right: 0;
         margin: auto;
 }
+
+/*---------About ----*/
+
+
+
+.about-info .right-content {
+    padding: 0px!important;
+    margin-right: 30px;
+}
+.more-info .right-content h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.more-info .right-content em {
+    font-style: normal;
+    color: #a4c639;
+}
+
+
+.more-info .right-content span {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #666;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}

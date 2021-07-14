@@ -4,12 +4,35 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Browse the latest and interesting reads on startups, entrepreneurship, share market, unicorns, mergers and acquisitions, layoffs and more on ETimes Media! " />
-        <meta name="keywords" content="equity research firms, equity market research, equity research company in india, market research companies in india,equity research canada, top stock research websites, investing in equities  " />
+        {% if exchange == 'nse' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly NSE reports to stay updated and invest wisely with ETimes Media! " />
+        <meta name="keywords" content="equity research firms, equity market research, equity research company in india, nse india, national stock exchange, nse stock, indian stock exchange, bse nse live " />
         <meta name="author" content="" />
+        <title>Get Daily Updated NSE Reports - ETimes Media</title>
+        {% elif exchange == 'bse' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly BSE reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research company in india, nse india, bombay stock exchange, bse stock, indian stock exchange, bse nse live" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated BSE Reports - ETimes Media</title>
+        {% elif exchange == 'nasdaq' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly NASDAQ reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research canada, top stock research websites, investing in equities, nasdaq" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated NASDAQ Reports - ETimes Media</title>
+        {% elif exchange == 'tsx' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly TSX reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research canada, top stock research websites, investing in equities, tsx, toronto stock exchange" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated TSX Reports - ETimes Media</title>
+        {% elif exchange == 'nyse' %}
+        <meta name="description" content="Subscribe to learn more about daily/monthly NYSE reports to stay updated and invest wisely with ETimes Media!" />
+        <meta name="keywords" content="equity research firms, equity market research, equity research canada, top stock research websites, investing in equities, nyse, new york stock exchange" />
+        <meta name="author" content="" />
+        <title>Get Daily Updated NYSE Reports - ETimes Media</title>
+        {% endif%}
         <link rel="icon" href="{% static 'edlyne_times/assets/img/et_logo.png' %}" sizes="32x32" type="image/png">
 
-        <title>Updated Stock Market News</title>
+
 
 
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -20,7 +43,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
-
 
 
         {% load static %}
@@ -138,14 +160,13 @@
                 </ul>
 
               </li>
-
                 <li>
                 <a href="{% url 'about' %}" class="d-block" title="About">
                   <span>About Us</span>
                 </a>
               </li>
               <li>
-                <a href="" class="d-block" title="post">
+                <a href="{% url 'post' %}" class="d-block" title="post  ">
                   <span>News</span>
                 </a>
               </li>
@@ -222,48 +243,98 @@
 
 
     </div> <!--bg.image ends here-->
-
-
+<div class="clear"></div>
 <br>
 <br>
-
-
-   <div class="services">
+<br>
+    <!-- Page Content -->
+    <div class="page-heading header-text">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Our Latest <em>Blogs</em></h2>
+            <h1>About Us</h1>
+            <span>We have over 20 years of experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+    <div class="more-info about-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="more-info-content">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="right-content">
+                    <span>our solid background on finance</span>
+                    <h2>Get to know about <em>our company</em></h2>
+                    <p>Fusce nec ultrices lectus. Duis nec scelerisque risus. Ut id tempor turpis, ac dignissim ipsum. Nulla ullamcorper, ipsum vel condimentum congue, mi odio vehicula tellus, sit amet malesuada justo sem.
+                    <br><br>Pellentesque in sagittis lacus, vel auctor sem. Quisque eu quam eleifend, ullamcorper dui nec, luctus quam.</p>
+                  </div>
+                </div>
 
-
-
-              <h1 class="span-text">Leading Equity Research Company</h1>
+                <div class="col-md-6">
+                  <div class="left-image">
+                    <img src="{% static  'edlyne_times/assets/images/aboutimage.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-            {% for post in Post %}
-          <div class="row  blog-item">
-            <div class="col-md-3">
-              <img src="{% static 'edlyne_times/assets/files/' %}{{post.featured_image}}" alt="">
-            </div>
-              <div class="col-md-9 down-content">
-                <h4>{{post.title}}</h4>
-                <p>
-                    {{post.content|slice:":100"}}
-                </p>
-                  <div class="row">
-                      <div class="col-md-3"><span class="author-tag">{{post.author}}</span></div>
-                          <div class="col-md-6">{{post.updated_on| date:"F d Y"}}</div>
-                          <div class="col-md-3">
-                              <a href="{% url 'post_detail' post.slug  %}" class="read-more">Read More</a>
-                          </div>
-                  </div>
-              </div>
-          </div>
-            {% endfor %}
       </div>
     </div>
 
+
+       <div class="fun-facts">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-content">
+              <span>Top Market Research Company</span>
+              <h2>Our Solutions for Your  <em>Financial Growth</em></h2>
+              <p>
+                  Our goal is to provide our customers with information on the market. Lack of information creates ineptitude that results in stocks being misrepresented. Our analysts spend a lot of time examining a stock, its industry, and its peer group to provide earnings and valuation guesstimate with their understanding and mastery.
+                <br>
+                <br>
+                  Research analysts share their insights and industry know-how with investors who may not have them or may not have the time to develop them. Our research is thus valuable and helpful for our clients as it fills information gaps so that our investors need not analyze every stock.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 align-self-center">
+            <div class="row" id="counter">
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="945">200</div>
+                  <div class="count-title">Work Hours</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="1280">500</div>
+                  <div class="count-title">Great Reviews</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="3956">2500</div>
+                  <div class="count-title">Reports Done</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="counter-value count-digit" data-count="945">900</div>
+                  <div class="count-title">Subscribers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -354,6 +425,8 @@
     <script src="{% static 'edlyne_times/js/scripts.js' %}"></script>
 
     <script src="{% static 'edlyne_times/js/parallax.min.js' %}"></script>
+    <script src="{% static 'edlyne_times/js/custom.js' %}"></script>
+    <script src="{% static 'edlyne_times/js/slick.js' %}"></script>
 
 
     </body>
