@@ -11,7 +11,7 @@ import requests
 import json
 from accounts.decorators import allowed_users
 from django.shortcuts import redirect
-
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse, HttpResponse
 from django.views import generic
 from .models import Post
@@ -587,7 +587,6 @@ def PostList(request):
     return render(request, 'edlyne_times/post.html', context)
 
 
-from django.core.exceptions import ObjectDoesNotExist
 
 def PostDetail(request, slug):
     try:
@@ -598,3 +597,5 @@ def PostDetail(request, slug):
         return render(request, 'edlyne_times/post_detail.html')
 
 
+def about(request):
+    return render(request, 'edlyne_times/about.html')
