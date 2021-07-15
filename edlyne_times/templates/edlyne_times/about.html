@@ -160,11 +160,6 @@
                 </ul>
 
               </li>
-                <li>
-                <a href="{% url 'about' %}" class="d-block" title="About">
-                  <span>About Us</span>
-                </a>
-              </li>
               <li>
                 <a href="{% url 'post' %}" class="d-block" title="post  ">
                   <span>News</span>
@@ -248,12 +243,12 @@
 <br>
 <br>
     <!-- Page Content -->
-    <div class="page-heading header-text">
+    <div class="page-heading about">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1>About Us</h1>
-            <span>We have over 20 years of experience</span>
+            <h4 class="text-left">About Us</h4>
+            <h1 class="text-left ">Breaking boundaries, igniting growth</h1>
           </div>
         </div>
       </div>
@@ -267,20 +262,27 @@
           <div class="col-md-12">
             <div class="more-info-content">
               <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-sm-2 col-sm-offset-2 col-md-2 col-md-offset-0"></div>
+                <div class=" col-md-8 ">
                   <div class="right-content">
-                    <span>our solid background on finance</span>
-                    <h2>Get to know about <em>our company</em></h2>
-                    <p>Fusce nec ultrices lectus. Duis nec scelerisque risus. Ut id tempor turpis, ac dignissim ipsum. Nulla ullamcorper, ipsum vel condimentum congue, mi odio vehicula tellus, sit amet malesuada justo sem.
-                    <br><br>Pellentesque in sagittis lacus, vel auctor sem. Quisque eu quam eleifend, ullamcorper dui nec, luctus quam.</p>
+                    <h2>Our <em>Story</em></h2>
+                      <p class="about-first-child">ETimes Media works to create an intelligent solution for your financial needs.</p>
+                        <p>From the cash, you spend today to the money you save for tomorrow we at
+                         ETimes Media craft a professional journey for you. We work intending to help an individual in managing and distributing the capital so that they can achieve their financial goals.
+                        With years of experience, our financial experts help you to shape global financial technology.</p>
+                        <p>We are the leading equity research firm who follow the client-centric approach by thinking about their needs and welcoming their feedbacks.<br>
+                        One of the best market research companies, ETimes Media is committed to excellence in partnerships, excellence in service and excellence in performance. We believe in keeping score and being transparent in our stock recommendation performance. We strive to fulfill our purpose by truly serving every community. We provide a variety of solutions to improve many areas of your financial life, including your investment portfolio.
+                        Our team is with you throughout the cycle. We keep you updated by providing everyday stock updates. We are here to assist you. Consider us your partner in navigating this rewarding world of global investing.
+                        </p>
+                            <p>Let’s go own the world! Call us today!</p>
                   </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="left-image">
-                    <img src="{% static  'edlyne_times/assets/images/aboutimage.png' %}" alt="">
-                  </div>
-                </div>
+                <!--<div class="col-md-6">-->
+                  <!--<div class="left-image">-->
+                    <!--<img src="{% static  'edlyne_times/assets/images/aboutimage.png' %}" alt="">-->
+                  <!--</div>-->
+                <!--</div>-->
               </div>
             </div>
           </div>
@@ -288,6 +290,87 @@
       </div>
     </div>
 
+    <div class="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our team <em>members</em></h2>
+              <span>We are a team of more than 500 collaborators in 9 offices worldwide</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-item">
+              <img src="{% static 'edlyne_times/assets/images/team_01.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>William Smith</h4>
+                <span>Co-Founder</span>
+                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-item">
+              <img src="{% static 'edlyne_times/assets/images/team_02.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Mary Houston</h4>
+                <span>Chief Marketing Officer</span>
+                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-item">
+              <img src="{% static 'edlyne_times/assets/images/team_03.jpg' %}" alt="">
+              <div class="down-content">
+                <h4>Paul Walker</h4>
+                <span>Financial Analyst</span>
+                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+              </div>
+            </div>
+          </div>
+           </div>
+          <br>
+          <br>
+            <div class="row">
+                 <div class="col-md-4">
+                    <div class="team-item">
+                      <img src="{% static 'edlyne_times/assets/images/team_03.jpg' %}" alt="">
+                      <div class="down-content">
+                        <h4>Paul Walker</h4>
+                        <span>Financial Analyst</span>
+                        <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                     <div class="col-md-4">
+                        <div class="team-item">
+                          <img src="{% static 'edlyne_times/assets/images/team_03.jpg' %}" alt="">
+                          <div class="down-content">
+                            <h4>Paul Walker</h4>
+                            <span>Financial Analyst</span>
+                            <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                          </div>
+                        </div>
+                    </div>
+
+                     <div class="col-md-4">
+                        <div class="team-item">
+                          <img src="{% static 'edlyne_times/assets/images/team_03.jpg' %}" alt="">
+                          <div class="down-content">
+                            <h4>Paul Walker</h4>
+                            <span>Financial Analyst</span>
+                            <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                          </div>
+                        </div>
+                      </div>
+
+            </div>
+
+
+      </div>
+    </div>
 
        <div class="fun-facts">
       <div class="container">
@@ -355,7 +438,7 @@
                 <div class="col-lg-2 col-lg-offset-1  col-md-offset-1 col-md-2 col-sm-10 col-12">
                     <h5>Company</h5>
                     <ul>
-                        <li><a>About</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
                         <li><a>Blog</a></li>
                         <li><a>Press</a></li>
                         <li><a>Careers</a></li>
