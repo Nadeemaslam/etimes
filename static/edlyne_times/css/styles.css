@@ -2763,3 +2763,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .about-info p:nth-child(5){
     font-weight:bold !important;
 }
+
+.howitworks {
+    background-color: #f7f7f7;
+    margin-top: 50px;
+    margin-bottom: -140px;
+    padding: 60px 0px 120px;
+
+}
