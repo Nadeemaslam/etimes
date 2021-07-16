@@ -559,6 +559,13 @@ input:checked~ul.submenu {
   background: none !important;
 }
 
+.about h1{
+    font-weight:700 !important;
+    text-transform: capitalize;
+    font-size:50px !important;
+    width:50%;
+    }
+
 }
 
 
@@ -2693,9 +2700,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 /*------About us ------*/
 
 .about h1{
-    font-weight:700 !important;
+    font-weight:700 ;
     text-transform: capitalize;
-    font-size:70px !important;
+    font-size:70px;
     width:62%;
     }
 
@@ -2754,7 +2761,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .about-info p{
     font-style: normal;
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 25px;
 
 }
