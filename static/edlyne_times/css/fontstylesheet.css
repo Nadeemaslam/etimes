@@ -1,0 +1,21 @@
+
+
+@font-face {
+    font-family: 'eina01-bold';
+    src: url('eina01-bold.woff2') format('woff2'),
+         url('eina01-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'eina01-regular';
+    src: url('eina01-regular.woff2') format('woff2'),
+         url('eina01-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
