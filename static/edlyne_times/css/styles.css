@@ -2369,15 +2369,18 @@ a.filled-button:hover {
 	overflow: hidden;
 }
 .tabs-content h4 {
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: 700;
 	letter-spacing: 0.25px;
+	margin-top:30px;
 }
 
 
 .tabs-content sub {
     font-size:14px;
     font-family:eina01-regular, Arial, sans-serif  !important;
+     color: #868282;
+
 }
 
 .tabs-content p {
