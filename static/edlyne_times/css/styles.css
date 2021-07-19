@@ -2275,7 +2275,7 @@ a.filled-button:hover {
 }
 
 .blog-item img{
-    width:90%;
+    width:100%;
 }
 
 .author-tag{
@@ -2290,7 +2290,7 @@ a.filled-button:hover {
     }
 
 .blog-item p {
-    padding-bottom:25px;
+    padding-bottom:10px;
 }
 
 .read-more {
