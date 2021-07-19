@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -155,4 +155,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 # EMAIL_PORT = 587
 
 os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+
+
 
