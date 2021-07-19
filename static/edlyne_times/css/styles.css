@@ -2372,13 +2372,19 @@ a.filled-button:hover {
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 0.25px;
-	margin-bottom: 15px;
-	margin-top: 30px;
 }
+
+
+.tabs-content sub {
+    font-size:14px;
+    font-family:eina01-regular, Arial, sans-serif  !important;
+}
+
 .tabs-content p {
   font-size: 14px;
   color: #7a7a7a;
-  margin-bottom: 0px;
+  margin-top: 10px;
+
 }
 
 /* Banner Style */

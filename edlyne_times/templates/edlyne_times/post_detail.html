@@ -24,10 +24,11 @@
 
                 <img src="{% static 'edlyne_times/assets/files/' %}{{post.featured_image}}" alt="">
                 <h4>{{post.title}}</h4>
+                <sub>By <b>{{post.author}}</b> &nbsp &nbsp    {{post.updated_on}}</sub>
                 <p>
                     {{post.content|safe}}
                    </p>
-                  <span>{{post.author}}</span>
+
               </article>
             </section>
           </div>
