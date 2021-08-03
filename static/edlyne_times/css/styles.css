@@ -2979,10 +2979,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .blog-posts .down-content p {
-	padding: 25px 0px;
-	margin: 25px 0px;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7a7a7a;
+    line-height: 30px;
 }
 
 .blog-posts .down-content ul.post-share {
