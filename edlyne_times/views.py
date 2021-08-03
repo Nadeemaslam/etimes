@@ -302,17 +302,16 @@ async  def index(request):
     # task9 = asyncio.ensure_future(get_nse_gainers_async())
     # task10 = asyncio.ensure_future(get_nse_losers_async())
     await asyncio.wait([task3, task4, task5, task6])
+    blogs = Post.objects.filter(status=1).order_by('-created_on')[:10]
 
     context = {
-               #  'nasdaq_gainers': task1.result(), 'nasdaq_losers': task2.result(),
                'nyse_gainers': task3.result(), 'nyse_losers': task4.result(),
                'tsx_gainers': task5.result(), 'tsx_losers': task6.result(),
-               # 'bse_gainers': task7.result(), 'bse_losers': task8.result(),
-               # 'nse_gainers': task9.result(), 'nse_losers': task10.result()
+                'Post': blogs
                }
 
     print(time.time() - start_time)
-    return render(request, 'edlyne_times/index.html', context)
+    return render(request, 'edlyne_times/index.html', context,)
 
 
 
@@ -591,7 +590,8 @@ def PostList(request):
 def PostDetail(request, slug):
     try:
         post = Post.objects.get(slug=slug)
-        context = {'post': post}
+        blogs = Post.objects.filter(status=1).order_by('-created_on')[:3]
+        context = {'blogs': blogs, 'post': post}
         return render(request, 'edlyne_times/post_detail.html', context)
     except ObjectDoesNotExist:
         return render(request, 'edlyne_times/post_detail.html')
