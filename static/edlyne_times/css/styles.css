@@ -2858,6 +2858,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	color: #fff;
 	font-weight: 500;
 	transition: all .3s;
+	text-transform: capitalize;
+
 }
 
 .owl-banner .item .item-content ul li a:hover {
