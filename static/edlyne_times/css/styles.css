@@ -2869,7 +2869,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .owl-banner .owl-nav {
 	position: absolute;
 	top: 48%;
-	width: 102%;
+	width: 100%;
 }
 
 .owl-banner .owl-nav .owl-prev {
@@ -2890,7 +2890,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	color: #fff;
 	font-size: 36px;
 	width: 50px;
-	height: 50px;
+	height: 45px;
 	display: inline-block;
 	text-align: center;
 	line-height: 40px;
