@@ -2868,8 +2868,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .owl-banner .owl-nav {
 	position: absolute;
-	top: 50%;
-	width: 100%;
+	top: 48%;
+	width: 102%;
 }
 
 .owl-banner .owl-nav .owl-prev {
@@ -2889,11 +2889,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .owl-banner .owl-nav button span {
 	color: #fff;
 	font-size: 36px;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	display: inline-block;
 	text-align: center;
-	line-height: 60px;
+	line-height: 40px;
 	background-color: rgba(250,250,250,0.3);
 }
 
