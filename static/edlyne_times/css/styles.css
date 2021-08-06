@@ -2970,19 +2970,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .blog-posts .down-content ul.post-info li a {
-	font-size: 14px;
+	font-size: 13px;
 	color: #aaa;
 	font-weight: 400;
 	transition: all .3s;
+}
+.page-heading .text-content h4 {
+    color: #f48840;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;}
+
+
+.blog-posts .down-content span {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    color: #f48840;
 }
 
 .blog-posts .down-content ul.post-info li a:hover {
 	color: #f48840;
 }
 
-.blog-posts .down-content p, .blog-posts .down-content span, .blog-posts .down-content p span {
-    font-size: 15px;
-    font-weight: 400 !important;
+.blog-posts .down-content p,  .blog-posts .down-content p span {
     color: #7a7a7a !important;
     line-height: 30px;
 }
