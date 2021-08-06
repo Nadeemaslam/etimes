@@ -263,7 +263,7 @@
                         <li><a href="#">{{post.updated_on |date:"F d Y"}}  </a></li>
                         <li><a href="#">28 Comments</a></li>
                       </ul>
-                      <p>{{post.content |slice:":100"| safe}}</p>
+                      {{post.content |slice:":80"| safe}}
                       <div class="post-options">
                         <div class="row">
                           <div class="col-lg-12">

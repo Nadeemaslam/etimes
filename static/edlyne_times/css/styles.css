@@ -2918,10 +2918,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .blog-posts .down-content {
-	padding: 40px;
+	padding: 30px;
 	border-right: 1px solid #eee;
 	border-left: 1px solid #eee;
 	border-bottom: 1px solid #eee;
+	max-height:45vh;
 }
 
 /*.blog-posts .down-content span {
