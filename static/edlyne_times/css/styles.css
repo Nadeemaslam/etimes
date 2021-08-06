@@ -2996,7 +2996,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	color: #f48840;
 }
 
-.blog-posts .down-content p,  .blog-posts .down-content p span {
+.blog-posts .down-content p, .blog-posts .down-content span, .blog-posts .down-content p span {
+    font-size: 15px;
+    font-weight: 400 !important;
     color: #7a7a7a !important;
     line-height: 30px;
 }
