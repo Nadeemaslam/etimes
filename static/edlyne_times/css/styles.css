@@ -2922,7 +2922,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	border-right: 1px solid #eee;
 	border-left: 1px solid #eee;
 	border-bottom: 1px solid #eee;
-	max-height:45vh;
+	min-height: 50vh;
 }
 
 /*.blog-posts .down-content span {
