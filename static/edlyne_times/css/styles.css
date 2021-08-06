@@ -2986,8 +2986,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .blog-posts .down-content span {
     font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: 900;
     color: #f48840;
 }
