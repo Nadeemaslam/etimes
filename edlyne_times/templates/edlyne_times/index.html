@@ -60,8 +60,8 @@
         <div id="tabs-bar">
     <ul id="tabs-nav">
         <li><a href="#th-tab-one" class="current">NASDAQ</a></li>
-        <li><a href="#th-tab-two">NYSE</a></li>
-        <li><a href="#th-tab-three">TSX</a></li>
+        <li><a id="nyse" href="#th-tab-two">NYSE</a></li>
+        <li><a id="tsx" href="#th-tab-three">TSX</a></li>
         <li><a href="#th-tab-four">BSE</a></li>
         <li><a href="#th-tab-five">NSE</a></li>
     </ul>
@@ -758,7 +758,9 @@ $(document).ready(function(){
 
 });
 
+$('#nyse').click(function(e){
 
+console.log("hiii");
 //nyse gainers
     $.ajax({
     url: '/nyse_gainers',
@@ -816,9 +818,11 @@ $(document).ready(function(){
     }
 });
 
+});
 
 //tsx gianers
-
+$('#tsx').click(function(e){
+console.log("ho tsx");
     $.ajax({
     url: '/tsx_gainers',
     type:'GET',
@@ -874,7 +878,7 @@ $(document).ready(function(){
         console.log('Got an error dude');
     }
 });
-
+});
 
 (function () {
   "use strict";
