@@ -59,8 +59,8 @@
 
         <div id="tabs-bar">
     <ul id="tabs-nav">
-        <li><a href="#th-tab-one" class="current">NYSE</a></li>
-        <li><a href="#th-tab-two">NASDAQ</a></li>
+        <li><a href="#th-tab-one" class="current">NASDAQ</a></li>
+        <li><a href="#th-tab-two">NYSE</a></li>
         <li><a href="#th-tab-three">TSX</a></li>
         <li><a href="#th-tab-four">BSE</a></li>
         <li><a href="#th-tab-five">NSE</a></li>
@@ -83,16 +83,8 @@
                                       <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in nyse_gainers.items %}
+                                  <tbody id="nasdaq_gainers_tbody">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>{{i}}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -106,16 +98,8 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in nyse_losers.items %}
+                                              <tbody id="nasdaq_losers_tbody">
 
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">{{i}}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
                                               </tbody>
                                             </table>
                                         </div>
@@ -134,7 +118,7 @@
                                           <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody id="nasdaq_gainers_tbody">
+                                  <tbody id="nyse_gainers_tbody">
 
                                   </tbody>
                                 </table>
@@ -149,7 +133,7 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                           <tbody id="nasdaq_losers_tbody" class="nse-table-body">
+                                           <tbody id="nyse-losers-tbody" class="nse-table-body">
 
 
                                               </tbody>
@@ -171,16 +155,8 @@
                                       <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
-                                  <tbody class="nse-table-body">
-                                  {% for key, value in tsx_gainers.items %}
+                                  <tbody id="tsx-gainers-tbody">
 
-                                                <tr class="">
-                                                  <td>{{key }}</td>
-                                                   {% for i in value %}
-                                                  <td>{{i}}</td>
-                                                    {% endfor %}
-
-                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -194,17 +170,8 @@
                                                   <th scope="col">%Change </th>
                                                 </tr>
                                               </thead>
-                                              <tbody class="nse-table-body">
-                                  {% for key, value in tsx_losers.items %}
+                                              <tbody id="tsx-losers-tbody">
 
-                                                <tr class="losers">
-                                                  <td>{{key}}</td>
-                                                {% for i in value %}
-                                                  <td> <span class="bearish">
-                                                      {{i}}</span></td>
-                                                    {% endfor %}
-                                                </tr>
-                                              {% endfor %}
                                               </tbody>
                                             </table>
                                         </div>
@@ -728,6 +695,9 @@ $(document).ready(function(){
 });
 
 
+
+
+
 $(document).ready(function(){
     $.ajax({
       type:'GET',
@@ -821,6 +791,9 @@ $(document).ready(function(){
     carousels();
   })(jQuery);
 })();
+
+
+
 
 </script>
 

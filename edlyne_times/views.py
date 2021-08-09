@@ -66,10 +66,7 @@ def get_nasdaq_losers(request):
     return JsonResponse(res)
 
 
-@sync_to_async
-def get_nyse_gainers_async():
-
-
+def nyse_gainers(request):
     res = requests.get('https://www.investcom.com/us/mpgnyse.htm', verify=False)
     soup = bs4.BeautifulSoup(res.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
@@ -93,12 +90,11 @@ def get_nyse_gainers_async():
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
+    return JsonResponse(res)
 
-    return res
 
 
-@sync_to_async
-def get_nyse_losers_async():
+def nyse_losers(request):
     res = requests.get('https://www.investcom.com/us/mplnyse.htm', verify=False)
     soup = bs4.BeautifulSoup(res.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
@@ -123,19 +119,10 @@ def get_nyse_losers_async():
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
-    return res
+    return JsonResponse(res)
 
 
-
-@sync_to_async
-def get_nse_gainers_async():
-    nse = Nse()
-    nse_gainers = nse.get_top_gainers()
-    return nse_gainers
-
-
-@sync_to_async
-def get_tsx_gainers_async():
+def tsx_gainers(request):
 
     res = requests.get('https://www.investcom.com/page/mpgtoronto.htm', verify=False)
     soup = bs4.BeautifulSoup(res.text,"xml")
@@ -160,10 +147,9 @@ def get_tsx_gainers_async():
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
-    return res
+    return JsonResponse(res)
 
-@sync_to_async
-def get_tsx_losers_async():
+def tsx_losers(request):
     res = requests.get('https://www.investcom.com/page/mpltoronto.htm', verify=False )
     soup = bs4.BeautifulSoup(res.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
@@ -188,132 +174,14 @@ def get_tsx_losers_async():
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
-    return res
-
-@sync_to_async
-def get_bse_gainers_async():
-    res = requests.get('https://money.rediff.com/gainers/bse')
-    soup = bs4.BeautifulSoup(res.text, "lxml")
-    table = soup.find('table', {"class": "dataTable"})
-    td = table.find_all('td')
-
-    res = {}
-    if len(td) > 0:
-        res[td[0].text.lstrip()] = [td[2].text, td[3].text, td[4].text]
-    if len(td) > 5:
-        res[td[5].text.lstrip()] = [td[7].text, td[8].text, td[9].text]
-    if len(td) > 10:
-        res[td[10].text.lstrip()] = [td[12].text, td[13].text, td[14].text]
-    if len(td) > 15:
-        res[td[15].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
-    if len(td) > 20:
-        res[td[20].text.lstrip()] = [td[22].text, td[23].text, td[24].text]
-    if len(td) > 25:
-        res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
-    if len(td) > 30:
-        res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
-    return res
-
-
-@sync_to_async
-def get_bse_losers_async():
-    res = requests.get('https://money.rediff.com/losers/bse/daily')
-    soup = bs4.BeautifulSoup(res.text, "lxml")
-    table = soup.find('table', {"class": "dataTable"})
-    td = table.find_all('td')
-
-    res = {}
-    if len(td) > 0:
-        res[td[0].text.lstrip()] = [td[2].text, td[3].text, td[4].text]
-    if len(td) > 5:
-        res[td[5].text.lstrip()] = [td[7].text, td[8].text, td[9].text]
-    if len(td) > 10:
-        res[td[10].text.lstrip()] = [td[12].text, td[13].text, td[14].text]
-    if len(td) > 15:
-        res[td[15].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
-    if len(td) > 20:
-        res[td[20].text.lstrip()] = [td[22].text, td[23].text, td[24].text]
-    if len(td) > 25:
-        res[td[25].text.lstrip()] = [td[27].text, td[28].text, td[29].text]
-    if len(td) > 30:
-        res[td[30].text.lstrip()] = [td[32].text, td[33].text, td[34].text]
-    return res
+    return JsonResponse(res)
 
 
 
-@sync_to_async
-def get_nse_gainers_async():
-    res = requests.get('https://money.rediff.com/gainers/nse')
-    soup = bs4.BeautifulSoup(res.text, "lxml")
-    table = soup.find('table', {"class": "dataTable"})
-    td = table.find_all('td')
-
-    res = {}
-    if len(td) > 0:
-        res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
-    if len(td) > 4:
-        res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
-    if len(td) > 8:
-        res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
-    if len(td) > 12:
-        res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
-    if len(td) > 16:
-        res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
-    if len(td) > 20:
-        res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
-    if len(td) > 24:
-        res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
-    return res
-
-@sync_to_async
-def get_nse_losers_async():
-    res = requests.get('https://money.rediff.com/losers/nse/daily')
-    soup = bs4.BeautifulSoup(res.text, "lxml")
-    table = soup.find('table', {"class": "dataTable"})
-    td = table.find_all('td')
-
-    res = {}
-    if len(td) > 0:
-        res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
-    if len(td) > 4:
-        res[td[4].text.lstrip()] = [td[5].text, td[6].text, td[7].text]
-    if len(td) > 8:
-        res[td[8].text.lstrip()] = [td[9].text, td[10].text, td[11].text]
-    if len(td) > 12:
-        res[td[12].text.lstrip()] = [td[13].text, td[14].text, td[15].text]
-    if len(td) > 16:
-        res[td[16].text.lstrip()] = [td[17].text, td[18].text, td[19].text]
-    if len(td) > 20:
-        res[td[20].text.lstrip()] = [td[21].text, td[22].text, td[23].text]
-    if len(td) > 24:
-        res[td[24].text.lstrip()] = [td[25].text, td[26].text, td[27].text]
-    return res
-
-async  def index(request):
-    start_time = time.time()
-    # task1 = asyncio.ensure_future(get_nasdaq_gainers_async())
-    # task2 = asyncio.ensure_future(get_nasdaq_losers_async())
-    task3 = asyncio.ensure_future(get_nyse_gainers_async())
-    task4 = asyncio.ensure_future(get_nyse_losers_async())
-    task5 = asyncio.ensure_future(get_tsx_gainers_async())
-    task6 = asyncio.ensure_future(get_tsx_losers_async())
-    # task7 = asyncio.ensure_future(get_bse_gainers_async())
-    # task8 = asyncio.ensure_future(get_bse_losers_async())
-    # task9 = asyncio.ensure_future(get_nse_gainers_async())
-    # task10 = asyncio.ensure_future(get_nse_losers_async())
-    await asyncio.wait([task3, task4, task5, task6])
+def home(request):
     blogs = Post.objects.filter(status=1).order_by('-created_on')[:10]
-
-    context = {
-               'nyse_gainers': task3.result(), 'nyse_losers': task4.result(),
-               'tsx_gainers': task5.result(), 'tsx_losers': task6.result(),
-                'Post': blogs
-               }
-
-    print(time.time() - start_time)
-    return render(request, 'edlyne_times/index.html', context,)
-
-
+    context = {'Post': blogs}
+    return render(request, 'edlyne_times/index.html', context)
 
 def nse(request):
 
@@ -475,7 +343,6 @@ def products(request, exchange):
 
 
 def get_bse_gainers(request):
-
     res = requests.get('https://money.rediff.com/gainers/bse', verify=False )
     soup = bs4.BeautifulSoup(res.text, "lxml")
     table = soup.find('table', {"class": "dataTable"})
