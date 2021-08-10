@@ -684,6 +684,7 @@ $(document).ready(function(){
         tableData += '</table>';
 
         $('#nse_losers_tbody').html(tableData);
+        get_nyse();
 
       },
       error: function( error) {
@@ -748,7 +749,7 @@ $(document).ready(function(){
         tableData += '</table>';
 
         $('#nasdaq_losers_tbody').html(tableData);
-
+          get_tsx();
       },
       error: function( error) {
         console.log("Error: " + error)
@@ -758,9 +759,9 @@ $(document).ready(function(){
 
 });
 
-$('#nyse').click(function(e){
+function get_nyse(e){
 
-console.log("hiii");
+console.log("hiii nyse ");
 //nyse gainers
     $.ajax({
     url: '/nyse_gainers',
@@ -818,11 +819,11 @@ console.log("hiii");
     }
 });
 
-});
+}
 
 //tsx gianers
-$('#tsx').click(function(e){
-console.log("ho tsx");
+function get_tsx(e){
+console.log("ho tsx 11111");
     $.ajax({
     url: '/tsx_gainers',
     type:'GET',
@@ -878,7 +879,7 @@ console.log("ho tsx");
         console.log('Got an error dude');
     }
 });
-});
+}
 
 (function () {
   "use strict";
