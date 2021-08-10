@@ -532,9 +532,6 @@ input:checked~ul.submenu {
     color: #000 !important;
 }
 
-.table-container {
-    height:210vh !important;
-    }
 
 #tabs-nav li a {
     font-size:12px !important;
@@ -2586,10 +2583,13 @@ ul.slick-dots {
 
 
 .table-container {
-    width:100%; height:120vh;
+    width:100%;
     position:relative;
     display:inline-block;
     margin: 0;
+    overflow: auto;
+    height: auto;
+    min-height: 143vh;
 }
 .vid {
     position: absolute;
