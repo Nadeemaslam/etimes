@@ -726,7 +726,7 @@ input:checked~ul.submenu {
 }
 
 .table-container {
-    height:210vh !important;
+    height:170vh !important;
     }
 #tabs-bar ul {
     margin-left:-30px;
@@ -738,7 +738,7 @@ input:checked~ul.submenu {
 
 #tabs-nav li a {
     padding: 6px 10px !important;
-    font-size:10px !important;
+    font-size:12px !important;
 }
 .table_subscript {
     color:#000000 !important;
