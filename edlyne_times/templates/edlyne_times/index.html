@@ -71,6 +71,10 @@
 <!-- Tabs Main Content -->
 <div id="tabs-content-wrap">
     <ul>
+         <div class="spinner-container">
+        <div class="spinner-border text-success spinner"></div>
+             Loading...
+        </div>
         <li id="th-tab-one" class="tab-content">
             <div class="row ">
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
@@ -701,11 +705,15 @@ $(document).ready(function(){
 $(document).ready(function(){
     $.ajax({
       type:'GET',
+      beforeSend: function(){
+        $('.spinner-container').show();
+        },
       url:'/nasdaq_gainers'    ,
       cache:false,
       async:'false',
       dataType:'json',
       success: function(data) {
+        $('.spinner-container').hide();
         var tableData = '<table>'
         $.each(data, function(key, value){
         tableData += '<tr>';
