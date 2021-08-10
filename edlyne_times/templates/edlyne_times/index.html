@@ -647,11 +647,15 @@ $(document).ready(function(){
 //   bse gainers
     $.ajax({
       type:'GET',
+        beforeSend: function(){
+        $('.spinner-container').show();
+        },
       url:'/bse_gainers'    ,
       cache:false,
       async:'false',
       dataType:'json',
       success: function(data) {
+      $('.spinner-container').hide();
         var tableData = '<table>'
         $.each(data, function(key, value){
         tableData += '<tr>';
@@ -675,7 +679,6 @@ $(document).ready(function(){
 
 //   bse losers
     $.ajax({
-      type:'GET',
       url:'/bse_losers'    ,
       cache:false,
       async:'false',
@@ -709,11 +712,15 @@ $(document).ready(function(){
 $(document).ready(function(){
     $.ajax({
       type:'GET',
+      beforeSend: function(){
+        $('.spinner-container').show();
+        },
       url:'/nse_gainers'    ,
       cache:false,
       async:'false',
       dataType:'json',
       success: function(data) {
+      $('.spinner-container').hide();
         var tableData = '<table>'
         $.each(data, function(key, value){
         tableData += '<tr>';
@@ -772,11 +779,16 @@ $(document).ready(function(){
 function get_nasdaq(e){
 $.ajax({
       type:'GET',
+      beforeSend: function(){
+        $('.spinner-container').show();
+        },
       url:'/nasdaq_gainers'    ,
       cache:false,
       async:'false',
       dataType:'json',
       success: function(data) {
+      $('.spinner-container').hide();
+      console.log("nasdaq");
         var tableData = '<table>'
         $.each(data, function(key, value){
         tableData += '<tr>';
@@ -806,6 +818,7 @@ $.ajax({
       async:'false',
       dataType:'json',
       success: function(data) {
+      $('.spinner-container').hide();
         var tableData = '<table>'
         $.each(data, function(key, value){
         tableData += '<tr>';
@@ -825,8 +838,6 @@ $.ajax({
       }
    });
 
-console.log("hiii nyse ");
-//nyse gainers
 
 
 }
@@ -835,12 +846,16 @@ console.log("hiii nyse ");
 function get_tsx(e){
 console.log("ho tsx 11111");
     $.ajax({
+    beforeSend: function(){
+    $('.spinner-container').show();
+    },
     url: '/tsx_gainers',
     type:'GET',
       cache:false,
       async:'false',
       dataType:'json',
     success: function(data) {
+        $('.spinner-container').hide();
         console.log("hellotsxgggggg", data);
          var tableData = '<table>'
         $.each(data, function(key, value){
