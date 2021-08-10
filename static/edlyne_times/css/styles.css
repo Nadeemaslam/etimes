@@ -648,10 +648,13 @@ input:checked~ul.submenu {
     padding-left: 0px;
 }
 .video_overlay {
-    top:20px;
+    top:10px;
 }
 
-
+.market-table {
+    width:95vw;
+    font-size:14px !important;
+}
 
 .first_content_wrapper {
     margin:0px 0px;
@@ -725,23 +728,32 @@ input:checked~ul.submenu {
 .table-container {
     height:210vh !important;
     }
-
-#tabs-nav li a {
-    font-size:12px !important;
+#tabs-bar ul {
+    margin-left:-30px;
 }
+
 #tabs-bar ul li {
     padding-right:0px !important;
 }
 
+#tabs-nav li a {
+    padding: 6px 10px !important;
+    font-size:10px !important;
+}
+.table_subscript {
+    color:#000000 !important;
+}
 .first_content_wrapper h2{
    color:#000 !important;
 }
 
 .mobile-table-view {
-    margin-left:-40px !important;
+    margin-left:-20px !important;
 }
 
-
+#tabs-bar {
+    padding: 0px 0px 0px !important;
+}
 
 
 .vid {
