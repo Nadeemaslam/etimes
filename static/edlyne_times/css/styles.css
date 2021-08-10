@@ -722,9 +722,9 @@ input:checked~ul.submenu {
     color: #000 !important;
 }
 
-.table-container {
+/*.table-container {
     height:170vh !important;
-    }
+    }*/
 #tabs-bar ul {
     margin-left:-30px;
 }
