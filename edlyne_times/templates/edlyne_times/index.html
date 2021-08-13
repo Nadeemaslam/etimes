@@ -121,6 +121,15 @@
                                     </tr>
                                   </thead>
                                   <tbody id="nyse_gainers_tbody">
+                                   {% for key, value in nyse_gainers.items %}
+
+                                                <tr class="">
+                                                  <td>{{key }}</td>
+                                                   {% for i in value %}
+                                                  <td>{{i}}</td>
+                                                    {% endfor %}
+
+                                              {% endfor %}
 
                                   </tbody>
                                 </table>
@@ -136,7 +145,15 @@
                                                 </tr>
                                               </thead>
                                            <tbody id="nyse-losers-tbody" class="nse-table-body">
+                                                 {% for key, value in nyse_losers.items %}
 
+                                                <tr class="">
+                                                  <td>{{key }}</td>
+                                                   {% for i in value %}
+                                                  <td>{{i}}</td>
+                                                    {% endfor %}
+
+                                              {% endfor %}
 
                                               </tbody>
                                             </table>
@@ -764,67 +781,8 @@ $(document).ready(function(){
 
 });
 
-$('#nyse').click(function(e){
-
-console.log("hiii");
-//nyse gainers
-    $.ajax({
-    url: '/nyse_gainers',
-    type:'GET',
-      cache:false,
-      async:'false',
-      dataType:'json',
-    success: function(data) {
-        console.log("hello", data);
-         var tableData = '<table>'
-        $.each(data, function(key, value){
-        tableData += '<tr>';
-        tableData += '<td>' + key + '</td>';
-        tableData += '<td>' + value[0] + '</td>';
-        tableData += '<td>' + value[1] + '</td>';
-        tableData += '<td>' + value[2] + '</td>';
-
-        tableData += '</tr>';
-            });
-        tableData += '</table>';
-
-        $('#nyse_gainers_tbody').html(tableData);
-    },
-    failure: function(data) {
-        console.log('Got an error dude');
-    }
-});
 
 
-
-   $.ajax({
-    url: '/nyse_losers',
-    type:'GET',
-      cache:false,
-      async:'false',
-      dataType:'json',
-    success: function(data) {
-        console.log("hello", data);
-         var tableData = '<table>'
-        $.each(data, function(key, value){
-        tableData += '<tr>';
-        tableData += '<td>' + key + '</td>';
-        tableData += '<td>' + value[0] + '</td>';
-        tableData += '<td>' + value[1] + '</td>';
-        tableData += '<td>' + value[2] + '</td>';
-
-        tableData += '</tr>';
-            });
-        tableData += '</table>';
-
-        $('#nyse-losers-tbody').html(tableData);
-    },
-    failure: function(data) {
-        console.log('Got an error dude');
-    }
-});
-
-});
 
 //tsx gianers
 $('#tsx').click(function(e){
