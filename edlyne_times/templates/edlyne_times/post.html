@@ -258,7 +258,7 @@
                       <img src="{% static 'edlyne_times/assets/files/' %}{{post.featured_image}}" alt="">
                     </div>
                     <div class="down-content">
-                      <a href="post-details.html"><h4>{{post.title}}</h4></a>
+                      <a href="{% url 'post_detail' post.slug %}"><h4>{{post.title}}</h4></a>
                       <ul class="post-info">
                         <li><a href="#">{{post.author}}</a></li>
                         <li><a href="#">{{post.updated_on |date:"F d Y"}}  </a></li>
