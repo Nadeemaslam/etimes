@@ -731,7 +731,7 @@
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
-                                {% if nse_america %}
+                                {% if nse_ipo %}
                                     <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-info">View Report</a>
                                 {% else%}
                                 <a href="{% url 'research' exchange %}?user_group={{ exchange }}_ipo" class="btn btn-block btn-danger">buy now</a>
