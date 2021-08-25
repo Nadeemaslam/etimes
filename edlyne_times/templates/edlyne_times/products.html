@@ -259,16 +259,72 @@
                                 Dividend Income Report
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>34</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>1999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li><b>Companies with high dividend yield.</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth. Click and download yours Dividend NSE report today.</b></li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>1999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth. Click and download yours Dividend BSE report today.</li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth.
+                                    Click and download yours Dividend NYSE report today.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth.
+                                    Click and download yours Dividend NASDAQ report today.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth.
+                                    Click and download yours Dividend TSX report today.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% endif %}
+
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
@@ -314,16 +370,76 @@
                                Gold Report
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>36</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>2499</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li>Weekly:<b>Reports on Email</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>
+                                    Our exclusive gold reports help you in making the right gold investment decisions at the standard time.  Click to get NSE Gold Research reports.
+
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>2499</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our exclusive gold reports help you in making the right gold investment decisions at the standard time.  Click to get BSE Gold Research reports.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>700</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our exclusive gold reports help you in making the right gold investment decisions at the standard time.  Click to get NYSE Gold Research reports.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>700</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our exclusive gold reports help you in making the right gold investment decisions at the standard time.  Click to get NASDAQ Gold Research reports.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>700</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                   Our exclusive gold reports help you in making the right gold investment decisions at the standard time.  Click to get TSX Gold Research reports.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                            {% if exchange == 'nse' %}
@@ -369,16 +485,76 @@
                                 Penny Stocks Report
                             </span>
                         </div>
+                       {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>29</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>2999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li>Weekly:<b>Reports on Email</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>
+                                   With us find the best market price of penny stocks. Click to get NSE reports of small stocks which trade for less than $5 per share.
+
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>2999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                 <li>
+                                   With us find the best market price of penny stocks. Click to get BSE reports of small stocks which trade for less than $5 per share.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                 <li>
+                                   With us find the best market price of penny stocks. Click to get NYSE reports of small stocks which trade for less than $5 per share.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                   With us find the best market price of penny stocks. Click to get NASDAQ reports of small stocks which trade for less than $5 per share.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                 <li>
+                                   With us find the best market price of penny stocks. Click to get TSX reports of small stocks which trade for less than $5 per share.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
@@ -429,16 +605,77 @@
                                 Resources Report
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>34</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>1999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
-                               <li>Duration:<b>12 months</b></li>
-                                <li><b>Focus on Mining & Energy sector</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to try luck in mining and energy companies? Hit off and download NSE resource reports with best recommendations in stock world.
+
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>1999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to try luck in mining and energy companies? Hit off and download BSE resource reports with best recommendations in stock world.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to try luck in mining and energy companies? Hit off and download NYSE resource reports with best recommendations in stock world.
+
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to try luck in mining and energy companies? Hit off and download NASDAQ resource reports with best recommendations in stock world.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                   Want to try luck in mining and energy companies? Hit off and download TSX resource reports with best recommendations in stock world.
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
@@ -485,16 +722,85 @@
                                Health Care Report
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>39</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>3000</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li>Weekly:<b>Reports on Email</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>
+                                    Want to invest in the Healthcare system? Click and get detailed NSE report of companies covering healthcare stocks across the globe.
+
+
+
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>3000</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                   Want to invest in the Healthcare system? Click and get detailed BSE report of companies covering healthcare stocks across the globe.
+
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>900</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+
+                                    <li>
+                                    Want to invest in the Healthcare system? Click and get detailed NYSE report of companies covering healthcare stocks across the globe.
+
+
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>900</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+<li>
+                                   Want to invest in the Healthcare system? Click and get detailed NASDAQ report of companies covering healthcare stocks across the globe.
+
+
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>900</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to invest in the Healthcare system? Click and get detailed TSX report of companies covering healthcare stocks across the globe.
+
+
+
+                                </li>                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
+
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                            {% if exchange == 'nse' %}
@@ -548,16 +854,64 @@
                                 <!--Platinium Package-->
                             <!--</span>-->
                         <!--</div>-->
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value platinum-price"><i class="fa fa-usd"></i><span>499</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>24999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li>Dedicated <b>Account Manager</b></li>
-                                <li><b>Covering all  the Reports</b></li>
+                                <li>
+                                    Whatever your experience level may be, we have platinum packages for everyone. Click to
+                                    unlock yours.
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>24999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth. Click and download yours Dividend BSE report today.</li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>6999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth. Click and download yours Dividend BSE report today.</li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>6999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth. Click and download yours Dividend BSE report today.</li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>6999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>Our DIR report primarily focuses on Dividend yield, Dividend Consistency and Dividend growth. Click and download yours Dividend BSE report today.</li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
@@ -606,17 +960,75 @@
                                 Technical Analysis
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>39.99</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>4999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li>Weekly:<b>Reports on Email</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>
+                                    Our technical analysts navigate the gap between intrinsic value and market price by
+                                    leveraging techniques like statistical analysis and behavioral economics.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>4999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our technical analysts  navigate the gap between intrinsic value and market price by
+                                    leveraging techniques like statistical analysis and behavioral economics.
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
 
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>500</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our technical analysts navigate the gap between intrinsic value and market price by
+                                    leveraging techniques like statistical analysis and behavioral economics.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our technical analysts navigate the gap between intrinsic value and market price by
+                                    leveraging techniques like statistical analysis and behavioral economics.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Our technical analysts navigate the gap between intrinsic value and market price by
+                                    leveraging techniques like statistical analysis and behavioral economics.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
                                 {% if nse_technical %}
@@ -661,17 +1073,73 @@
                                American Tech Report
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>199</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>5999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
                                 <li>Duration:<b>12 months</b></li>
-                                <li>Weekly:<b>Reports on Email</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>
+                                    We equip business leaders with indispensable insights, advice about the American tech world. Click and get an authentic American tech report today!
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>5999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    We equip business leaders with indispensable insights, advice about the American tech world.
+                                    Click and get an authentic American tech report today!
+                                </li>                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>888</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    We equip business leaders with indispensable insights, advice about the American tech world.
+                                    Click and get an authentic American tech report today!
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
 
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>888</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    We equip business leaders with indispensable insights, advice about the American tech world.
+                                    Click and get an authentic American tech report today!
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>888</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    We equip business leaders with indispensable insights, advice about the American tech world.
+                                    Click and get an authentic American tech report today!
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
                                 {% if nse_american %}
@@ -718,16 +1186,71 @@
                                Ipo Report
                             </span>
                         </div>
+                        {% if exchange == 'nse' %}
                         <div class="pricing-plans">
-                            <span class="price-value"><i class="fa fa-usd"></i><span>79</span></span>
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i></i><span>1999</span></span>
                         </div>
                         <div class="pricingContent">
                             <ul>
-                               <li>Duration:<b>12 months</b></li>
-                                <li>Weekly:<b>Reports on Email</b></li>
-                                <li><b>Daily: Market setup &  Recommendations</b></li>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to have a detailed NSE stock report of any private company that has gone public by sale of its stocks? Click and download.
+                                </li>
                             </ul>
                         </div><!-- /  CONTENT BOX-->
+                        {% elif exchange == 'bse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-rupee-sign"></i><span>1999</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to have a detailed BSE stock report of any private company that has gone public by sale of its stocks? Click and download.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nyse' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>799</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to have a detailed NYSE stock report of any private company that has gone public by sale of its stocks? Click and download.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'nasdaq' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>799</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to have a detailed NASDAQ stock report of any private company that has gone public by sale of its stocks? Click and download.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+
+                        {% elif exchange == 'tsx' %}
+                        <div class="pricing-plans">
+                            <span class="price-value"><i class="fa fa-usd"></i><span>799</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <li>Duration:<b>12 months</b></li>
+                                <li>
+                                    Want to have a detailed TSX stock report of any private company that has gone public by sale of its stocks? Click and download.
+                                </li>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        {% endif %}
+
 
                         <div class="pricingTable-sign-up"><!-- BUTTON BOX-->
                             {% if exchange == 'nse' %}
