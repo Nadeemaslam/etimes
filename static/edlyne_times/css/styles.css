@@ -1680,7 +1680,8 @@ color:#ffffff;
 }
 
 .pricingTable .pricingContent ul li{
-    padding: 20px 0;
+    padding: 10px 25px;
+    line-height:30px;
 }
 
 .pricingTable .pricingContent ul li:nth-child(odd) {
