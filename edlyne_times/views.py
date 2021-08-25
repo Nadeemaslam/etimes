@@ -223,7 +223,6 @@ def products(request, exchange):
     nasdaq_penny, nasdaq_technical, nasdaq_american, nasdaq_resources, tsx_ipo,\
     tsx_gold, tsx_dividend, tsx_health, tsx_platinum, tsx_penny, tsx_technical, tsx_american, tsx_resources, = (False,)*45
 
-   
     for key in user_category:
         if key['name'] == 'nse_gold':
             nse_gold = True
@@ -251,7 +250,7 @@ def products(request, exchange):
             bse_dividend = True
         elif key['name'] == 'bse_health':
             bse_health = True
-        elif key['name'] == 'bse-platinum':
+        elif key['name'] == 'bse_platinum':
             bse_platinum = True
         elif key['name'] == 'bse_penny':
             bse_penny = True
@@ -269,7 +268,7 @@ def products(request, exchange):
             nasdaq_dividend = True
         elif key['name'] == 'nasdaq_health':
             nasdaq_health = True
-        elif key['name'] == 'nasdaq-platinum':
+        elif key['name'] == 'nasdaq_platinum':
             nasdaq_platinum = True
         elif key['name'] == 'nasdaq_penny':
             nasdaq_penny = True
@@ -287,7 +286,7 @@ def products(request, exchange):
             tsx_dividend = True
         elif key['name'] == 'tsx_health':
             tsx_health = True
-        elif key['name'] == 'tsx-platinum':
+        elif key['name'] == 'tsx_platinum':
             tsx_platinum = True
         elif key['name'] == 'tsx_penny':
             tsx_penny = True
@@ -303,7 +302,7 @@ def products(request, exchange):
             nyse_dividend = True
         elif key['name'] == 'nyse_health':
             nyse_health = True
-        elif key['name'] == 'nyse-platinum':
+        elif key['name'] == 'nyse_platinum':
             nyse_platinum = True
         elif key['name'] == 'nyse_penny':
             nyse_penny = True
