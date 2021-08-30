@@ -15,6 +15,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse, HttpResponse
 from django.views import generic
 from .models import Post
+from .models import Tsx_losers, Tsx_gainers
+from .models import Nyse_gainers, Nyse_losers
 
 def get_nasdaq_gainers(request):
     res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
@@ -67,8 +69,8 @@ def get_nasdaq_losers(request):
 
 
 def nyse_gainers(request):
-    res = requests.get('https://munafasutra.com/nyse/top/GAINERS/Day', verify=False)
-    soup = bs4.BeautifulSoup(res.text, "lxml")
+    results = requests.get('https://munafasutra.com/nyse/top/GAINERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(results.text, "lxml")
     table = soup.find_all('table')
     td = table[1].find_all('td')
     #
@@ -88,13 +90,18 @@ def nyse_gainers(request):
         res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+
+    if results.status_code == 200:
+        Nyse_gainers.objects.all().delete()
+        for key, value in res.items():
+            Nyse_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
     return JsonResponse(res)
 
 
 
 def nyse_losers(request):
-    res = requests.get('https://munafasutra.com/nyse/top/LOSERS/Day', verify=False)
-    soup = bs4.BeautifulSoup(res.text, "lxml")
+    results = requests.get('https://munafasutra.com/nyse/top/LOSERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(results.text, "lxml")
     table = soup.find_all('table')
     td = table[1].find_all('td')
     #
@@ -115,14 +122,18 @@ def nyse_losers(request):
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
 
+    if results.status_code == 200:
+        Nyse_losers.objects.all().delete()
+        for key, value in res.items():
+            Nyse_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
 
     return JsonResponse(res)
 
 
 def tsx_gainers(request):
 
-    res = requests.get('https://www.investcom.com/page/mpgtoronto.htm', verify=False)
-    soup = bs4.BeautifulSoup(res.text,"xml")
+    results = requests.get('https://www.investcom.com/page/mpgtoronto.htm', verify=False)
+    soup = bs4.BeautifulSoup(results.text,"xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
     u = table.find_all('u')
@@ -144,11 +155,16 @@ def tsx_gainers(request):
         res[u[12].text] = [u[13].text, font[12].text, font[13].text]
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
+
+    if results.status_code == 200:
+        Tsx_gainers.objects.all().delete()
+        for key, value in res.items():
+            Tsx_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return JsonResponse(res)
 
 def tsx_losers(request):
-    res = requests.get('https://www.investcom.com/page/mpltoronto.htm', verify=False )
-    soup = bs4.BeautifulSoup(res.text, "xml")
+    results = requests.get('https://www.investcom.com/page/mpltoronto.htm', verify=False )
+    soup = bs4.BeautifulSoup(results.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
     u = table.find_all('u')
@@ -171,13 +187,22 @@ def tsx_losers(request):
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
+    if results.status_code == 200:
+        Tsx_losers.objects.all().delete()
+        for key, value in res.items():
+            Tsx_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return JsonResponse(res)
 
 
 
 def home(request):
     blogs = Post.objects.filter(status=1).order_by('-created_on')[:10]
-    context = {'Post': blogs}
+    tsx_losers = Tsx_losers.objects.all()
+    tsx_gainers = Tsx_gainers.objects.all()
+    nyse_gainers = Nyse_gainers.objects.all()
+    nyse_losers = Nyse_losers.objects.all()
+    context = {'Post': blogs, 'tsx_losers': tsx_losers, 'tsx_gainers': tsx_gainers,
+               'nyse_gainers': nyse_gainers, 'nyse_losers': nyse_losers}
     return render(request, 'edlyne_times/index.html', context)
 
 def nse(request):
