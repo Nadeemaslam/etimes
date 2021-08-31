@@ -33,13 +33,9 @@ def tsx_losers():
         Tsx_losers.objects.all().delete()
         for key, value in res.items():
             Tsx_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
-    return res
-
-
-def tsx_gainers():
 
     results = requests.get('https://www.investcom.com/page/mpgtoronto.htm', verify=False)
-    soup = bs4.BeautifulSoup(results.text,"xml")
+    soup = bs4.BeautifulSoup(results.text, "xml")
     div1 = soup.find_all('div', {"class": "genTable"})
     table = div1[0].find('table')
     u = table.find_all('u')
@@ -68,3 +64,5 @@ def tsx_gainers():
         for key, value in res.items():
             Tsx_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return res
+
+
