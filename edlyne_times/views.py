@@ -188,9 +188,10 @@ def tsx_losers(request):
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
     if results.status_code == 200:
-        Tsx_losers.objects.all().delete()
-        for key, value in res.items():
-            Tsx_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
+        # Tsx_losers.objects.all().delete()
+        print("shehehehhehehehehehheheh",Tsx_losers.objects.all())
+        # for key, value in res.items():
+        #     Tsx_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return JsonResponse(res)
 
 

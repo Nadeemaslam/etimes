@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'edlyne_times',
     'accounts',
-    'ckeditor'
+    'ckeditor',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -155,4 +156,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 
-
+CRONJOBS = [
+    ('*/1 * * * *', 'edlyne_times.cron.tsx_losers')
+]
