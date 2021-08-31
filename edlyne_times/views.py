@@ -91,10 +91,6 @@ def nyse_gainers(request):
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
 
-    if results.status_code == 200:
-        Nyse_gainers.objects.all().delete()
-        for key, value in res.items():
-            Nyse_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
     return JsonResponse(res)
 
 
@@ -121,11 +117,6 @@ def nyse_losers(request):
         res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
-
-    if results.status_code == 200:
-        Nyse_losers.objects.all().delete()
-        # for key, value in res.items():
-        #     Nyse_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
 
     return JsonResponse(res)
 
@@ -187,11 +178,6 @@ def tsx_losers(request):
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
-    if results.status_code == 200:
-        # Tsx_losers.objects.all().delete()
-        print("shehehehhehehehehehheheh",Tsx_losers.objects.all())
-        # for key, value in res.items():
-        #     Tsx_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return JsonResponse(res)
 
 
@@ -202,6 +188,7 @@ def home(request):
     tsx_gainers = Tsx_gainers.objects.all()
     nyse_gainers = Nyse_gainers.objects.all()
     nyse_losers = Nyse_losers.objects.all()
+    print(nyse_losers,"nanannananannanannasbansbna")
     context = {'Post': blogs, 'tsx_losers': tsx_losers, 'tsx_gainers': tsx_gainers,
                'nyse_gainers': nyse_gainers, 'nyse_losers': nyse_losers}
     return render(request, 'edlyne_times/index.html', context)
