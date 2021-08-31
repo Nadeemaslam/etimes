@@ -2,7 +2,7 @@ import requests
 import bs4
 from .models import Tsx_losers, Tsx_gainers
 from .models import Nyse_losers, Nyse_gainers
-
+from datetime import datetime
 
 def tsx_losers():
     results = requests.get('https://www.investcom.com/page/mpltoronto.htm', verify=False )
@@ -114,7 +114,7 @@ def tsx_losers():
         res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
     if len(td) > 24:
         res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
-    print("nyse_gianerss", results.status_code)
+    print("nyse_gianerss", results.status_code, str(datetime.now()))
     if results.status_code == 200:
         Nyse_gainers.objects.all().delete()
         print("Nyse gainers ")
