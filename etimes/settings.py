@@ -157,5 +157,5 @@ os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 
 CRONJOBS = [
-    ('*/5 * * * *', 'edlyne_times.cron.tsx_losers')
+    ('*/1 * * * *', 'edlyne_times.cron.tsx_losers')
 ]
