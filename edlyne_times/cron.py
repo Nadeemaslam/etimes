@@ -1,6 +1,7 @@
 import requests
 import bs4
 from .models import Tsx_losers, Tsx_gainers
+from .models import Nyse_losers, Nyse_gainers
 
 
 def tsx_losers():
@@ -29,7 +30,7 @@ def tsx_losers():
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
     print("jnjnjnjidieieiieie")
     if results.status_code == 200:
-        print("dkdkdkdkkdkdkdkdkdk")
+        print("dkdkdkdkkdkdkdkdkdk ")
         Tsx_losers.objects.all().delete()
         for key, value in res.items():
             Tsx_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
@@ -59,10 +60,67 @@ def tsx_losers():
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
     if results.status_code == 200:
-        print("hellellel gainerss   tsx")
+        print("hellellel gainerss   tsx gain")
         Tsx_gainers.objects.all().delete()
         for key, value in res.items():
             Tsx_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
+
+    # Nyse loser
+    results = requests.get('https://munafasutra.com/nyse/top/LOSERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(results.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
+    #
+    res = {}
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+
+    if results.status_code == 200:
+        Nyse_losers.objects.all().delete()
+        print("Nyse Losers ")
+        for key, value in res.items():
+            Nyse_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+
+    # nyse gainers
+    results = requests.get('https://munafasutra.com/nyse/top/GAINERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(results.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
+    #
+    res = {}
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+    print("nyse_gianerss", results.status_code)
+    if results.status_code == 200:
+        Nyse_gainers.objects.all().delete()
+        print("Nyse gainers ")
+        for key, value in res.items():
+            Nyse_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+
     return res
 
 
