@@ -92,6 +92,8 @@ def tsx_losers():
         for key, value in res.items():
             Nyse_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
 
+    print(Nyse_losers.objects.all(),"nyse losersssssss from db")
+
     # nyse gainers
     results = requests.get('https://munafasutra.com/nyse/top/GAINERS/Day', verify=False)
     soup = bs4.BeautifulSoup(results.text, "lxml")
