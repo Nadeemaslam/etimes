@@ -794,7 +794,43 @@ $(document).ready(function(){
 
 });
 
+$(document).ready(function(){
 
+console.log("hiii");
+//nyse gainers
+    $.ajax({
+    url: '/nyse_gainers',
+    type:'GET',
+      cache:false,
+      async:'false',
+      dataType:'json',
+    success: function(data) {
+        console.log("helloNysegainers", data);
+
+    },
+    failure: function(data) {
+        console.log('Got an error dude');
+    }
+});
+
+
+
+   $.ajax({
+    url: '/nyse_losers',
+    type:'GET',
+      cache:false,
+      async:'false',
+      dataType:'json',
+    success: function(data) {
+        console.log("hellolosers", data);
+
+    },
+    failure: function(data) {
+        console.log('Got an error dude');
+    }
+});
+
+});
 
 
 (function () {

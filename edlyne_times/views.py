@@ -124,8 +124,8 @@ def nyse_losers(request):
 
     if results.status_code == 200:
         Nyse_losers.objects.all().delete()
-        for key, value in res.items():
-            Nyse_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+        # for key, value in res.items():
+        #     Nyse_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
 
     return JsonResponse(res)
 
@@ -156,10 +156,10 @@ def tsx_gainers(request):
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
-    if results.status_code == 200:
-        Tsx_gainers.objects.all().delete()
-        for key, value in res.items():
-            Tsx_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
+    # if results.status_code == 200:
+    #     Tsx_gainers.objects.all().delete()
+    #     for key, value in res.items():
+    #         Tsx_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return JsonResponse(res)
 
 def tsx_losers(request):
