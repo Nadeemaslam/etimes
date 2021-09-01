@@ -3323,17 +3323,3 @@ ul.page-numbers li a:hover {
 	border-color: #f48840;
 	color: #fff;
 }
-
-
-.spinner-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    top:150px;
-}
-.spinner{
-    height: 100px;
-    width: 100px;
-    position: absolute
-}
