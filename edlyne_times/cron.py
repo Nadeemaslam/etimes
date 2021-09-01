@@ -2,6 +2,7 @@ import requests
 import bs4
 from .models import Tsx_losers, Tsx_gainers
 from .models import Nyse_losers, Nyse_gainers
+from .models import Nasdaq_losers, Nasdaq_gainers
 from datetime import datetime
 
 def tsx_losers():
@@ -123,6 +124,64 @@ def tsx_losers():
         for key, value in res.items():
             Nyse_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
 
+
+    # nasdaq losers
+    res = requests.get('https://munafasutra.com/nasdaq/top/LOSERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
+    #
+    res = {}
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+
+    if results.status_code == 200:
+        Nasdaq_losers.objects.all().delete()
+        print("Nasdaq losers ")
+        for key, value in res.items():
+            Nasdaq_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+
+    # nasdaq gainers
+    res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
+    soup = bs4.BeautifulSoup(res.text, "lxml")
+    table = soup.find_all('table')
+    td = table[1].find_all('td')
+    #
+    res = {}
+    # if len(td) > 0:
+    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+    if len(td) > 4:
+        res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
+        text = td[5].text
+    if len(td) > 8:
+        res[td[8].text.lstrip()] = [td[11].text, td[10].text, td[9].text[:-7]]
+    if len(td) > 12:
+        res[td[12].text.lstrip()] = [td[15].text, td[14].text, td[13].text[:-7]]
+    if len(td) > 16:
+        res[td[16].text.lstrip()] = [td[19].text, td[18].text, td[17].text[:-7]]
+    if len(td) > 20:
+        res[td[20].text.lstrip()] = [td[23].text, td[22].text, td[21].text[:-7]]
+    if len(td) > 24:
+        res[td[24].text.lstrip()] = [td[27].text, td[26].text, td[25].text[:-7]]
+
+    if results.status_code == 200:
+        Nasdaq_gainers.objects.all().delete()
+        print("Nasdaq gainers ")
+        for key, value in res.items():
+            Nasdaq_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
     return res
 
 

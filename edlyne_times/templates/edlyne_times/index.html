@@ -86,7 +86,15 @@
                                     </tr>
                                   </thead>
                                   <tbody id="nasdaq_gainers_tbody">
+                                    {% for stock in nyse_gainers %}
 
+                                                <tr class="Gainers">
+                                                  <td>{{stock.name}}</td>
+                                                  <td>{{stock.prev}}</td>
+                                                  <td> <span class="bearish">{{stock.current}} </span></td>
+                                                  <td> <span class="bearish">{{stock.change}} </span></td>
+                                                </tr>
+                                              {% endfor %}
                                   </tbody>
                                 </table>
                                         </div>
@@ -101,7 +109,15 @@
                                                 </tr>
                                               </thead>
                                               <tbody id="nasdaq_losers_tbody">
+                                                    {% for stock in nasdaq_losers %}
 
+                                                <tr class="losers">
+                                                  <td>{{stock.name}}</td>
+                                                  <td>{{stock.prev}}</td>
+                                                  <td> <span class="bearish">{{stock.current}} </span></td>
+                                                  <td> <span class="bearish">{{stock.change}} </span></td>
+                                                </tr>
+                                              {% endfor %}
                                               </tbody>
                                             </table>
                                         </div>
@@ -123,7 +139,7 @@
                                   <tbody id="nyse_gainers_tbody">
                                      {% for stock in nyse_gainers %}
 
-                                                <tr class="losers">
+                                                <tr class="gainers">
                                                   <td>{{stock.name}}</td>
                                                   <td>{{stock.prev}}</td>
                                                   <td> <span class="bearish">{{stock.current}} </span></td>
@@ -730,69 +746,6 @@ $(document).ready(function(){
 
 
 
-$(document).ready(function(){
-    $.ajax({
-      type:'GET',
-      beforeSend: function(){
-        $('.spinner-container').show();
-        },
-      url:'/nasdaq_gainers'    ,
-      cache:false,
-      async:'false',
-      dataType:'json',
-      success: function(data) {
-        $('.spinner-container').hide();
-        var tableData = '<table>'
-        $.each(data, function(key, value){
-        tableData += '<tr>';
-        tableData += '<td>' + key + '</td>';
-        tableData += '<td>' + value[0] + '</td>';
-        tableData += '<td>' + value[1] + '</td>';
-        tableData += '<td>' + value[2] + '</td>';
-
-        tableData += '</tr>';
-            });
-        tableData += '</table>';
-
-        $('#nasdaq_gainers_tbody').html(tableData);
-
-      },
-      error: function( error) {
-        console.log("Error: " + error)
-      }
-   });
-
-
-//   nasdaq losers
-    $.ajax({
-      type:'GET',
-      url:'/nasdaq_losers'    ,
-      cache:false,
-      async:'false',
-      dataType:'json',
-      success: function(data) {
-        var tableData = '<table>'
-        $.each(data, function(key, value){
-        tableData += '<tr>';
-        tableData += '<td>' + key + '</td>';
-        tableData += '<td>' + value[0] + '</td>';
-        tableData += '<td>' + value[1] + '</td>';
-        tableData += '<td>' + value[2] + '</td>';
-
-        tableData += '</tr>';
-            });
-        tableData += '</table>';
-
-        $('#nasdaq_losers_tbody').html(tableData);
-
-      },
-      error: function( error) {
-        console.log("Error: " + error)
-      }
-   });
-
-
-});
 
 
 
