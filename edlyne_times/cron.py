@@ -154,7 +154,7 @@ def tsx_losers():
         Nasdaq_losers.objects.all().delete()
         print("Nasdaq losers dataa ")
         for key, value in res.items():
-            Nasdaq_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+            Nasdaq_losers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
 
     # res = requests.get('https://munafasutra.com/nasdaq/top/LOSERS/Day', verify=False)
     # soup = bs4.BeautifulSoup(res.text, "lxml")
@@ -234,7 +234,7 @@ def tsx_losers():
         Nasdaq_gainers.objects.all().delete()
         print("Nasdaq gainers new daata")
         for key, value in res.items():
-            Nasdaq_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+            Nasdaq_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
 
     print(Nasdaq_losers.objects.all(), "nasdaq new ssssss from db")
     return res
