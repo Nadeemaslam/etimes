@@ -132,19 +132,19 @@ class Nyse_losers(models.Model):
 
 
 class Nasdaq_gainers(models.Model):
+    symbol = models.CharField(max_length=200, blank=True)
     name = models.CharField(max_length=200, blank=True)
-    prev = models.CharField(max_length=200, blank=True)
-    current = models.CharField(max_length=200, blank=True)
     change = models.CharField(max_length=200, blank=True)
+    percent = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
 
 class Nasdaq_losers(models.Model):
+    symbol = models.CharField(max_length=200, blank=True)
     name = models.CharField(max_length=200, blank=True)
-    prev = models.CharField(max_length=200, blank=True)
-    current = models.CharField(max_length=200, blank=True)
     change = models.CharField(max_length=200, blank=True)
+    percent = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
