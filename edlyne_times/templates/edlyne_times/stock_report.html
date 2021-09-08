@@ -4,9 +4,10 @@
 <div class="clear"></div>
 <div class="container text-center" style="margin-top:80px;">
     <object data="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0" type="application/pdf" width="80%" height="1200vh">
-    <iframe src="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0"></iframe>
+    <iframe src="https://docs.google.com/viewer?url={% static 'edlyne_times/assets/files/' %}{{stock_report.file}}&embedded=true"></iframe>
 </object>
-
+    <object data="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0" type="application/pdf" width="80%" height="1200vh">
+    </object>
     </div>
 
 {% endblock %}
