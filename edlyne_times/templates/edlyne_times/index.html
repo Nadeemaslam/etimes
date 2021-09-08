@@ -85,7 +85,7 @@
                                   <tbody id="nasdaq_gainers_tbody">
                                     {% for stock in nasdaq_gainers %}
 
-                                                <tr class="losers">
+                                                <tr class="">
                                                   <td>{{stock.symbol}}</td>
                                                   <td>{{stock.name}}</td>
                                                   <td> <span class="bearish">{{stock.change}} </span></td>
@@ -127,20 +127,20 @@
                                         <table class="table table-striped market-table home-nse-gainer-table">
                                   <thead class="nse-table-head">
                                     <tr>
-                                          <th scope="col">Company</th>
-                                          <th scope="col">Prev Price</th>
-                                          <th scope="col">Current Price </th>
-                                          <th scope="col">%Change </th>
+                                      <th scope="col">Symbol</th>
+                                      <th scope="col">Company</th>
+                                      <th scope="col">Change </th>
+                                      <th scope="col">%Change </th>
                                     </tr>
                                   </thead>
                                   <tbody id="nyse_gainers_tbody">
                                      {% for stock in nyse_gainers %}
 
-                                                <tr class="gainers">
+                                                 <tr class="">
+                                                  <td>{{stock.symbol}}</td>
                                                   <td>{{stock.name}}</td>
-                                                  <td>{{stock.prev}}</td>
-                                                  <td> <span class="bearish">{{stock.current}} </span></td>
                                                   <td> <span class="bearish">{{stock.change}} </span></td>
+                                                  <td> <span class="bearish">{{stock.percent}} </span></td>
                                                 </tr>
                                               {% endfor %}
                                   </tbody>
@@ -149,21 +149,21 @@
                                         <div class="col-lg-6 col-md-6 col-10 col-sm-10">
                                         <table class="table table-striped  market-table home-nse-loser-table">
                                               <thead class="nse-table-head">
-                                                <tr>
-                                                  <th scope="col">Company</th>
-                                                  <th scope="col">Prev Price</th>
-                                                  <th scope="col">Current Price </th>
-                                                  <th scope="col">%Change </th>
-                                                </tr>
+                                               <tr>
+                                                      <th scope="col">Symbol</th>
+                                                      <th scope="col">Company</th>
+                                                      <th scope="col">Change </th>
+                                                      <th scope="col">%Change </th>
+                                                    </tr>
                                               </thead>
                                            <tbody id="nyse-losers-tbody" class="nse-table-body">
                                                 {% for stock in nyse_losers %}
 
-                                                <tr class="losers">
+                                                <tr class="">
+                                                  <td>{{stock.symbol}}</td>
                                                   <td>{{stock.name}}</td>
-                                                  <td>{{stock.prev}}</td>
-                                                  <td> <span class="bearish">{{stock.current}} </span></td>
                                                   <td> <span class="bearish">{{stock.change}} </span></td>
+                                                  <td> <span class="bearish">{{stock.percent}} </span></td>
                                                 </tr>
                                               {% endfor %}
 
@@ -189,7 +189,7 @@
                                   <tbody id="tsx-gainers-tbody">
                                   {% for stock in tsx_gainers %}
 
-                                                <tr class="losers">
+                                                <tr class="">
                                                   <td>{{stock.symbol}}</td>
                                                   <td>{{stock.name}}</td>
                                                   <td> <span class="bearish">{{stock.change}} </span></td>
