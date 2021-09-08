@@ -152,7 +152,7 @@ def tsx_losers():
 
     if results.status_code == 200:
         Nasdaq_losers.objects.all().delete()
-        print("Nasdaq losers ")
+        print("Nasdaq losers dataa ")
         for key, value in res.items():
             Nasdaq_losers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
 
@@ -232,9 +232,11 @@ def tsx_losers():
 
     if results.status_code == 200:
         Nasdaq_gainers.objects.all().delete()
-        print("Nasdaq gainers ")
+        print("Nasdaq gainers new daata")
         for key, value in res.items():
             Nasdaq_gainers.objects.create(name=key, prev=value[0], current=value[1], change=value[2])
+
+    print(Nasdaq_losers.objects.all(), "nasdaq new ssssss from db")
     return res
 
 
