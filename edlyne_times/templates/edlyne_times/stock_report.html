@@ -4,7 +4,9 @@
 <div class="clear"></div>
 <div class="container text-center" style="margin-top:80px;">
     <object data="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0" type="application/pdf" width="80%" height="1200vh">
-    </object>
+    <iframe src="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0"></iframe>
+</object>
+
     </div>
 
 {% endblock %}
