@@ -237,6 +237,7 @@ def tsx_losers():
             Nasdaq_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
 
     print(Nasdaq_losers.objects.all(), "nasdaq new ssssss from db")
+    print(Nasdaq_gainers.objects.all(), "nasdaq new ssssss from db")
     return res
 
 
