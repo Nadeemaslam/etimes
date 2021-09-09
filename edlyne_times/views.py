@@ -219,7 +219,7 @@ def reports(request, slug):
 
 def research(request, exchange):
     user_group = request.GET.get('user_group', -1)
-    stocks = report.objects.filter(exchange=exchange, category=user_group)
+    stocks = report.objects.filter(exchange=exchange, category=user_group).order_by('-created_on')
     context = {'range': stocks, 'user_group': user_group}
     return render(request, 'edlyne_times/research.html', context)
 

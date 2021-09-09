@@ -4,9 +4,12 @@ from edlyne_times.models import report
 from edlyne_times.models import Tsx_losers
 from edlyne_times.models import Post
 
-class AuthorAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(report,AuthorAdmin)
+class ReportAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug', 'category', 'created_on')
+    list_filter = ("created_on",)
+    search_fields = ['name', 'category']
+
+admin.site.register(report,ReportAdmin)
 
 
 class PostAdmin(admin.ModelAdmin):
