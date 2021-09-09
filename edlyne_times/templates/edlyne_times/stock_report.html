@@ -2,12 +2,12 @@
 {% load static %}
 {% block content %}
 <div class="clear"></div>
-<div class="container text-center" style="margin-top:80px;">
-    <object data="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0" type="application/pdf" width="80%" height="1200vh">
-    <iframe src="https://docs.google.com/viewer?url={% static 'edlyne_times/assets/files/' %}{{stock_report.file}}&embedded=true"></iframe>
-</object>
+<div class="container text-center" style="margin-top:80px;">{{stock_report.file}}
+    {% static 'edlyne_times/assets/files/' %}{{stock_report.file}}
     <object data="{% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0" type="application/pdf" width="80%" height="1200vh">
     </object>
+    <iframe id="pdfviewer" src="http://docs.google.com/gview?embedded=true&url={% static 'edlyne_times/assets/files/' %}{{stock_report.file}}#toolbar=0&amp;embedded=true" frameborder="0" width="100%" height="100%"></iframe>
+
     </div>
 
 {% endblock %}
