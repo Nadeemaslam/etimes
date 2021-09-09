@@ -6,7 +6,7 @@ from edlyne_times.models import Post
 
 class ReportAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'category', 'created_on')
-    list_filter = ("created_on",)
+    list_filter = ("created_on", 'category')
     search_fields = ['name', 'category']
 
 admin.site.register(report,ReportAdmin)
