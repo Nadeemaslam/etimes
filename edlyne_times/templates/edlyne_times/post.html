@@ -280,14 +280,38 @@
                   </div>
                 </div>
                   {% endfor %}
+
+
+
+
                 <div class="col-lg-12">
-                  <ul class="page-numbers">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                  </ul>
+                    {% if Post.has_other_pages %}
+                      <ul class="page-numbers">
+                        {% if Post.has_previous %}
+                          <li><a href="?page={{ Post.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                          <li class="disabled"><a>&laquo;</a></li>
+                        {% endif %}
+                        {% for i in Post.paginator.page_range %}
+                          {% if Post.number == i %}
+                            <li class="active"><a>{{ i }} <span class="sr-only">(current)</span></a></li>
+                          {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                        {% if Post.has_next %}
+                          <li><a href="?page={{ Post.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                          <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                      </ul>
+                {% endif %}
                 </div>
+
+
+
+
+
               </div>
             </div>
           </div>

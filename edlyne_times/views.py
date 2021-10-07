@@ -1,23 +1,18 @@
 from django.shortcuts import render
-from nsetools import Nse
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
-import time
 from edlyne_times.models import report
-import asyncio
-from asgiref.sync import sync_to_async
 import bs4
 import requests
-import json
-from accounts.decorators import allowed_users
 from django.shortcuts import redirect
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import JsonResponse, HttpResponse
-from django.views import generic
+from django.http import JsonResponse
 from .models import Post
 from .models import Tsx_losers, Tsx_gainers
 from .models import Nyse_gainers, Nyse_losers
 from .models import Nasdaq_gainers, Nasdaq_losers
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 def get_nasdaq_gainers(request):
     res = requests.get('https://munafasutra.com/nasdaq/top/GAINERS/Day', verify=False)
@@ -26,8 +21,6 @@ def get_nasdaq_gainers(request):
     td = table[1].find_all('td')
     #
     res = {}
-    # if len(td) > 0:
-    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
     if len(td) > 4:
         res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
         text = td[5].text
@@ -49,10 +42,8 @@ def get_nasdaq_losers(request):
     soup = bs4.BeautifulSoup(res.text, "lxml")
     table = soup.find_all('table')
     td = table[1].find_all('td')
-    #
+
     res = {}
-    # if len(td) > 0:
-    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
     if len(td) > 4:
         res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
         text = td[5].text
@@ -76,8 +67,7 @@ def nyse_gainers(request):
     td = table[1].find_all('td')
     #
     res = {}
-    # if len(td) > 0:
-    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+
     if len(td) > 4:
         res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
         text = td[5].text
@@ -101,10 +91,9 @@ def nyse_losers(request):
     soup = bs4.BeautifulSoup(results.text, "lxml")
     table = soup.find_all('table')
     td = table[1].find_all('td')
-    #
+
     res = {}
-    # if len(td) > 0:
-    #     res[td[0].text.lstrip()] = [td[1].text, td[2].text, td[3].text]
+
     if len(td) > 4:
         res[td[4].text.lstrip()] = [td[7].text, td[6].text, td[5].text[:-7]]
         text = td[5].text
@@ -148,10 +137,6 @@ def tsx_gainers(request):
     if len(u) > 14:
         res[u[14].text] = [u[15].text, font[14].text, font[15].text]
 
-    # if results.status_code == 200:
-    #     Tsx_gainers.objects.all().delete()
-    #     for key, value in res.items():
-    #         Tsx_gainers.objects.create(symbol=key, name=value[0], change=value[1], percent=value[2])
     return JsonResponse(res)
 
 def tsx_losers(request):
@@ -198,10 +183,7 @@ def home(request):
 
 def nse(request):
 
-    # nse = Nse()
-    # data = nse.get_top_gainers()
-    # context = {'companyName': data[0]['symbol'],'LTP': data[1]['ltp']}
-     # print( data(i), print (data[0]['symbol'],"llllll", data[1]['ltp']))
+
     return render(request, 'edlyne_times/nse.html', )
 
 def reports(request, slug):
@@ -460,7 +442,16 @@ def get_nse_losers(request):
 
 
 def PostList(request):
-    blogs = Post.objects.filter(status=1).order_by('-created_on')[:10]
+    blogs = Post.objects.filter(status=1).order_by('-created_on')
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(blogs, 2)
+    try:
+        blogs = paginator.page(page)
+    except PageNotAnInteger:
+        blogs = paginator.page(1)
+    except EmptyPage:
+        blogs = paginator.page(paginator.num_pages)
     context = {'Post': blogs}
     return render(request, 'edlyne_times/post.html', context)
 
