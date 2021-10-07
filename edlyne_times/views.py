@@ -445,7 +445,7 @@ def PostList(request):
     blogs = Post.objects.filter(status=1).order_by('-created_on')
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(blogs, 2)
+    paginator = Paginator(blogs, 4)
     try:
         blogs = paginator.page(page)
     except PageNotAnInteger:
