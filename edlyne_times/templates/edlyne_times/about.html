@@ -75,11 +75,16 @@
             <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
               <li class="">
                 <a href="{% url 'index' %}" class="d-block" title="Home">
-                  <span>HOME</span>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="{% url 'about' %}" class="d-block" title="About">
+                  <span>About Us</span>
                 </a>
               </li>
               <li >
-                  <a href="#" class="d-block submenu-mobile" title="Services">
+                  <a href="#" class="d-block submenu-mobile" title="Reports">
                       <span>Market Research</span></a>
                    <div class="dropdown">
                                 <button class="dropbtn">Market Research
@@ -161,13 +166,18 @@
                 </ul>
 
               </li>
+              <li class="">
+                <a href="{% url 'services' %}" class="d-block" title="Services">
+                  <span>Our Services</span>
+                </a>
+              </li>
               <li>
-                <a href="{% url 'post' %}" class="d-block" title="post  ">
+                <a href="{% url 'post' %}" class="d-block" title="News">
                   <span>News</span>
                 </a>
               </li>
               <li>
-                <a href="{% url 'contact' %}" class="d-block" title="Blog">
+                <a href="{% url 'contact' %}" class="d-block" title="Contact">
                   <span>Contact Us</span>
                 </a>
               </li>
@@ -217,9 +227,7 @@
           </div>
         </div>
       </div>
-    </header>
-
-        </nav>
+</header>
 
 <!-- side menu start -->
     <div class="side-menu-wrap ">
@@ -304,31 +312,31 @@
           </div>
           <div class="col-md-4">
             <div class="team-item">
-              <img src="{% static 'edlyne_times/assets/images/team_01.jpg' %}" alt="">
+              <img src="{% static 'edlyne_times/assets/images/pfp.png' %}" alt="">
               <div class="down-content">
                 <h4>Mr. Gowhar Bashir</h4>
                 <span>Chairman  ETimes Media</span>
-                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                <p>Gowhar Bashir founded ETimes Media with a vision to offer financial services that are both top-of-the-range and accessible to the general masses. He has an indisputable reputation for working relentlessly and with devotion.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="team-item">
-              <img src="{% static 'edlyne_times/assets/images/service_03.jpg' %}" alt="">
+              <img src="{% static 'edlyne_times/assets/images/pfp.png' %}" alt="">
               <div class="down-content">
                 <h4>Mr Aleem Hamid</h4>
                 <span>Director ETimes Media</span>
-                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                <p>Aleem Hamid has experience of 15+ years, making him a valuable asset to ETimes Media. With a degree in business administration, his guidance and support have helped us in achieving the unachievable directing ETimes media towards the skies and further. </p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="team-item">
-              <img src="{% static 'edlyne_times/assets/images/team_03.jpg' %}" alt="">
+              <img src="{% static 'edlyne_times/assets/images/pfp.png' %}" alt="">
               <div class="down-content">
                 <h4>Mr Bariq Wani </h4>
                 <span>Director ETimes Media</span>
-                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                <p>With an experience of more than 10 years, Mr. Bariq Wani is a connoisseur when it comes to investments, equity research, and analyzing financial data. Honored with many accolades, he has directed ETimes Media towards success by dealing remarkably with national and international clients.</p>
               </div>
             </div>
           </div>

@@ -72,11 +72,16 @@
             <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
               <li class="">
                 <a href="{% url 'index' %}" class="d-block" title="Home">
-                  <span>HOME</span>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="{% url 'about' %}" class="d-block" title="About">
+                  <span>About Us</span>
                 </a>
               </li>
               <li >
-                  <a href="#" class="d-block submenu-mobile" title="Services">
+                  <a href="#" class="d-block submenu-mobile" title="Reports">
                       <span>Market Research</span></a>
                    <div class="dropdown">
                                 <button class="dropbtn">Market Research
@@ -158,14 +163,18 @@
                 </ul>
 
               </li>
-
+              <li class="">
+                <a href="{% url 'services' %}" class="d-block" title="Services">
+                  <span>Our Services</span>
+                </a>
+              </li>
               <li>
-                <a href="{% url 'post' %}" class="d-block" title="post">
+                <a href="{% url 'post' %}" class="d-block" title="News">
                   <span>News</span>
                 </a>
               </li>
               <li>
-                <a href="{% url 'contact' %}" class="d-block" title="Blog">
+                <a href="{% url 'contact' %}" class="d-block" title="Contact">
                   <span>Contact Us</span>
                 </a>
               </li>
