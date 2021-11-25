@@ -77,6 +77,20 @@ WSGI_APPLICATION = 'etimes.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
+"""
+ALLOWED_HOSTS = ['*']
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'etimes_db',
+        'USER': 'admin',
+        'PASSWORD': 'root@123',
+        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+}
+"""
+
+
 if DEBUG:
     DATABASES = {
         'default': {
