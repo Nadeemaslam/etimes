@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic.base import TemplateView
+from django.conf.urls import url
 
 
 urlpatterns = [
     path('', include('edlyne_times.urls')),
     path('accounts/', include('accounts.urls')),
     path('secretpanel/', admin.site.urls),
+    url(r'^robots\.txt/$', TemplateView.as_view(template_name="etimes/robots.txt", content_type='text/plain')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
