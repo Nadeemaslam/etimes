@@ -5,6 +5,8 @@ from django.conf.urls import url
 from . import views
 from accounts.views import registerPage, loginPage, logoutUser, contact
 
+
+
 urlpatterns = [
     url('register/', registerPage, name='register'),
     url('login/', loginPage, name='login'),
@@ -28,5 +30,5 @@ urlpatterns = [
     url(r'nasdaq_losers/', views.get_nasdaq_losers, name='nasdaq_losers'),
     url(r'nasdaq_gainers/', views.get_nasdaq_gainers, name='nasdaq_gainers'),
     url(r'blogs/', views.PostList, name='post'),
-    url(r'blog/(?P<slug>[\w-]+)/$', views.PostDetail, name='post_detail')
+    url(r'blog/(?P<slug>[\w-]+)/$', views.PostDetail, name='post_detail'),
 ]
