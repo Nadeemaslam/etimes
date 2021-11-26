@@ -1,13 +1,10 @@
-
-
-
 //nav background color change onscroll
 
 var myNav = document.getElementById('main_header');
 var myNav_a = document.getElementById('main_header');
 window.onscroll = function () {
     "use strict";
-     if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200 )
+     if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 1 )
     {
         myNav.classList.add("nav-colored");
         myNav.classList.remove("nav-transparent");
