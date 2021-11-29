@@ -1146,18 +1146,18 @@ dropdown research_submenu
 }
 
 .dropdown-content {
-  height: 0;
+    height: 0px;
     overflow: hidden;
     position: fixed;
-    background-color: #08080869;
+    background-color: #fff;
     width: 90%;
     left: 65px;
     z-index: 1;
-    box-shadow: -1px 4px 28px 0px rgb(0 0 0 / 75%);
+    box-shadow: 0px 6px 6px 0px rgb(0 0 0 / 40%);
     transition: all .5s ease;
     opacity: 1;
     top: 56px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -2028,8 +2028,9 @@ a.filled-button {
 }
 
 a.filled-button:hover {
-	background-color: #fff;
-	color: #c0293a;
+    background-color: #fff;
+    color: #c0293a;
+    border: 2px solid #c0293a;
 }
 
 
@@ -2142,21 +2143,23 @@ a.filled-button:hover {
     padding: 230px 0px 150px 0px;
     color: #fff;
 
-    }
+}
 
 .single-services {
-	margin-top: 140px;
+	margin-top: 10px;
 }
 
 #tabs ul {
   margin: 0;
   padding: 0;
 }
+
 #tabs ul li {
   margin-bottom: 10px;
   display: inline-block;
   width: 100%;
 }
+
 #tabs ul li:last-child {
   margin-bottom: 0px;
 }
@@ -2189,7 +2192,7 @@ a.filled-button:hover {
   color: #1e1e1e;
 }
 .tabs-content {
-	margin-left: 30px;
+  margin-left: 30px;
   text-align: left;
   display: inline-block;
   transition: all 0.3s;
@@ -2199,10 +2202,10 @@ a.filled-button:hover {
 	overflow: hidden;
 }
 .tabs-content h4 {
-	font-size: 24px;
-	font-weight: 700;
-	letter-spacing: 0.25px;
-	margin-top:30px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    margin: 30px 0;
 }
 
 
@@ -2214,10 +2217,15 @@ a.filled-button:hover {
 }
 
 .tabs-content p {
-  font-size: 14px;
-  color: #7a7a7a;
-  margin-top: 10px;
+    font-size: 14px;
+    color: #7a7a7a;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
 
+.tabs-content hr{
+    margin-bottom: 40px;
 }
 
 /* Banner Style */
