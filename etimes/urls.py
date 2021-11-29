@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('secretpanel/', admin.site.urls),
     url(r'^robots\.txt/$', TemplateView.as_view(template_name="etimes/robots.txt", content_type='text/plain')),
+    url(r'^sitemap\.xml/$', TemplateView.as_view(template_name="etimes/sitemap.xml", content_type='text/plain')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
